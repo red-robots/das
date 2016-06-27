@@ -1,17 +1,20 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * The sidebar for every page except the homepage.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package ACStarter
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<aside id="homepage-sidebar" role="complementary">
+	<div class="logo-wrapper">
+        <img src="<?php wp_get_attachment_url(get_field("logo","option");?>" alt="logo" id="logo">
+    </div><!--.logo-wrapper-->
+    <div class="nav-info-wrapper">
+        <nav class="homepage-nav">
+            <?php wp_nav_menu( array( 'menu_id' => 'main-menu' ) ); ?>
+        </nav><!-- .homepage-nav-->
+    </div><!-- .nav-info-wrapper -->
+</aside><!-- #homepagesidebar -->
