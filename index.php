@@ -65,7 +65,7 @@ get_header(); ?>
                     </div><!--.process-->
                     <div class="featured-video">
                             <h2>Featured Video</h2>
-                        <div class="video-and-description">
+                        <div class="video-section-wrapper">
                             <div class="video">
                                 <?php the_field("featured_video","option");?>
                             </div><!--.video-->
