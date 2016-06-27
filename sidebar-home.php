@@ -8,10 +8,10 @@
  */
 ?>
 
-<aside id="homepagesidebar" role="complementary">
+<aside id="homepage-sidebar" role="complementary">
 	<div class="logo-wrapper">
         <img src="<?php wp_get_attachment_url(get_field("logo","option");?>" alt="logo" id="logo">
-    </div><!--.logo-holder-->
+    </div><!--.logo-wrapper-->
     <div class="nav-info-wrapper">
         <nav class="homepage-nav">
             <?php wp_nav_menu( array( 'menu_id' => 'main-menu' ) ); ?>
