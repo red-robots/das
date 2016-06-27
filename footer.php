@@ -15,12 +15,29 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrapper">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acstarter' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acstarter' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'acstarter' ), 'acstarter', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-			</div><!-- .site-info -->
-	</div><!-- wrapper -->
+            <div class="float-left">
+                <div class="company-info">
+                    <p><?php the_field("company_name","option");?></p>
+                    <p><?php the_field("main_line_telephone_number","option");?></p>
+                    <p>fax <?php the_field("fax_line_number","option");?></p>
+                    <p>toll free <?php the_field("toll_free_line_number","option");?></p>
+                </div><!-- .company-info -->
+                <div class="footer-links-menu">
+                    <?php wp_nav_menu( array( 'menu_id' => 'footer-menu' ) ); ?>
+                </div>
+            </div> <!-- .float-left -->
+            <div class="float-right">
+                <div class="company-location">
+                    <p><?php the_field("location","option");?></p>
+                    <div class="google-maps-location"><?php the_field("google_maps_location","option");?></div>
+                    <p><?php the_field("address_line_1","option");?> | <?php the_field("address_line_2","option");?></p>
+                    <p><?php the_field("city_state_zip","option");?></p>
+                    <div class="sitemap-bw-menu">
+                        <?php wp_nav_menu( array( 'menu_id' => 'sitemap-bw-menu' ) ); ?>
+                    </div>
+                </div><!-- .company-location -->
+            </div><!-- .float-right -->
+        </div><!-- wrapper -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
