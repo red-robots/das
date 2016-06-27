@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo" style="background-image: <?php the_field("footer-image","option");?>;">
 		<div class="wrapper">
             <div class="float-left">
                 <div class="company-info">
