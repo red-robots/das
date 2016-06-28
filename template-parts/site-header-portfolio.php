@@ -27,9 +27,9 @@
     </div><!--.company-info-->
     <nav class="portfolio">
         <span class="descriptor">Categories:</span>
-        <?php $cats=get_categories(array('taxonomy'=>'portfolio'));?>
+        <?php $cats=get_categories(array('taxonomy'=>'project_type'));?>
         <?php foreach($cats as $cat): ?>
-            <a href="<?php get_category_link(get_cat_ID($cat));?>"><li><?php echo $cat;?></li></a>
+            <a href="<?php get_category_link(get_cat_ID($cat->slug));?>"><li><?php echo $cat->name;?></li></a>
         <?php endforeach; ?>
     </nav>
 </div><!--#site-header-->
