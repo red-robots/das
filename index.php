@@ -93,9 +93,9 @@ get_header(); ?>
                             <div class="news_tile">
                                 <?php $title=$query->post->post_title; ?>
                                 <?php if(has_post_thumbnail() && $title):?>
-                                    <img src="<?php wp_get_attachment_url();?>" alt="<?php echo $title; ?>" class="featured_image">
+                                    <img src="<?php echo  wp_get_attachment_url(get_post_thumbnail_id());?>" alt="<?php echo $title; ?>" class="featured_image">
                                 <?php endif; //if for image ?>
-                                <p class="date"><?php the_date("n.j.Y")?></p>
+                                <p class="date box"><?php the_date("n.j.Y")?></p>
                                 <h2 class="title"><?php echo $title ?></h2>
                                 <a href="<?php the_permalink(); ?>">MORE</a>
                             </div><!--.news_tile-->
