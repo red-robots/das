@@ -25,25 +25,26 @@ get_header(); ?>
                         <?php if(have_rows("project_slider")):
                             while(have_rows("project_slider")): the_row();
                                 $image_url=get_sub_field("image");
-                                $project_title=get_sub_field("project_title");
                                 $project_type=get_sub_field("project_type");
                                 $project_selector=get_sub_field("project_selector");
-                                if($image_url && $project_title && $project_selector):
-                                ?>
+                                if($image_url && $project_selector):
+                                    setup_postdata($project_selector);
+                                    ?>
                                     <ul class="slides">
-                                        <a href="<?php echo $project_selector;?>">
+                                        <a href="<?php the_permalink();?>">
                                             <li class="slide">
                                                 <img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
                                                 <div class="info">
                                                     <?php if($project_type): ?>
                                                         <h3 class="type"><?php echo $project_type; ?></h3>
                                                     <?php endif; ?>
-                                                    <h2 class="title"><?php echo $project_title; ?></h2>
+                                                    <h2 class="title"><?php the_title(); ?></h2>
                                                 </div><!--.info-->
                                             </li><!--.slide-->
                                         </a>
                                     </ul><!--.slides-->
-                                <?php endif; //if for the slide ?>
+                                    <?php wp_reset_postdata();
+                                endif; //if for the slide ?>
                             <?php endwhile; // while for slides as a whole ?>
                         <?php endif; //if for if have slides ?>
                     </div><!--.flexslider-->
