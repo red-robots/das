@@ -21,29 +21,32 @@ get_header(); ?>
                     <div class="float-left">
                         <?php get_sidebar("home"); ?>
                     </div><!-- .float-left -->
-                    <div class="slides">
-                        <?php if(have_rows("slider"):
-                            while(have_rows("slider"): the_row();
-                                $image_url=wp_get_attachment_url(get_sub_field("image"));
-                                $project_title=the_sub_field("project_title");
-                                $project_type=the_sub_field("project_type");
-                                if($image_url)
+                    <div class="flexslider">
+                        <?php if(have_rows("project_slider"):
+                            while(have_rows("project_slider"): the_row();
+                                $image_url=get_sub_field("image");
+                                $project_title=get_sub_field("project_title");
+                                $project_type=get_sub_field("project_type");
+                                $project_selector=get_sub_field("project_selector");
+                                if($image_url && $project_title && $project_selector)
                                 ?>
-                                    <div class="slide">
-                                        <img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
-                                        <div class="info">
-                                            <?php if($project_title): ?>
-                                                <h2 class="title"><?php echo $project_title; ?></h2>
-                                            <?php endif; ?>
-                                            <?php if($project_type): ?>
-                                                <h3 class="type"><?php echo $project_type; ?></h3>
-                                            <?php endif; ?>
-                                        </div><!--.info-->
-                                    </div><!--.slide-->
+                                    <ul class="slides">
+                                        <a href="<?php echo $project_selector;?>">
+                                            <li class="slide">
+                                                <img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
+                                                <div class="info">
+                                                    <?php if($project_type): ?>
+                                                        <h3 class="type"><?php echo $project_type; ?></h3>
+                                                    <?php endif; ?>
+                                                    <h2 class="title"><?php echo $project_title; ?></h2>
+                                                </div><!--.info-->
+                                            </li><!--.slide-->
+                                        </a>
+                                    </ul><!--.slides-->
                                 <?php endif; //if for the slide ?>
                             <?php endwhile; // while for slides as a whole ?>
                         <?php endif; //if for if have slides ?>
-                    </div><!--.slides-->
+                    </div><!--.flexslider-->
                 </section><!--.homepage-slider-->
                 <section class="homepage-section-featured-project">
                     <div class="process">
