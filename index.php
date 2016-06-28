@@ -22,13 +22,13 @@ get_header(); ?>
                         <?php get_sidebar("home"); ?>
                     </div><!-- .float-left -->
                     <div class="flexslider">
-                        <?php if(have_rows("project_slider"):
-                            while(have_rows("project_slider"): the_row();
+                        <?php if(have_rows("project_slider")):
+                            while(have_rows("project_slider")): the_row();
                                 $image_url=get_sub_field("image");
                                 $project_title=get_sub_field("project_title");
                                 $project_type=get_sub_field("project_type");
                                 $project_selector=get_sub_field("project_selector");
-                                if($image_url && $project_title && $project_selector)
+                                if($image_url && $project_title && $project_selector):
                                 ?>
                                     <ul class="slides">
                                         <a href="<?php echo $project_selector;?>">
@@ -86,7 +86,7 @@ get_header(); ?>
                 </section><!--.homepage-featured-project-->
                 <section class="homepage-section-news">
                     <h2>Latest News</h2>
-                    <?php $query=WP_Query(array('post_type'=>'post','posts_per_page'=>3));
+                    <?php $query= new WP_Query(array('post_type'=>'post','posts_per_page'=>3));
                     if($query->have_posts()):
                         while($query->have_posts()): $query->the_post();?>
                             <div class="news_tile">

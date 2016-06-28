@@ -10,7 +10,7 @@
 
 <aside id="homepage-sidebar" role="complementary">
 	<div class="logo-wrapper">
-        <img src="<?php wp_get_attachment_url(get_field("logo","option");?>" alt="logo" id="logo">
+        <img src="<?php wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo">
     </div><!--.logo-wrapper-->
     <div class="nav-info-wrapper">
         <nav class="homepage-nav">
@@ -38,7 +38,7 @@
                 <?php endif; ?>
             </div><!-- .electronic-info -->
             <div class="address">
-                <?php if(get_field("address_line_1","option"): ?>
+                <?php if(get_field("address_line_1","option")): ?>
                     <p><?php the_field("address_line_1","option");?></p>
                 <?php endif; ?>
                 <?php if(get_field("address_line_2","option")): ?>
