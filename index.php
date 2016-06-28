@@ -16,29 +16,28 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) :
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post(); ?>
+            <?php setup_postdata(get_post(244)); ?>
                 <section class="homepage-section-slider">
                     <div class="float-left">
                         <?php get_sidebar("home"); ?>
                     </div><!-- .float-left -->
                     <div class="slides">
-                        <?php if(have_rows("slider_projects"):
-                            while(have_rows("slider_projects"): the_row();
+                        <?php if(have_rows("slider"):
+                            while(have_rows("slider"): the_row();
                                 $image_url=wp_get_attachment_url(get_sub_field("image"));
                                 $project_title=the_sub_field("project_title");
                                 $project_type=the_sub_field("project_type");
-                                if($image_url && $project_title && $project_type)
+                                if($image_url)
                                 ?>
                                     <div class="slide">
                                         <img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
                                         <div class="info">
-                                            <h2 class="title"><?php echo $project_title; ?></h2>
-                                            <h3 class="type"><?php echo $project_type; ?></h3>
+                                            <?php if($project_title): ?>
+                                                <h2 class="title"><?php echo $project_title; ?></h2>
+                                            <?php endif; ?>
+                                            <?php if($project_type): ?>
+                                                <h3 class="type"><?php echo $project_type; ?></h3>
+                                            <?php endif; ?>
                                         </div><!--.info-->
                                     </div><!--.slide-->
                                 <?php endif; //if for the slide ?>
@@ -51,15 +50,15 @@ get_header(); ?>
                         <?php if(get_field("company_name","option")): ?>
                             <p><?php the_field("company_name","option");?></p>
                         <?php endif; ?>
-                        <?php if(get_field("process_description","option")): ?>
-                            <p><?php the_field("process description","option");?></p>
+                        <?php if(get_field("process_description")): ?>
+                            <p><?php the_field("process description");?></p>
                         <?php endif; ?>
-                        <?php if(get_field("process_link_text","option")): ?>
+                        <?php if(get_field("process_link_text")): ?>
                             <a href="<?php the_permalink(38); ?>">
-                                <?php the_field("process_link_text","option");?>
+                                <?php the_field("process_link_text");?>
                             </a>
                         <?php endif; ?>
-                        <?php if(get_field("process_graphic","option")): ?>
+                        <?php if(get_field("process_graphic")): ?>
                             <img src="<?php wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic">
                         <?php endif; ?>
                     </div><!--.process-->
@@ -67,14 +66,14 @@ get_header(); ?>
                             <h2>Featured Video</h2>
                         <div class="video-section-wrapper">
                             <div class="video">
-                                <?php the_field("featured_video","option");?>
+                                <?php the_field("featured_video");?>
                             </div><!--.video-->
                             <div class="description">
-                                <?php if(get_field("featured_video_title","option")&&get_field("featured_video_description","option")&&get_field("featured_video_link_text","option")): ?>
-                                    <h3><?php the_field("featured_video_title","option");?></h3>
-                                    <p><?php the_field("featured_video_description","option");?></p>
+                                <?php if(get_field("featured_video_title")&&get_field("featured_video_description")&&get_field("featured_video_link_text")): ?>
+                                    <h3><?php the_field("featured_video_title");?></h3>
+                                    <p><?php the_field("featured_video_description");?></p>
                                     <a href="<?php the_permalink(82); ?>">
-                                        <?php the_field("featured_video_link_text","option");?>
+                                        <?php the_field("featured_video_link_text");?>
                                     </a>
                                 <?php endif; ?>
                             </div><!--.description-->
@@ -100,11 +99,10 @@ get_header(); ?>
                     endif; //if for news posts
                     wp_reset_postdata();?>
                 </section><!--.homepage-news-->
-            <?php 
-			endwhile;
-		endif; ?>
+            <?php wp_reset_postdata(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
 get_footer();
+?>
