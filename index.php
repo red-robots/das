@@ -24,9 +24,7 @@ get_header(); ?>
                     <div class="flexslider">
                         <?php if(have_rows("project_slider")):
                             while(have_rows("project_slider")): the_row();
-                                $image_url=get_sub_field("image");
-                                $project_type=get_sub_field("project_type");
-                                $project_selector=get_sub_field("project_selector");
+                                $image_url=get_sub_field("image");                         $project_selector=get_sub_field("project_selector");
                                 if($image_url && $project_selector):
                                     setup_postdata($project_selector);
                                     ?>
@@ -35,8 +33,10 @@ get_header(); ?>
                                             <li class="slide">
                                                 <img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
                                                 <div class="info">
-                                                    <?php if($project_type): ?>
-                                                        <h3 class="type"><?php echo $project_type; ?></h3>
+                                                    <?php 
+                                                    $project_type = get_the_terms($project_selector,"project-type");
+                                                    if(!is_wp_error($project_type)&&is_array($project_type)): ?>
+                                                        <h3 class="type"><?php echo $project_type[0]; ?></h3>
                                                     <?php endif; ?>
                                                     <h2 class="title"><?php the_title(); ?></h2>
                                                 </div><!--.info-->
