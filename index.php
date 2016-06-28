@@ -18,7 +18,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
             <?php setup_postdata(get_post(244)); ?>
                 <section class="homepage-section-slider">
-                    <div class="float-left">
+                    <div class="float-left sidebar">
                         <?php get_sidebar("home"); ?>
                     </div><!-- .float-left -->
                     <div class="flexslider">

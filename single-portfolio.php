@@ -17,7 +17,8 @@ get_header(); ?>
             <header>
                 <!-- header information here -->
             </header>
-            <article class="portfolio left-column">
+            <!-- gallery here -->
+            <article class="portfolio">
                 <header>
                 </header>
                 <div class="video wrapper left-column">
@@ -25,8 +26,6 @@ get_header(); ?>
                 <div class="right-column copy">
                 </div>
             </article>
-            <aside class="right-column">
-            </aside>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
