@@ -23,7 +23,7 @@ get_header(); ?>
                             <header>
                                 <?php $project_type = get_the_terms($post->ID,"project-type");
                                 if(!is_wp_error($project_type)&&is_array($project_type)): ?>
-                                    <div class="type"><?php echo $project_type[0]; ?></div>
+                                    <div class="type box"><?php echo $project_type[0]; ?></div>
                                 <?php endif; ?>
                                 <h1 class="title"><?php the_title();?></h1>
                                 <p class="location"><?php the_field("location");?></p>
