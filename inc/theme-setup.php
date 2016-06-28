@@ -36,8 +36,10 @@ function acstarter_setup() {
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
-    'primary' => esc_html__( 'Primary', 'acstarter' ),
-    'sitemap' => esc_html__( 'Sitemap', 'acstarter' ),
+    'sidebar' => esc_html__( 'Sidebar Menu', 'acstarter' ),
+    'about' => esc_html__('About Menu'),
+    'portfolio' => esc_html__('Portfolio Menu'),
+    'technical' => esc_html__('Technical Menu')
   ) );
 
   /*

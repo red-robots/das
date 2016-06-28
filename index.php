@@ -68,7 +68,7 @@ get_header(); ?>
                     </div><!--.process-->
                     <div class="featured-video">
                             <h2>Featured Video</h2>
-                        <div class="video-section-wrapper">
+                        <div class="video-section wrapper">
                             <div class="video">
                                 <?php the_field("featured_video");?>
                             </div><!--.video-->
@@ -82,7 +82,7 @@ get_header(); ?>
                                 <?php endif; ?>
                             </div><!--.description-->
                             
-                        </div><!--.video-and-description
+                        </div><!--.video-section-->
                     </div><!-- .featured-video-->
                 </section><!--.homepage-featured-project-->
                 <section class="homepage-section-news">

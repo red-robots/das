@@ -25,8 +25,7 @@
             <?php the_field("main_line_telephone_number","option");?>
         </p>
     </div><!--.company-info-->
-    <nav class="portfolio">
-        <span class="descriptor">Categories:</span>
-        <?php wp_nav_menu( array( 'menu_id' => 'portfolio-menu' ) ); ?>
+    <nav class="about">
+        <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
     </nav>
 </div><!--#site-header-->

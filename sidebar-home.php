@@ -14,7 +14,7 @@
     </div><!--.wrapper-->
     <div class="nav-info wrapper">
         <nav class="homepage-nav">
-            <?php wp_nav_menu( array( 'menu_id' => 'main-menu' ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'sidebar' ) ); ?>
         </nav><!-- .homepage-nav-->
         <div class="company-info">
             <div class="social wrapper">

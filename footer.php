@@ -31,7 +31,7 @@
                     <?php endif; ?>
                 </div><!-- .company-info -->
                 <div class="footer-links-menu">
-                    <?php wp_nav_menu( array( 'menu_id' => 'footer-menu' ) ); ?>
+                    <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
                 </div><!--.footer-links-menu-->
             </div> <!-- .float-left -->
             <div class="float-right">
@@ -49,7 +49,7 @@
                         <p class="city-state-zip"><?php the_field("city_state_zip","option");?></p>
                     <?php endif;?>
                     <div class="sitemap-bw-menu">
-                        <?php wp_nav_menu( array( 'menu_id' => 'sitemap-bw-menu' ) ); ?>
+                        <?php wp_nav_menu( array( 'theme_location' => 'technical' ) ); ?>
                     </div><!--.sitemap-bw-menu-->
                 </div><!-- .company-location -->
             </div><!-- .float-right -->
