@@ -36,7 +36,7 @@ get_header(); ?>
                                                     <?php 
                                                     $project_type = get_the_terms($project_selector,"project-type");
                                                     if(!is_wp_error($project_type)&&is_array($project_type)): ?>
-                                                        <h3 class="type"><?php echo $project_type[0]; ?></h3>
+                                                        <div class="type"><?php echo $project_type[0]; ?></div>
                                                     <?php endif; ?>
                                                     <h2 class="title"><?php the_title(); ?></h2>
                                                 </div><!--.info-->

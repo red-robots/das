@@ -16,17 +16,31 @@ get_header(); ?>
         <div class="right-column">
             <?php get_template_part("/template-parts/site-header","portfolio"); ?>
             <main id="main" class="site-main" role="main">
-                <!-- gallery -->
-                <article class="portfolio left-column">
-                    <header>
-                    </header>
-                    <!-- if video then columns and video wrapper-->
-                    <div class="video wrapper left-column">
-                    </div><!--.video-->
-                    <!-- end if video -->
-                    <div class="right-column copy">
-                    </div><!--.copy-->
-                </article><!--.portfolio .left-column-->
+                <?php if(have_posts()):
+                    while(have_posts()):the_post(); ?>
+                        <!-- gallery -->
+                        <article class="portfolio left-column">
+                            <header>
+                                <?php $project_type = get_the_terms($post->ID,"project-type");
+                                if(!is_wp_error($project_type)&&is_array($project_type)): ?>
+                                    <div class="type"><?php echo $project_type[0]; ?></div>
+                                <?php endif; ?>
+                                <h1 class="title"><?php the_title();?></h1>
+                                <p class="location"><?php the_field("location");?></p>
+                                <p class="completion-date">Completion Date: <?php the_field("completion_date");?></p>
+                            </header>
+                            <?php if(get_field("video")): ?>
+                                <div class="video wrapper left-column">
+                                </div><!--.video-->
+                                <div class="right-column copy">
+                            <?php else: ?>
+                                <div class="copy">
+                            <?php endif; ?>
+                            <?php the_field("description");?>
+                            </div><!--.copy-->
+                        </article><!--.portfolio .left-column-->
+                    <?php endwhile; 
+                endif; ?>
             </main><!-- #main -->
         </div><!--.right-column-->
 	</div><!-- #primary -->

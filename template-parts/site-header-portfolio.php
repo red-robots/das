@@ -26,10 +26,12 @@
         </p>
     </div><!--.company-info-->
     <nav class="portfolio">
-        <span class="descriptor">Categories:</span>
-        <?php $cats=get_categories(array('taxonomy'=>'project_type'));?>
-        <?php foreach($cats as $cat): ?>
-            <a href="<?php get_category_link(get_cat_ID($cat->slug));?>"><li><?php echo $cat->name;?></li></a>
-        <?php endforeach; ?>
+        <ul>
+            <span class="descriptor">Categories:</span>
+            <?php $cats = get_categories(array('taxonomy'=>'project_type'));?>
+            <?php foreach($cats as $cat): ?>
+                <a href="<?php get_category_link(get_cat_ID($cat->slug));?>"><li><?php echo $cat->name;?></li></a>
+            <?php endforeach; ?>
+        </ul>
     </nav>
 </div><!--#site-header-->
