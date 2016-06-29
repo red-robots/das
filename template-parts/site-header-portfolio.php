@@ -27,7 +27,7 @@
     </div><!--.company-info-->
     <nav class="portfolio">
         <ul>
-            <span class="descriptor">Categories:</span>
+            <span class="descriptor">Filter:</span>
             <?php $cats = get_categories(array('taxonomy'=>'project_type'));?>
             <?php foreach($cats as $cat): ?>
                 <a href="<?php get_category_link(get_cat_ID($cat->slug));?>"><li><?php echo $cat->name;?></li></a>

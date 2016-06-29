@@ -96,7 +96,7 @@ get_header(); ?>
                                 <?php endif; //if for image ?>
                                 <p class="date box"><?php echo get_the_date("n.j.Y");?></p>
                                 <h2 class="title"><?php echo $query->post->post_title; ?></h2>
-                                <a href="<?php the_permalink(); ?>">MORE</a>
+                                <div class="link full-article"><a href="<?php the_permalink(); ?>">MORE</a></div><!--.link .full-article-->
                             </div><!--.news_tile-->
                         <?php endwhile; //while for news posts
                     endif; //if for news posts

@@ -28,7 +28,7 @@ get_header(); ?>
                             <section class="copy">
                                 <?php the_content(); ?>
                             </section><!--.copy-->
-                            <div class="button next-news">
+                            <div class="box link next-news">
                                 <?php $news_ids = array();
                                 $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1));
                                 if($query->have_posts()):
