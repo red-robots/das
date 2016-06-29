@@ -17,4 +17,4 @@
             <?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
         </nav><!-- .homepage-nav-->
     </div><!-- .nav-info .wrapper -->
-</aside><!-- #homepagesidebar -->
+</aside><!-- #sidebar -->

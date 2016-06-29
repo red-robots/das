@@ -6,6 +6,7 @@
  *
  * @package ACStarter
  */
+global $wp_query;
 
 get_header(); ?>
 
@@ -18,18 +19,41 @@ get_header(); ?>
             <main id="main" class="site-main" role="main">
                 <?php if(have_posts()):
                     while(have_posts()):the_post();?>
-                        <!-- gallery -->
                         <article class="news left-column">
                             <header>
                                 <div class="date box"><?php the_date("n.j.Y");?></div>
                                 <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id());?>">
                                 <h1 class="title"><?php the_title();?></h1>
                             </header>
-                            <div class="copy">
+                            <section class="copy">
                                 <?php the_content(); ?>
-                                <!-- pagination link-->
-                            </div><!--.copy-->
+                            </section><!--.copy-->
+                            <div class="button next-news">
+                                <?php $news_ids = array();
+                                $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1));
+                                if($query->have_posts()):
+                                    while($query->have_posts()):$query->the_post();
+                                        $news_ids[]=$query->post->ID;
+                                    endwhile;
+                                endif; 
+                                wp_reset_postdata();
+                                $location_key = array_search($post->ID,$news_ids);
+                                $max_key = count($news_ids)-1;
+                                if($location_key !== false):
+                                    if($location_key>0):
+                                        echo '<a href="'.get_permalink($news_ids[$location_key-1]).'">News</a>';
+                                    else:
+                                        echo '<a href="'.get_permalink($news_ids[$max_key]).'">News</a>';
+                                    endif;
+                                else:
+                                    echo "News";
+                                endif;
+                                ?>
+                            </div>
                         </article><!--.news-->
+                        <div class="right-column">
+                            <?php get_sidebar("social");?>
+                        </div><!--.right-column-->
                     <?php endwhile;
                 endif; ?>
             </main><!-- #main -->

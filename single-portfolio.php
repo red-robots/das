@@ -31,6 +31,7 @@ get_header(); ?>
                             </header>
                             <?php if(get_field("video")): ?>
                                 <div class="video wrapper left-column">
+                                    <!-- insert video here -->
                                 </div><!--.video-->
                                 <div class="right-column copy">
                             <?php else: ?>
