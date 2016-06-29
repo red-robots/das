@@ -54,8 +54,8 @@ get_header(); ?>
                         <div class="right-column">
                             <?php get_sidebar("social");?>
                         </div><!--.right-column-->
-                    <?php endwhile;
-                endif; ?>
+                    <?php endwhile; //while for initializing news post
+                endif; //if for initializing news post?>
             </main><!-- #main -->
             <aside class="right-column">
             </aside><!--.right-column-->

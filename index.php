@@ -34,9 +34,9 @@ get_header(); ?>
                                                 <img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
                                                 <div class="info">
                                                     <?php 
-                                                    $project_type = get_the_terms($project_selector,"project-type");
-                                                    if(!is_wp_error($project_type)&&is_array($project_type)): ?>
-                                                        <div class="type box"><?php echo $project_type[0]; ?></div>
+                                                    $project_types = get_the_terms($project_selector,"project_type");
+                                                    if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
+                                                        <div class="type box"><?php echo $project_types[0]->name; ?></div>
                                                     <?php endif; ?>
                                                     <h2 class="title"><?php the_title(); ?></h2>
                                                 </div><!--.info-->
@@ -91,12 +91,11 @@ get_header(); ?>
                     if($query->have_posts()):
                         while($query->have_posts()): $query->the_post();?>
                             <div class="news_tile">
-                                <?php $title=$query->post->post_title; ?>
-                                <?php if(has_post_thumbnail() && $title):?>
-                                    <img src="<?php echo  wp_get_attachment_url(get_post_thumbnail_id());?>" alt="<?php echo $title; ?>" class="featured_image">
+                                <?php if(has_post_thumbnail()):?>
+                                    <img src="<?php echo  wp_get_attachment_url(get_post_thumbnail_id());?>" alt="<?php echo get_post(get_post_thumbnail_id())->post_title; ?>" class="featured_image">
                                 <?php endif; //if for image ?>
-                                <p class="date box"><?php the_date("n.j.Y")?></p>
-                                <h2 class="title"><?php echo $title ?></h2>
+                                <p class="date box"><?php echo get_the_date("n.j.Y");?></p>
+                                <h2 class="title"><?php echo $query->post->post_title; ?></h2>
                                 <a href="<?php the_permalink(); ?>">MORE</a>
                             </div><!--.news_tile-->
                         <?php endwhile; //while for news posts

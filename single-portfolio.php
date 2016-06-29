@@ -61,8 +61,8 @@ get_header(); ?>
                             <?php the_field("description");?>
                             </div><!--.copy-->
                         </article><!--.portfolio .left-column-->
-                    <?php endwhile; 
-                endif; ?>
+                    <?php endwhile; //while for intializing page 
+                endif; //if for initializing page?>
             </main><!-- #main -->
         </div><!--.right-column-->
 	</div><!-- #primary -->
