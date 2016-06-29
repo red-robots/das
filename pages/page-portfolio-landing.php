@@ -16,10 +16,10 @@ get_header(); ?>
         <div class="right-column">
             <?php get_template_part("/template-parts/site-header","portfolio"); ?>
             <main id="main" class="site-main" role="main">
-                <div class="flexslider">
+                <div class="flexslider left-column">
                     <ul class="slides">
                         <li class="slide">
-                            <div id="container" class="left-column">
+                            <div id="container">
                                 <?php $query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
                                 if($query->have_posts()):
                                     $max = $query->post_count;
@@ -43,10 +43,10 @@ get_header(); ?>
                                         <?php endif; ?>
                                     <?php endfor; //while for all news posts; 
                                 endif; //if for all news posts?>
-                            </div><!--#container .left-column-->
+                            </div><!--#container-->
                         </li><!--.slide-->
                     </ul><!--.slides-->
-                </div><!--.flexslider-->
+                </div><!--.flexslider .left-column-->
                 <div class="right-column pagination">
                     <!--img here-->
                 </div><!--.pagination .right-column-->
