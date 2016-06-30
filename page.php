@@ -23,7 +23,19 @@ get_header(); ?>
                                 <?php the_content();?>
                             </section><!--.copy-->
                             <div class="video">
-                                <!--insert random video-->
+                                <?php $videos = array();
+								$query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
+								if($query->have_posts()):
+									while($query->have_posts()):$query->the_post();
+										if(get_field("video")):
+											$videos[] = get_field("video");
+										endif;//end of if for has video
+									endwhile;//end of have posts for portfolios
+								endif;//end of if posts for portfolios
+								wp_reset_postdata();
+								if(!empty($videos)):
+									echo $videos[rand(0,count($videos)-1)];//insert random video
+								endif;//end of if for has videos?>
                             </div><!--.video-->
                         </div><!--.video-copy .wrapper-->
                         <?php if(have_rows("affiliations_")): ?>
