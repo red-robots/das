@@ -43,12 +43,12 @@ get_header(); ?>
                                 <?php while(have_rows("affiliations_")):the_row();?>
                                     <?php $file = get_sub_field('logo');
                                     $affiliation = get_sub_field('affiliation_');?>
-                                    <div class="affiliation">
-                                        <?php if($file && trim($file['type']) === 'image' && $affiliation): ?>
-                                            <img src="<?php echo $file['sizes']['thumbnail'];?>" alt="<?php echo $file['title'];?>">
-                                        <?php endif; ?>
-                                        <h2><?php echo $affiliation;?></h2>
-                                    </div><!--.affiliation -->
+                                    <?php if($file && trim($file['type']) === 'image' && $affiliation): ?>
+                                        <div class="affiliation">
+											<img src="<?php echo $file['sizes']['thumbnail'];?>" alt="<?php echo $file['title'];?>">
+											<h2><?php echo $affiliation;?></h2>
+										</div><!--.affiliation -->
+                                    <?php endif; //end of if for file and affilation?>    
                                 <?php endwhile;?>
                             </div><!--.affiliation .wrapper-->
                         <?php endif; ?>

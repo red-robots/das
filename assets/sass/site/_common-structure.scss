@@ -17,34 +17,96 @@ div {
 	hyphens: auto;
 }
 .clear {clear: both;}
+.float-left {float: left;}
+.float-right{float: right;}
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
-	padding: 20px;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 100%;
-	}
-	@media screen and (min-width: $deskwidth) {
-		width: 1200px;
-		padding: 0px;
-	}
 }
 
-.content-area {
+#primary.content-area {
 	width: 100%;
 	margin: 0px auto;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 66%;
-		float: left;
-		margin: 0;
+	display: table;
+}
+
+#logo {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 20%;
+}
+
+#primary {
+	> .right-column {
+		width: 80%;
+		display:table-cell;
 	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+	> .left-column {
+		width: 20%;
+		display: table-cell;
+		#sidebar {
+			.logo.wrapper {
+				min-height: $size__header-height;
+			}
+			.nav.wrapper {
+				height: 100%;
+				
+			}
+		}
 	}
 }
 
+#site-header {
+	width: 100%;
+	display: block;
+	min-height: $site__header-height;
+	.company-info {
+		text-align: right;
+		p {
+			margin: 10px 0;
+		}
+	}
+	nav {
+		display: block;
+		margin: 0;
+		padding: 0;
+		ul {
+			margin: 0 0 0 auto;
+			padding: 0;
+			display: table;
+			li {
+				display: table-cell;
+				margin: 0;
+				padding: 5px;
+			}
+		}
+	}
+}
+
+#colophon {
+	width: 100%;
+	display: table;
+	position: relative;
+	.wrapper {
+		position: relative;
+		> * {
+			display: table-cell;
+		}
+	}
+}
+#colophon::before {
+	content:"";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	position: absolute;
+	background-color: $color__das-blue;
+	opacity: .8;
+}
+
+/*
 .widget-area {
 	width: 100%;
 	margin: 0px auto;
@@ -55,11 +117,12 @@ div {
 		margin: 0;
 	}
 	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+		//width: 1200px;
 	}
 }
+*/
 
-/* Logo */
+/* Logo 
 .logo , h1.logo {
 	width: 300px;
 	height: 200px;
@@ -73,9 +136,10 @@ div {
 		margin: 0;
 	}
 	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+		//width: 1200px;
 	}
 }
+
 .logo a, h1.logo a {
 	width: 300px;
 	height: 200px;
@@ -87,6 +151,7 @@ div {
 		height: 200px;
 	}
 	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+		//width: 1200px;
 	}
 }
+*/

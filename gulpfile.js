@@ -172,7 +172,7 @@ gulp.task('styles', function () {
 			maxLineLen: 10
 		}))
 		.pipe( gulp.dest( styleDestination ) )
-		.pipe( browserSync.stream() )
+		//.pipe( browserSync.stream() )
 		.pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) );
 });
 
@@ -269,8 +269,8 @@ gulp.task( 'images', function() {
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images', 'browser-sync'], function () {
+ gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images'/*, 'browser-sync'*/], function () {
  	gulp.watch( styleWatchFiles, [ 'styles' ] );
- 	gulp.watch( vendorJSWatchFiles, [ 'vendorsJs', reload ]  );
- 	gulp.watch( customJSWatchFiles, [ 'customJS', reload ]  );
+ 	gulp.watch( vendorJSWatchFiles, [ 'vendorsJs']);//, reload ]  );
+ 	gulp.watch( customJSWatchFiles, [ 'customJS']);//, reload ]  );
  });

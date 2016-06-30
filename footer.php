@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo" style="background-image: <?php the_field("footer-image","option");?>;">
 		<div class="wrapper">
-            <div class="float-left">
+            <div class="float-left company-info-footer-links">
                 <div class="company-info">
                     <?php if(get_field("company_name","option")): ?>
                         <p class="company-name"><?php the_field("company_name","option");?></p>
@@ -33,8 +33,8 @@
                 <div class="footer-links-menu">
                     <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
                 </div><!--.footer-links-menu-->
-            </div> <!-- .float-left -->
-            <div class="float-right">
+            </div> <!-- .float-left .company-info-footer-link-->
+            <div class="float-right company-location-sitemap-bw">
                 <div class="company-location">
                     <?php if(get_field("location","option")): ?>
                         <p class="location"><?php the_field("location","option");?></p>
@@ -52,7 +52,7 @@
                         <?php wp_nav_menu( array( 'theme_location' => 'technical' ) ); ?>
                     </div><!--.sitemap-bw-menu-->
                 </div><!-- .company-location -->
-            </div><!-- .float-right -->
+            </div><!-- .float-right .comapny-loaction-sitemap-bw -->
         </div><!-- wrapper -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
