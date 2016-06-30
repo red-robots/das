@@ -11,12 +11,12 @@ global $wp_query;
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-        <div class="left-column sidebar">
-            <?php get_sidebar(); ?>
-        </div><!-- .sidebar -->
-        <div class="right-column">
-            <?php get_template_part("/template-parts/site-header","news"); ?>
-            <main id="main" class="site-main" role="main">
+		<?php get_template_part("/template-parts/site-header","news"); ?>    
+        <div class="main-sidebar wrapper">
+            <div class="sidebar wrapper">
+			    <?php get_sidebar(); ?>
+			</div><!-- .sidebar .wrapper-->
+			<main id="main" class="site-main" role="main">
                 <?php if(have_posts()):
                     while(have_posts()):the_post();?>
                         <article class="news left-column">
@@ -57,9 +57,7 @@ get_header(); ?>
                     <?php endwhile; //while for initializing news post
                 endif; //if for initializing news post?>
             </main><!-- #main -->
-            <aside class="right-column">
-            </aside><!--.right-column-->
-        </div><!--.right-column-->
+        </div><!--.main-sidebar .wrapper-->
 	</div><!-- #primary -->
 
 <?php

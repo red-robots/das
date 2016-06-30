@@ -10,18 +10,18 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-        <div class="left-column sidebar">
-                <?php get_sidebar(); ?>
-        </div><!-- .sidebar -->
-        <div class="right-column">
-            <?php get_template_part("/template-parts/site-header","news"); ?>
-            <main id="main" class="site-main" role="main">
+        <?php get_template_part("/template-parts/site-header","news"); ?>
+        <div class="main-sidebar wrapper">
+        	<div class="sidebar wrapper">
+					<?php get_sidebar(); ?>
+			</div><!-- .sidebar .wrapper-->
+			<main id="main" class="site-main" role="main">
                 <div class="flexslider left-column">
                     <ul class="slides">
                         <li class="slide"><div id="container" >
                             <?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1));
                             if($query->have_posts()):
-                                while($query->have_posts()):$query- >the_post(); ?>
+                                while($query->have_posts()):$query->the_post(); ?>
                                     <div class="item">
                                         <header>
                                             <div class="box date"><?php echo get_the_date("n.j.Y");?></div><!--.box .date-->
@@ -48,7 +48,7 @@ get_header(); ?>
                     <!--img here-->
                 </div><!--.pagination .right-column-->
             </main><!-- #main -->
-        </div><!--.right-column-->
+        </div><!--.main-sidebar .wrapper-->
 	</div><!-- #primary -->
 
 <?php

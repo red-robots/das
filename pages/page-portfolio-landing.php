@@ -10,12 +10,12 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-        <div class="left-column sidebar">
-                <?php get_sidebar(); ?>
-        </div><!-- .sidebar -->
-        <div class="right-column">
-            <?php get_template_part("/template-parts/site-header","portfolio"); ?>
-            <main id="main" class="site-main" role="main">
+		<?php get_template_part("/template-parts/site-header","portfolio"); ?>
+        <div class="main-sidebar wrapper">
+        	<div class="sidebar wrapper">
+					<?php get_sidebar(); ?>
+			</div><!-- .sidebar .wrapper-->
+			<main id="main" class="site-main" role="main">
                 <div class="flexslider left-column">
                     <ul class="slides">
                         <li class="slide">
@@ -51,7 +51,7 @@ get_header(); ?>
                     <!--img here-->
                 </div><!--.pagination .right-column-->
             </main><!-- #main -->
-        </div><!--.right-column-->
+        </div><!--.main-sidebar .wrapper-->
 	</div><!-- #primary -->
 
 <?php
