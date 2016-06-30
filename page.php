@@ -27,17 +27,18 @@ get_header(); ?>
                             </div><!--.video-->
                         </div><!--.video-copy .wrapper-->
                         <?php if(have_rows("affiliations_")): ?>
-                            <div class="affiliations-certifications">
-                                <?php while(have_rows("affiliations_"):the_row();?>
+                            <div class="affiliation wrapper">
+                                <?php while(have_rows("affiliations_")):the_row();?>
                                     <?php $file = get_sub_field('logo');
-                                    $affiliation = get_sub_field('affiliation');
-                                    if($file && $file['type'] == 'image' && $affiliation:
-                                        $image =  $file['sizes']['thumbnail'];
-	                                endif; ?>
-                                    <img src="<?php echo $image;?>" alt="<?php echo $file['title'];?>">
-                                    <h2><?php echo $affiliation;?</h2>
+                                    $affiliation = get_sub_field('affiliation_');?>
+                                    <div class="affiliation">
+                                        <?php if($file && trim($file['type']) === 'image' && $affiliation): ?>
+                                            <img src="<?php echo $file['sizes']['thumbnail'];?>" alt="<?php echo $file['title'];?>">
+                                        <?php endif; ?>
+                                        <h2><?php echo $affiliation;?></h2>
+                                    </div><!--.affiliation -->
                                 <?php endwhile;?>
-                            </div><!--.affiliations-certifications-->
+                            </div><!--.affiliation .wrapper-->
                         <?php endif; ?>
                     <?php endwhile; //while for intializing page 
                 endif; //if for initializing page?>
