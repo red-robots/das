@@ -145,9 +145,6 @@ div {
 	width: 100%;
 	display: table;
 	position: relative;
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	background-position: left top;
 	min-height: 300px;
 	color: white;
 	nav {
@@ -165,22 +162,24 @@ div {
 			}
 		}
 	}
-	.background-image {
-		width: 100%;
-		position: absolute;
-		z-index: -2;
-		img {
-			width: 100%;
-			height: auto;
-		}
-	}
 	.footer.wrapper {
 		padding: 75px;
 	}
 	.footer.wrapper:after {
-	content:"";
-	display: block;
-	clear:both;
+		content:"";
+		display: block;
+		clear:both;
+	}
+	.background-image.wrapper {		
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: left top;
+		position: absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index: -2;
 	}
 }
 #colophon:before {
@@ -192,7 +191,7 @@ div {
 		background-color: $color__das-blue;
 		opacity: .6;
 		z-index:-1;
-	}
+}
 /*
 .widget-area {
 	width: 100%;
