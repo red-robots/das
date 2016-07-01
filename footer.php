@@ -13,8 +13,11 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo" style="background-image: <?php the_field("footer-image","option");?>;">
-		<div class="wrapper">
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="background-image">
+			<img src="<?php echo wp_get_attachment_image_src(get_field("footer_image","option"),"full")[0];?>" alt="footer background image">
+		</div>
+		<div class="footer wrapper">
             <div class="float-left company-info-footer-links">
                 <div class="company-info">
                     <?php if(get_field("company_name","option")): ?>
@@ -30,9 +33,9 @@
                         <p class="toll-free-line">toll free <?php the_field("toll_free_line_number","option");?></p>
                     <?php endif; ?>
                 </div><!-- .company-info -->
-                <div class="footer-links-menu">
+                <nav class="footer-links-menu">
                     <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
-                </div><!--.footer-links-menu-->
+                </nav><!--.footer-links-menu-->
             </div> <!-- .float-left .company-info-footer-link-->
             <div class="float-right company-location-sitemap-bw">
                 <div class="company-location">
@@ -48,9 +51,9 @@
                     <?php if(get_field("city_state_zip","option")): ?>
                         <p class="city-state-zip"><?php the_field("city_state_zip","option");?></p>
                     <?php endif;?>
-                    <div class="sitemap-bw-menu">
+                    <nav class="sitemap-bw-menu">
                         <?php wp_nav_menu( array( 'theme_location' => 'technical' ) ); ?>
-                    </div><!--.sitemap-bw-menu-->
+                    </nav><!--.sitemap-bw-menu-->
                 </div><!-- .company-location -->
             </div><!-- .float-right .comapny-loaction-sitemap-bw -->
         </div><!-- wrapper -->

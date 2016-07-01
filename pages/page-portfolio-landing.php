@@ -25,9 +25,8 @@ get_header(); ?>
                                     $max = $query->post_count;
                                     for($i=1;$i<=$max;$i++):$query->the_post();?>
                                         <div class="item">
-                                            <?php if(get_field("featured_image")): 
-                                                $thumbnail = get_post(get_field("featured_image")); ?>
-                                                <img src="<?php echo wp_get_attachment_image_src($thumbnail->ID, array(200,200))[0]; ?>" alt="<?php echo $thumbnail->post_title;?>">
+                                            <?php if(get_field("featured_image")): ?>
+                                                <img src="<?php echo wp_get_attachment_image_src(get_field("featured_image"), array(150,150))[0]; ?>" alt="<?php echo $thumbnail->post_title;?>">
                                                 <?php $project_types = get_the_terms($query->post->ID,"project_type");
                                                 if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
                                                     <div class="type box"><?php echo $project_types[0]->name; ?></div>

@@ -1,7 +1,7 @@
-$color__link : #0999F3;
+$color__link : white;
 a {
 	color: $color__link;
-
+	text-decoration: none;
 	/*&:visited {
 		color: $color__link-visited;
 	}*/
