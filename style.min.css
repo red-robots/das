@@ -1391,22 +1391,24 @@ div{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-
 .float-left{float:left}
 .float-right{float:right}
 .wrapper{width:100%;margin:0 auto}
-#primary.content-area{width:100%;margin:0 auto;display:table}
-#logo{width:100%;margin:0;padding:0;position:relative;top:20%}
-#primary>.right-column{width:80%;display:table-cell}
-#primary>.left-column{width:20%;display:table-cell}
-#primary>.left-column #sidebar .logo.wrapper{min-height:150px}
-#primary>.left-column #sidebar .nav.wrapper{height:100%}
-#site-header{width:100%;display:block}
-#site-header .company-info{text-align:right}
-#site-header .company-info p{margin:10px 0}
-#site-header nav{display:block;margin:0;padding:0}
-#site-header nav ul{margin:0 0 0 auto;padding:0;display:table}
-#site-header nav ul li{display:table-cell;margin:0;padding:5px}
+#primary{width:100%;margin:0 auto}
+#primary #site-header{width:100%;display:block;min-height:150px}
+#primary #site-header .logo.wrapper{width:20%;float:left}
+#primary #site-header .logo.wrapper #logo{width:100%;margin:0;padding:0;position:relative;top:20%}
+#primary #site-header .company-info-nav.wrapper .company-info{text-align:right}
+#primary #site-header .company-info-nav.wrapper .company-info p{margin:10px 0}
+#primary #site-header .company-info-nav.wrapper nav{display:block;margin:0;padding:0}
+#primary #site-header .company-info-nav.wrapper nav ul{margin:0 0 0 auto;padding:0;display:table}
+#primary #site-header .company-info-nav.wrapper nav ul li{display:table-cell;margin:0;padding:5px}
+#primary .main-sidebar.wrapper{display:block;position:relative;width:100%}
+#primary .main-sidebar.wrapper .sidebar.wrapper{position:absolute;top:0;left:0;width:20%}
+#primary .main-sidebar.wrapper .sidebar.wrapper #sidebar{width:100%}
+#primary .main-sidebar.wrapper #main{width:80%;position:relative;left:20%}
+#primary .main-sidebar.wrapper::before{content:"";position:absolute;top:0;left:0;width:20%;height:100%;background-color:#005fbb;z-index:-1}
 #colophon{width:100%;display:table;position:relative}
 #colophon .wrapper{position:relative}
 #colophon .wrapper>*{display:table-cell}
-#colophon::before{content:"";width:100%;height:100%;top:0;position:absolute;background-color:#005fbb;opacity:.8}
+#colophon::before{content:"";width:100%;height:100%;top:0;position:absolute;background-color:#005fbb;opacity:.8;z-index:-1}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}

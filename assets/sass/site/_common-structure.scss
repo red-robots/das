@@ -24,64 +24,76 @@ div {
 	margin: 0px auto;
 }
 
-#primary.content-area {
+#primary {
 	width: 100%;
 	margin: 0px auto;
-	display: table;
-}
-
-#logo {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	top: 20%;
-}
-
-#primary {
-	> .right-column {
-		width: 80%;
-		display:table-cell;
-	}
-	> .left-column {
-		width: 20%;
-		display: table-cell;
-		#sidebar {
-			.logo.wrapper {
-				min-height: $size__header-height;
-			}
-			.nav.wrapper {
-				height: 100%;
-				
-			}
-		}
-	}
-}
-
-#site-header {
-	width: 100%;
-	display: block;
-	min-height: $site__header-height;
-	.company-info {
-		text-align: right;
-		p {
-			margin: 10px 0;
-		}
-	}
-	nav {
+	#site-header {
+		width: 100%;
 		display: block;
-		margin: 0;
-		padding: 0;
-		ul {
-			margin: 0 0 0 auto;
-			padding: 0;
-			display: table;
-			li {
-				display: table-cell;
+		min-height: $size__header-height;
+		.logo.wrapper {
+			width: $size__main-sidebar;
+			float: left;
+			#logo {
+				width: 100%;
 				margin: 0;
-				padding: 5px;
+				padding: 0;
+				position: relative;
+				top: 20%;
 			}
 		}
+		.company-info-nav.wrapper {
+			.company-info {
+				text-align: right;
+				p {
+					margin: 10px 0;
+				}
+			}
+			nav {
+				display: block;
+				margin: 0;
+				padding: 0;
+				ul {
+					margin: 0 0 0 auto;
+					padding: 0;
+					display: table;
+					li {
+						display: table-cell;
+						margin: 0;
+						padding: 5px;
+					}
+				}
+			}
+		}
+	}
+	.main-sidebar.wrapper {
+		display: block;
+		position: relative;
+		width: 100%;
+		.sidebar.wrapper {
+			position: absolute;
+			top:0;
+			left:0;
+			width: $size__main-sidebar;
+			#sidebar {
+				width: 100%;
+			}
+		}
+		#main {
+			width: 100%-$size__main-sidebar;
+			position: relative;
+			left: $size__main-sidebar;
+		}
+	}
+	.main-sidebar.wrapper::before {
+		content: "";
+		position: absolute;
+		top:0;
+		left: 0;
+		width: $size__main-sidebar;
+		height: 100%;
+		background-color: $color__das-blue;
+		z-index: -1;
 	}
 }
 
@@ -104,6 +116,7 @@ div {
 	position: absolute;
 	background-color: $color__das-blue;
 	opacity: .8;
+	z-index:-1;
 }
 
 /*

@@ -11,7 +11,7 @@
 
 <div id="site-header">
     <div class="logo wrapper">
-       <a href="<?php get_site_url();?>"><img src="<?php wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
+       <a href="<?php get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
     </div><!--.logo .wrapper-->
     <div class="company-info-nav wrapper">
         <div class="company-info">

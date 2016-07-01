@@ -25,7 +25,8 @@ get_header(); ?>
 						<div class="flexslider">
 							<?php if(have_rows("project_slider")):
 								while(have_rows("project_slider")): the_row();
-									$image_url=get_sub_field("image");                         $project_selector=get_sub_field("project_selector");
+									$image_url= wp_get_attachment_image_src(get_sub_field("image"), "full")[0];
+									$project_selector=get_sub_field("project_selector");
 									if($image_url && $project_selector):
 										setup_postdata($project_selector);
 										?>
@@ -93,7 +94,7 @@ get_header(); ?>
 							while($query->have_posts()): $query->the_post();?>
 								<div class="news_tile">
 									<?php if(has_post_thumbnail()):?>
-										<img src="<?php echo  wp_get_attachment_url(get_post_thumbnail_id());?>" alt="<?php echo get_post(get_post_thumbnail_id())->post_title; ?>" class="featured_image">
+										<img src="<?php echo  wp_get_attachment_image_src(get_post_thumbnail_id(), array(150,150))[0];?>" alt="<?php echo get_post(get_post_thumbnail_id())->post_title; ?>" class="featured_image">
 									<?php endif; //if for image ?>
 									<p class="date box"><?php echo get_the_date("n.j.Y");?></p>
 									<h2 class="title"><?php echo $query->post->post_title; ?></h2>
