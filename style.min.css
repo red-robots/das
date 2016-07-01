@@ -1392,19 +1392,27 @@ div{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-
 .float-right{float:right}
 .wrapper{width:100%;margin:0 auto}
 #primary{width:100%;margin:0 auto}
-#primary #site-header{width:100%;display:block;min-height:150px}
-#primary #site-header .logo.wrapper{width:20%;float:left}
-#primary #site-header .logo.wrapper #logo{width:100%;margin:0;padding:0;position:relative;top:20%}
+#primary #site-header{width:100%;display:block;position:relative;min-height:150px}
+#primary #site-header .false-logo-wrapper.wrapper{width:30%;position:relative;float:left}
+#primary #site-header .false-logo-wrapper.wrapper .false.logo{width:70%;min-width:70%;margin:0 auto;padding:0}
+#primary #site-header .logo.wrapper{width:30%;position:absolute;bottom:0;left:0}
+#primary #site-header .logo.wrapper .false.logo{width:70%;min-width:70%;margin:0 auto;padding:0}
+#primary #site-header .logo.wrapper #logo{width:70%;min-width:70%;margin:0 auto;padding:0;position:absolute;left:15%;bottom:-25%}
+#primary #site-header .company-info-nav.wrapper{width:70%;margin:0 0 0 auto}
 #primary #site-header .company-info-nav.wrapper .company-info{text-align:right}
 #primary #site-header .company-info-nav.wrapper .company-info p{margin:10px 0}
 #primary #site-header .company-info-nav.wrapper nav{display:block;margin:0;padding:0}
 #primary #site-header .company-info-nav.wrapper nav ul{margin:0 0 0 auto;padding:0;display:table}
 #primary #site-header .company-info-nav.wrapper nav ul li{display:table-cell;margin:0;padding:5px}
-#primary .main-sidebar.wrapper{display:block;position:relative;width:100%}
-#primary .main-sidebar.wrapper .sidebar.wrapper{position:absolute;top:0;left:0;width:20%}
+#primary #site-header::after{content:"";display:block;clear:both}
+#primary .main-sidebar.wrapper{display:block;position:relative;width:100%;padding:0 20px}
+#primary .main-sidebar.wrapper .sidebar.wrapper{position:absolute;top:0;left:0;width:30%}
 #primary .main-sidebar.wrapper .sidebar.wrapper #sidebar{width:100%}
-#primary .main-sidebar.wrapper #main{width:80%;position:relative;left:20%}
-#primary .main-sidebar.wrapper::before{content:"";position:absolute;top:0;left:0;width:20%;height:100%;background-color:#005fbb;z-index:-1}
+#primary .main-sidebar.wrapper #main{width:70%;position:relative;left:30%}
+#primary .main-sidebar.wrapper #main .video-copy.wrapper .video.wrapper{float:right;width:auto}
+#primary .main-sidebar.wrapper #main .video-copy.wrapper .video.wrapper .link.full-article{text-align:right}
+#primary .main-sidebar.wrapper #main .video-copy.wrapper .copy>p:first-child{margin-top:0}
+#primary .main-sidebar.wrapper::before{content:"";position:absolute;top:0;left:0;width:30%;height:100%;background-color:#005fbb;z-index:-1}
 #colophon{width:100%;display:table;position:relative}
 #colophon .wrapper{position:relative}
 #colophon .wrapper>*{display:table-cell}

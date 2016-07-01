@@ -20,7 +20,8 @@ get_header(); ?>
 				<?php get_sidebar("home"); ?>
 			</div><!-- .float-left .sidebar .wrapper-->
 			<main id="main" class="site-main" role="main">
-				<?php setup_postdata(get_post(244)); ?>
+				<?php $post = get_post(244);
+				setup_postdata($post); ?>
 					<section class="homepage-section-slider">
 						<div class="flexslider">
 							<?php if(have_rows("project_slider")):
@@ -28,7 +29,8 @@ get_header(); ?>
 									$image_url= wp_get_attachment_image_src(get_sub_field("image"), "full")[0];
 									$project_selector=get_sub_field("project_selector");
 									if($image_url && $project_selector):
-										setup_postdata($project_selector);
+										$post=get_post($project_selector);
+										setup_postdata($post);
 										?>
 										<ul class="slides">
 											<a href="<?php the_permalink();?>">

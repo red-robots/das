@@ -10,8 +10,12 @@
 ?>
 
 <div id="site-header">
-    <div class="logo wrapper">
-       <a href="<?php get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
+	<div class="false-logo-wrapper wrapper">	
+		<img src="/wp-content/uploads/2016/07/false-logo-bg.png" alt="false logo" class="false logo">
+	</div><!--.false-logo-wrapper .wrapper-->
+	<div class="logo wrapper">	
+		<img src="/wp-content/uploads/2016/07/false-logo-bg.png" alt="false logo" class="false logo">
+		<a href="<?php get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
     </div><!--.logo .wrapper-->
     <div class="company-info-nav wrapper">
         <div class="company-info">
