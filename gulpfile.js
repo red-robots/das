@@ -24,8 +24,8 @@
   * Edit the variables as per your project requirements.
   */
 
-var project             = 'AC-Starter'; // Project Name.
-var projecturl          = 'http://localhost:8888/austincrane/ACStarter/'; // Project URL. Could be something like localhost:8888.
+var project             = 'DAS'; // Project Name.
+var projecturl          = 'http://localhost:8888'; // Project URL. Could be something like localhost:8888.
 
 
 var styleSRC            = './assets/sass/style.scss'; // Path to main .scss file.
@@ -113,22 +113,10 @@ var notify       = require('gulp-notify'); // Sends message notification to you
  /*gulp.task( 'browser-sync', function() {
  	browserSync.init( {
 
- 		// For more options
- 		// @link http://www.browsersync.io/docs/options/
-
- 		// Project URL.
- 		proxy: projecturl,
-
- 		// Stop the browser from automatically opening.
- 		open: false,
-
- 		// Inject CSS changes.
- 		// Commnet it to reload browser for every CSS change.
- 		// injectChanges: true,
-
- 		// Use a specific port (instead of the one auto-detected by Browsersync).
- 		// port: 7000,
-
+ 		server: {
+			baseDir : "C:\\Program\ Files\ (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\das",
+		},
+		startPath: "index.html"
  	} );
  });
 */
@@ -172,7 +160,7 @@ gulp.task('styles', function () {
 			maxLineLen: 10
 		}))
 		.pipe( gulp.dest( styleDestination ) )
-		//.pipe( browserSync.stream() )
+//		.pipe( browserSync.stream() )
 		.pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) );
 });
 
@@ -269,7 +257,7 @@ gulp.task( 'images', function() {
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images'/*, 'browser-sync'*/], function () {
+ gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images' /*, 'browser-sync'*/], function () {
  	gulp.watch( styleWatchFiles, [ 'styles' ] );
  	gulp.watch( vendorJSWatchFiles, [ 'vendorsJs']);//, reload ]  );
  	gulp.watch( customJSWatchFiles, [ 'customJS']);//, reload ]  );

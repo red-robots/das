@@ -43,10 +43,10 @@
 						<div class="google-maps-location"><?php the_field("google_maps_location","option");?></div>
 					<?php endif; ?>
 					<?php if(get_field("address_line_1","option")&& get_field("address_line_2","option")): ?>
-					<p><span class="address-line-1"><?php the_field("address_line_1","option");?></span> | <span class="address-line-2"><?php the_field("address_line_2","option");?></span></p>
+					<p class="address"><span class="address-line-1"><?php the_field("address_line_1","option");?></span> | <span class="address-line-2"><?php the_field("address_line_2","option");?></span></p>
 					<?php endif;?>
 					<?php if(get_field("city_state_zip","option")): ?>
-						<p class="city-state-zip"><?php the_field("city_state_zip","option");?></p>
+						<br><p class="city-state-zip"><?php the_field("city_state_zip","option");?></p>
 					<?php endif;?>
 					<nav class="sitemap-bw-menu">
 						<?php wp_nav_menu( array( 'theme_location' => 'technical' ) ); ?>

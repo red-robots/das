@@ -23,6 +23,22 @@ div {
 	width: 100%;
 	margin: 0px auto;
 }
+h1 {font-size: $font__size-large;}
+h2 {font-size: $font__size-medium;}
+h3 {font-size: $font__size-small;}
+
+p {font-size: $font__size-medium;}
+
+.copy {
+	> p:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+	> p:last-child {
+		margin-bottom: 0;
+		padding: 0;
+	}
+}
 
 #primary {
 	width: 100%;
@@ -67,16 +83,26 @@ div {
 		.company-info-nav.wrapper {
 			width: 100%-$size__main-sidebar;
 			margin: 0 0 0 auto;
+			padding-right: $size__page-right-margin;
+			padding-top: 30px;
 			.company-info {
 				text-align: right;
+				color: $color__das-grey;
 				p {
 					margin: 10px 0;
 				}
+				p.info {
+					font-size: $font__size-medium-small;
+				}
+				p.main-line {
+					font-size: $font__size-medium-large;
+				}
 			}
 			nav {
+				clear:right;
 				display: block;
-				margin: 0;
 				padding: 0;
+				margin: 5% 0 0 0;
 				ul {
 					margin: 0 0 0 auto;
 					padding: 0;
@@ -85,6 +111,12 @@ div {
 						display: table-cell;
 						margin: 0;
 						padding: 5px;
+						a {	
+							color: $color__das-grey;
+						}
+						a.active {
+								color: $color__text-main;
+							}
 					}
 				}
 			}
@@ -99,7 +131,6 @@ div {
 		display: block;
 		position: relative;
 		width: 100%;
-		padding: 0 20px;
 		.sidebar.wrapper {
 			position: absolute;
 			top:0;
@@ -113,20 +144,6 @@ div {
 			width: 100%-$size__main-sidebar;
 			position: relative;
 			left: $size__main-sidebar;
-			.video-copy.wrapper {
-				.video.wrapper {
-					float: right;
-					width: auto;
-					.link.full-article {
-						text-align: right;
-					}
-				}
-				.copy {
-					> p:first-child {
-						margin-top: 0;
-					}
-				}
-			}
 		}
 	}
 	.main-sidebar.wrapper:before {
@@ -147,6 +164,7 @@ div {
 	position: relative;
 	min-height: 300px;
 	color: white;
+	* {font-size: $font__size-medium-small;}
 	nav {
 		ul {
 			margin: 0;
@@ -164,6 +182,34 @@ div {
 	}
 	.footer.wrapper {
 		padding: 75px;
+		.company-info-footer-links {
+			text-align: left;
+		}
+		.company-location-sitemap-bw {
+			text-align: right;
+			.location {
+				margin-bottom: 20px;
+			}
+			.google-maps-location {
+				margin: 20px 0 15px 0;
+			}
+			.address {
+				.address_line_1 {
+					display: block;
+					margin: 15px 0 5px 0;
+				}
+				.address_line_2 {
+					display: block;
+					margin: 5px 0 20px 0;
+				}
+			}
+			.sitemap-bw-menu {
+				margin: 20px 0 0 0;
+				> li {
+					display: inline-block;
+				}
+			}
+		}
 	}
 	.footer.wrapper:after {
 		content:"";
