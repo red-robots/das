@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer wrapper">
-			<div class="float-left company-info-footer-links">
+			<div class="float-left company-info-footer-links wrapper">
 				<div class="company-info">
 					<?php if(get_field("company_name","option")): ?>
 						<p class="company-name"><?php the_field("company_name","option");?></p>
@@ -34,10 +34,10 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
 				</nav><!--.footer-links-menu-->
 			</div> <!-- .float-left .company-info-footer-link-->
-			<div class="float-right company-location-sitemap-bw">
+			<div class="float-right company-location-sitemap-bw wrapper">
 				<div class="company-location">
 					<?php if(get_field("location","option")): ?>
-						<p class="location"><?php the_field("location","option");?></p>
+						<div class="location"><?php  echo get_field("location","option");?></div>
 					<?php endif;?>
 					<?php if(get_field("google-maps-location","option")): ?>
 						<div class="google-maps-location"><?php the_field("google_maps_location","option");?></div>
@@ -46,12 +46,12 @@
 					<p class="address"><span class="address-line-1"><?php the_field("address_line_1","option");?></span> | <span class="address-line-2"><?php the_field("address_line_2","option");?></span></p>
 					<?php endif;?>
 					<?php if(get_field("city_state_zip","option")): ?>
-						<br><p class="city-state-zip"><?php the_field("city_state_zip","option");?></p>
+						<p class="city-state-zip"><?php the_field("city_state_zip","option");?></p>
 					<?php endif;?>
-					<nav class="sitemap-bw-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'technical' ) ); ?>
-					</nav><!--.sitemap-bw-menu-->
 				</div><!-- .company-location -->
+				<nav class="sitemap-bw-menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'technical' ) ); ?>
+				</nav><!--.sitemap-bw-menu-->
 			</div><!-- .float-right .comapny-loaction-sitemap-bw -->
 		</div><!-- .footer .wrapper -->
 		<div class="background-image wrapper" style="background-image: url('<?php echo wp_get_attachment_image_src(get_field("footer_image","option"),"full")[0];?>');">

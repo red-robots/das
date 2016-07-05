@@ -30,11 +30,11 @@ h3 {font-size: $font__size-small;}
 p {font-size: $font__size-medium;}
 
 .copy {
-	> p:first-child {
+	> *:first-child {
 		margin-top: 0;
 		padding-top: 0;
 	}
-	> p:last-child {
+	> *:last-child {
 		margin-bottom: 0;
 		padding: 0;
 	}
@@ -182,31 +182,54 @@ p {font-size: $font__size-medium;}
 	}
 	.footer.wrapper {
 		padding: 75px;
-		.company-info-footer-links {
+		.company-info-footer-links.wrapper {
 			text-align: left;
-		}
-		.company-location-sitemap-bw {
-			text-align: right;
-			.location {
-				margin-bottom: 20px;
-			}
-			.google-maps-location {
-				margin: 20px 0 15px 0;
-			}
-			.address {
-				.address_line_1 {
-					display: block;
-					margin: 15px 0 5px 0;
+			width: auto;
+			.company-info {
+				font-weight: 600;
+				.company-name {
+					margin: 0 0 20px 0;
 				}
-				.address_line_2 {
-					display: block;
-					margin: 5px 0 20px 0;
+				.main-line {
+					margin: 20px 0 0 0;
+				}
+				.fax-line {
+					margin: 0;
+				}
+				.toll-free-line {
+					margin: 0 0 20px 0;
+				}
+			}
+			.footer-links-menu {
+				margin: 20px 0 0 0;
+			}
+		}
+		.company-location-sitemap-bw.wrapper {
+			text-align: right;
+			width: auto;
+			.company-location {
+				.location {
+					margin-bottom: 20px;
+					p {
+						margin:0;
+					}
+				}
+				.google-maps-location {
+					margin: 20px 0 15px 0;
+				}
+				.address {
+					margin: 15px 0 0 0;
+				}
+				.city-state-zip {
+					margin: 0 0 20px 0;
 				}
 			}
 			.sitemap-bw-menu {
 				margin: 20px 0 0 0;
-				> li {
-					display: inline-block;
+				ul {
+					> li {
+						display: inline-block;
+					}
 				}
 			}
 		}
