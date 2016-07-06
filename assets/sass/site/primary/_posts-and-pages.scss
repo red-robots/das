@@ -1,7 +1,7 @@
 #main {
-	.flexslider-pagination.wrapper {
+	.flexslider-pagination.wrapper, .isotope-pagination.wrapper {
 		display: table;
-		.flexslider.left-column {
+		.flexslider.left-column, .isotope.left-column {
 			display: table-cell;
 			margin: 0;
 			width: 100% - $size__pagination-column;
@@ -33,48 +33,48 @@
 							}
 						}
 					}
-					.news.wrapper {
-						.news {
-							width: (98%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
-							margin: $size__news-landing-tile-margin;
-							header {
-								.box.date {
-									background-color: $color__box-dark;
-									display: inline;
-									padding: 5px 10px;
-									margin: 0 0 8px 0;
-									font-size: $font__size-small;
-									color: white;
-								}
-								.featured-news-image {
-									width: 100%;
-									display: block;
-									margin: 8px 0 10px 0;
-								}
-								.title {
-									width: 100%;
-									display: block;
-									color: $color__text-dark;
-									font-size: $font__size-medium-large;
-									margin: 10px 0 15px 0;
-								}
-							}
-							.copy {
-								width: 100%;
-								display: block;
-								font-size: $font__size-medium;
-								color: $color__text-main;
-								margin: 15px 0;
-							}
-							.link.full-article {
-								width: 100%;
-								text-transform: lowercase;
-								padding: 10px 5px;
-								margin: 15px 0;
-								a {
-									color: $color__text-dark;
-								}
-							}
+				}
+			}
+			.news.wrapper {
+				.news {
+					width: (98%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
+					margin: $size__news-landing-tile-margin;
+					header {
+						.box.date {
+							background-color: $color__box-dark;
+							display: inline;
+							padding: 5px 10px;
+							margin: 0 0 8px 0;
+							font-size: $font__size-small;
+							color: white;
+						}
+						.featured-news-image {
+							width: 100%;
+							display: block;
+							margin: 8px 0 10px 0;
+						}
+						.title {
+							width: 100%;
+							display: block;
+							color: $color__text-dark;
+							font-size: $font__size-medium-large;
+							margin: 10px 0 15px 0;
+						}
+					}
+					.copy {
+						width: 100%;
+						display: block;
+						font-size: $font__size-medium;
+						color: $color__text-main;
+						margin: 15px 0;
+					}
+					.link.full-article {
+						width: 100%;
+						text-transform: lowercase;
+						padding: 10px 5px;
+						margin: 15px 0;
+						a {
+							color: $color__text-dark;
 						}
 					}
 				}

@@ -38,8 +38,9 @@ jQuery(document).ready(function ($) {
 			$container.isotope({//initialize isotope
 				// options
 				itemSelector: '.item', //.items are selector
+				percentPosition: true,
 				masonry: {
-					gutter: 15
+					gutter: 0
 				}
 			});//end of initialize isotope
 		});
