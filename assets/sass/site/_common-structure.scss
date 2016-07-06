@@ -86,6 +86,7 @@ p {font-size: $font__size-medium;}
 			padding-right: $size__page-right-margin;
 			padding-top: 30px;
 			.company-info {
+				padding: 1px;
 				text-align: right;
 				color: $color__das-grey;
 				p {
@@ -147,7 +148,7 @@ p {font-size: $font__size-medium;}
 			width: 100%-$size__main-sidebar;
 			position: relative;
 			left: $size__main-sidebar;
-			padding: 0 $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
+			padding: 1px $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
 			min-height: 800px;
 		}
 	}

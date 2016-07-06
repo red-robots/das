@@ -38,8 +38,11 @@
 			.news.wrapper {
 				.news {
 					width: (98%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
-					margin: $size__news-landing-tile-margin;
+					margin: 0 $size__news-landing-tile-margin $size__news-landing-tile-margin*4 $size__news-landing-tile-margin;
+					border-bottom: 1px dotted $color__das-grey;
+					min-width: 150px; 
 					header {
+						display: block;
 						.box.date {
 							background-color: $color__box-dark;
 							display: inline;
@@ -71,8 +74,9 @@
 					.link.full-article {
 						width: 100%;
 						text-transform: lowercase;
-						padding: 10px 5px;
+						padding: 0 8px;
 						margin: 15px 0;
+						border-left: 3px solid $color__das-blue;
 						a {
 							color: $color__text-dark;
 						}
