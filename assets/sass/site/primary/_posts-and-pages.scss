@@ -1,36 +1,88 @@
 #main {
-	.flexslider.left-column {
-		.slides {
+	.flexslider-pagination.wrapper {
+		display: table;
+		.flexslider.left-column {
+			display: table-cell;
 			margin: 0;
-			width: 100%;
-			li {
-				display: block;
-				width: 100%;
-				.is-container {
-					.item {
-						height: auto;
-						width: (98%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
-						position: relative;
-						display: inline-block;
-						margin: $size__portfolio-landing-tile-margin;
-						img {
-							width: 100%;
-						}
-						.title-type.wrapper {
-							position: absolute;
-							top: 0;
-							left: 0;
-							display: block;
-							.type.box {
-								margin: 0;
+			width: 100% - $size__pagination-column;
+			.slides {
+				margin: 0;
+				li {
+					display: block;
+					.project.wrapper {
+						.project {
+							position: relative;
+							height: auto;
+							width: (98%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
+							margin: $size__portfolio-landing-tile-margin;
+							display: inline-block;
+							img {
+								width: 100%;
 							}
-							.title {
-								margin: 0;
+							.title-type.wrapper {
+								position: absolute;
+								top: 0;
+								left: 0;
+								display: block;
+								.type.box {
+									margin: 0;
+								}
+								.title {
+									margin: 0;
+								}
+							}
+						}
+					}
+					.news.wrapper {
+						.news {
+							width: (98%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
+							margin: $size__news-landing-tile-margin;
+							header {
+								.box.date {
+									background-color: $color__box-dark;
+									display: inline;
+									padding: 5px 10px;
+									margin: 0 0 8px 0;
+									font-size: $font__size-small;
+									color: white;
+								}
+								.featured-news-image {
+									width: 100%;
+									display: block;
+									margin: 8px 0 10px 0;
+								}
+								.title {
+									width: 100%;
+									display: block;
+									color: $color__text-dark;
+									font-size: $font__size-medium-large;
+									margin: 10px 0 15px 0;
+								}
+							}
+							.copy {
+								width: 100%;
+								display: block;
+								font-size: $font__size-medium;
+								color: $color__text-main;
+								margin: 15px 0;
+							}
+							.link.full-article {
+								width: 100%;
+								text-transform: lowercase;
+								padding: 10px 5px;
+								margin: 15px 0;
+								a {
+									color: $color__text-dark;
+								}
 							}
 						}
 					}
 				}
 			}
+		}
+		.right-column.pagination {
+			width: $size__pagination-column;
+			display: table-cell;
 		}
 	}
 	.video-copy.wrapper {

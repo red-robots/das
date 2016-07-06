@@ -20,27 +20,30 @@ jQuery(document).ready(function ($) {
 	
 	/*
 	*
-	*	Flexslider and Isotope plugin
-	*	NOTE: Images must be loaded before the plugins run
-	*	the isotope plugin runs for each is-container and
-	*	once all the containers are managed via isotope the
-	*	containers are put into the flexslider
+	*	Flexslider
 	*
 	------------------------------------*/
-	$(window).load(function(){
-		$('.is-container').each(function(){//for each is-container
-			$(this).isotope({//initialize isotope
+	$('.flexslider').flexslider({
+		animation: 'slide',
+		slideshow: false//disable rotation
+	});
+	
+	/*
+	 *
+	 *	Isotope
+	 *
+	 ----------------------------------*/
+	$('.is-container').each(function(){//for each is-container
+		$container = $(this).imagesLoaded(function(){
+			$container.isotope({//initialize isotope
 				// options
 				itemSelector: '.item', //.items are selector
-					masonry: {
-						gutter: 15
-					}
-			});
-		}).parents('.flexslider').flexslider({
-			animation: 'slide',
-			slideshow: false//disable rotation
-		});//end flexslider
-	});//end images loaded
+				masonry: {
+					gutter: 15
+				}
+			});//end of initialize isotope
+		});
+	});//end of each
 	
 	
 	/*
