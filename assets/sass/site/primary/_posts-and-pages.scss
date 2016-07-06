@@ -1,6 +1,38 @@
 #main {
-	padding: 0 $size__page-right-margin 0 3/5*$size__page-right-margin;
-	min-height: 900px;
+	.flexslider.left-column {
+		.slides {
+			margin: 0;
+			width: 100%;
+			li {
+				display: block;
+				width: 100%;
+				.is-container {
+					.item {
+						height: auto;
+						width: (98%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
+						position: relative;
+						display: inline-block;
+						margin: $size__portfolio-landing-tile-margin;
+						img {
+							width: 100%;
+						}
+						.title-type.wrapper {
+							position: absolute;
+							top: 0;
+							left: 0;
+							display: block;
+							.type.box {
+								margin: 0;
+							}
+							.title {
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.video-copy.wrapper {
 		.video.wrapper {
 			width: 35%;

@@ -107,6 +107,9 @@ p {font-size: $font__size-medium;}
 					margin: 0 0 0 auto;
 					padding: 0;
 					display: table;
+					.descriptor {
+						color: $color__das-grey;
+					}
 					li {
 						display: table-cell;
 						margin: 0;
@@ -144,6 +147,8 @@ p {font-size: $font__size-medium;}
 			width: 100%-$size__main-sidebar;
 			position: relative;
 			left: $size__main-sidebar;
+			padding: 0 $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
+			min-height: 800px;
 		}
 	}
 	.main-sidebar.wrapper:before {

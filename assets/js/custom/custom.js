@@ -20,12 +20,28 @@ jQuery(document).ready(function ($) {
 	
 	/*
 	*
-	*	Flexslider
+	*	Flexslider and Isotope plugin
+	*	NOTE: Images must be loaded before the plugins run
+	*	the isotope plugin runs for each is-container and
+	*	once all the containers are managed via isotope the
+	*	containers are put into the flexslider
 	*
 	------------------------------------*/
-	$('.flexslider').flexslider({
-		animation: "slide",
-	}); // end register flexslider
+	$(window).load(function(){
+		$('.is-container').each(function(){//for each is-container
+			$(this).isotope({//initialize isotope
+				// options
+				itemSelector: '.item', //.items are selector
+					masonry: {
+						gutter: 15
+					}
+			});
+		}).parents('.flexslider').flexslider({
+			animation: 'slide',
+			slideshow: false//disable rotation
+		});//end flexslider
+	});//end images loaded
+	
 	
 	/*
 	*
@@ -38,21 +54,6 @@ jQuery(document).ready(function ($) {
 		height: '80%'
 	});
 	
-	/*
-	*
-	*	Isotope with Images Loaded
-	*
-	------------------------------------*/
-	var $container = $('#container').imagesLoaded( function() {
-  	$container.isotope({
-    // options
-	 itemSelector: '.item',
-		  masonry: {
-			gutter: 15
-			}
- 		 });
-	});
-
 	/*
 	*
 	*	Smooth Scroll to Anchor

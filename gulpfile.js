@@ -94,11 +94,14 @@ var imagemin     = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG im
 // Utility related plugins.
 var rename       = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css
 var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
-var notify       = require('gulp-notify'); // Sends message notification to you
+var notify       = require('gulp-notify'); // Sends message notification to you 
 //var browserSync  = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
 //var reload       = browserSync.reload; // For manual browser reload.
-
-
+/*
+gulp.task('browser-sync', function(){
+	browserSync.init({proxy:'127.0.0.1:80/das'});
+});
+*/
 /**
  * Task: `browser-sync`.
  *
@@ -257,8 +260,8 @@ gulp.task( 'images', function() {
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images' /*, 'browser-sync'*/], function () {
- 	gulp.watch( styleWatchFiles, [ 'styles' ] );
+ gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images'/*, 'browser-sync'*/], function () {
+ 	gulp.watch( styleWatchFiles, [ 'styles'] );//.on('change',reload);
  	gulp.watch( vendorJSWatchFiles, [ 'vendorsJs']);//, reload ]  );
  	gulp.watch( customJSWatchFiles, [ 'customJS']);//, reload ]  );
  });
