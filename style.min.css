@@ -1409,12 +1409,12 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #primary #site-header .company-info-nav.wrapper .company-info p{margin:10px 0}
 #primary #site-header .company-info-nav.wrapper .company-info p.info{font-size:9pt}
 #primary #site-header .company-info-nav.wrapper .company-info p.main-line{font-size:14pt}
-#primary #site-header .company-info-nav.wrapper nav{clear:right;display:block;padding:0;margin:5% 0 0 0}
+#primary #site-header .company-info-nav.wrapper nav{clear:right;display:block;padding:0 0 10px 0;margin:5% 0 0 0}
 #primary #site-header .company-info-nav.wrapper nav ul{margin:0 0 0 auto;padding:0;display:table}
 #primary #site-header .company-info-nav.wrapper nav ul .descriptor{color:black}
-#primary #site-header .company-info-nav.wrapper nav ul li{display:table-cell;margin:0;padding:5px}
-#primary #site-header .company-info-nav.wrapper nav ul li a{color:lightgrey}
-#primary #site-header .company-info-nav.wrapper nav ul li a.active{color:#005fbb}
+#primary #site-header .company-info-nav.wrapper nav ul li{display:table-cell;margin:0;padding:0 5px}
+#primary #site-header .company-info-nav.wrapper nav ul li a{color:lightgrey;padding:5px 0}
+#primary #site-header .company-info-nav.wrapper nav ul li a.active{color:black;font-weight:700;border-bottom:3px solid black}
 #primary #site-header:after{content:"";display:block;clear:both}
 #primary .main-sidebar.wrapper{display:block;position:relative;width:100%}
 #primary .main-sidebar.wrapper:before{content:"";position:absolute;top:0;left:0;width:25%;height:100%;background-color:#005fbb;z-index:-1}
@@ -1466,17 +1466,41 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #main .flexslider-pagination.wrapper .flexslider.left-column .news.wrapper .news .link.full-article,#main .flexslider-pagination.wrapper .isotope.left-column .news.wrapper .news .link.full-article,#main .isotope-pagination.wrapper .flexslider.left-column .news.wrapper .news .link.full-article,#main .isotope-pagination.wrapper .isotope.left-column .news.wrapper .news .link.full-article{width:100%;text-transform:lowercase;padding:0 8px;margin:15px 0;border-left:3px solid #005fbb}
 #main .flexslider-pagination.wrapper .flexslider.left-column .news.wrapper .news .link.full-article a,#main .flexslider-pagination.wrapper .isotope.left-column .news.wrapper .news .link.full-article a,#main .isotope-pagination.wrapper .flexslider.left-column .news.wrapper .news .link.full-article a,#main .isotope-pagination.wrapper .isotope.left-column .news.wrapper .news .link.full-article a{color:black}
 #main .flexslider-pagination.wrapper .right-column.pagination,#main .isotope-pagination.wrapper .right-column.pagination{width:10%;display:block;position:absolute;right:0;top:0}
-#main .video-copy.wrapper .video.wrapper{width:35%;float:right;margin:0 0 10px 20px}
-#main .video-copy.wrapper .video.wrapper .video{width:100%;height:auto}
-#main .video-copy.wrapper .video.wrapper .video iframe{width:100%}
-#main .video-copy.wrapper .video.wrapper .link.full-article{text-align:right;padding-right:10px;font-size:8pt}
-#main .video-copy.wrapper .video.wrapper .link.full-article a{color:black}
-#main .affiliation{display:block;width:100%}
-#main .affiliation .affiliation.wrapper{width:auto;display:table;margin:0 auto}
-#main .affiliation .affiliation.wrapper .affiliation{display:inline-block;width:300px;height:130px;margin-bottom:20px;border-bottom:1px solid lightgrey}
-#main .affiliation .affiliation.wrapper .affiliation img{max-width:250px;max-height:70px;width:auto;margin:0 auto;height:auto;display:block}
-#main .affiliation .affiliation.wrapper .affiliation header{width:100%}
-#main .affiliation .affiliation.wrapper .affiliation header h3{font-size:10pt;text-transform:uppercase;text-align:center}
+#main .flexslider-pagination.wrapper:after,#main .isotope-pagination.wrapper:after{content:"";display:block;clear:both}
+#main .video-copy-affiliation.wrapper .video-copy.wrapper .video.wrapper{width:35%;float:right;margin:0 0 10px 20px}
+#main .video-copy-affiliation.wrapper .video-copy.wrapper .video.wrapper .video{width:100%;height:auto}
+#main .video-copy-affiliation.wrapper .video-copy.wrapper .video.wrapper .video iframe{width:100%}
+#main .video-copy-affiliation.wrapper .video-copy.wrapper .video.wrapper .link.full-article{text-align:right;padding-right:10px;font-size:8pt}
+#main .video-copy-affiliation.wrapper .video-copy.wrapper .video.wrapper .link.full-article a{color:black}
+#main .video-copy-affiliation.wrapper .affiliation{display:block;width:100%}
+#main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper{width:auto;display:table;margin:0 auto}
+#main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation{display:inline-block;width:300px;height:130px;margin-bottom:20px;border-bottom:1px solid lightgrey}
+#main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation img{max-width:250px;max-height:70px;width:auto;margin:0 auto;height:auto;display:block}
+#main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation header{width:100%}
+#main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation header h3{font-size:10pt;text-transform:uppercase;text-align:center}
+#main .gallery-portfolio.wrapper{position:relative}
+#main .gallery-portfolio.wrapper .gallery.wrapper{position:relative;width:100%;margin-bottom:10px}
+#main .gallery-portfolio.wrapper .gallery.wrapper .featured-image.left-column{position:relative;width:84%}
+#main .gallery-portfolio.wrapper .gallery.wrapper .featured-image.left-column img{width:100%;display:block}
+#main .gallery-portfolio.wrapper .gallery.wrapper .thumbnail.wrapper.right-column{position:absolute;right:0;top:0;width:16%}
+#main .gallery-portfolio.wrapper .gallery.wrapper .thumbnail.wrapper.right-column .thumbnail{width:48%;margin:0 0 2% 2%;display:block;float:left}
+#main .gallery-portfolio.wrapper .gallery.wrapper .thumbnail.wrapper.right-column .thumbnail .thumbnail-img{width:100%;display:block}
+#main .gallery-portfolio.wrapper .gallery.wrapper .thumbnail.wrapper.right-column .thumbnail:after{content:"";clear:both;display:block}
+#main .gallery-portfolio.wrapper .gallery.wrapper:after{content:"";display:block;clear:both}
+#main .gallery-portfolio.wrapper .portfolio{margin-top:10px}
+#main .gallery-portfolio.wrapper .portfolio header{display:block;width:100%}
+#main .gallery-portfolio.wrapper .portfolio header .type.box{color:white;background-color:black;display:inline-block;padding:5px;margin:0;font-size:8pt}
+#main .gallery-portfolio.wrapper .portfolio header .title{display:block;font-size:14pt;margin:5px 0 0 0}
+#main .gallery-portfolio.wrapper .portfolio header .location-completion-date{display:block;font-size:12pt;margin:0 0 20px 0}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper{position:relative;display:block;margin-top:20px}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper:before{width:30%;position:absolute;top:0;left:0;height:100%;background-color:lightgrey;z-index:-1;content:""}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper .video.wrapper.left-column{width:30%;position:absolute;top:0;left:0;z-index:0}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper .video.wrapper.left-column .video{display:block;width:100%}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper .video.wrapper.left-column .video iframe{width:100%}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper .video.wrapper.left-column .video-description.copy{display:block;width:100%;padding:3%}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper .copy.right-column{position:relative;left:30%;width:70%;padding:0 0 0 3%}
+#main .gallery-portfolio.wrapper .portfolio .video-copy.wrapper:after{content:"";display:block;clear:both}
+#main .gallery-portfolio.wrapper .portfolio .copy.no-column{width:100%}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .sidebar.wrapper #sidebar{padding:150px 0}
 .sidebar.wrapper #sidebar .nav.wrapper #site-nav{text-align:right;margin-right:15%;font-size:16pt}

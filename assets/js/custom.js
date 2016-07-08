@@ -93,5 +93,15 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	new WOW().init();
+	
+	/*
+	 *
+	 * Custom gallery thumbnail switcher
+	 *
+	 */	
+	$('.gallery .thumbnail img.thumbnail-img').on('click',function(){
+		var url = $(this).attr('data-full-url');
+		$('.gallery .featured-image img').attr('src',url);
+	});
 
 });// END #####################################    END

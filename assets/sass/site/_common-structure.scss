@@ -111,7 +111,7 @@ a.surrounding {
 			nav {
 				clear:right;
 				display: block;
-				padding: 0;
+				padding: 0 0 10px 0;
 				margin: 5% 0 0 0;
 				ul {
 					margin: 0 0 0 auto;
@@ -123,12 +123,15 @@ a.surrounding {
 					li {
 						display: table-cell;
 						margin: 0;
-						padding: 5px;
+						padding: 0 5px;
 						a {	
 							color: $color__das-grey;
+							padding: 5px 0;
 						}
 						a.active {
-							color: $color__das-blue;
+							color: $color__text-dark;
+							font-weight: 700;
+							border-bottom: 3px solid $color__text-dark;
 						}
 					}
 				}
