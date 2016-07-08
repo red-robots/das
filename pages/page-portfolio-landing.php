@@ -35,6 +35,8 @@ get_header(); ?>
 														<?php endif; ?>                    
 														<h2 class="title"><?php the_title(); ?></h2>
 													</div><!--.title-type .wrapper-->
+													<div class="background wrapper"></div>
+													<a href="<?php echo get_the_permalink();?>" class="surrounding full-article"></a>
 												</div><!--.project-->    
 											<?php endif;//if featured image?> 
 											<?php if($i%9==0&&$i<($max-1)&&$i!==0):?>
@@ -44,7 +46,8 @@ get_header(); ?>
 													<div class="project wrapper">
 											<?php endif; ?>
 										<?php endfor; //while for all news posts; 
-									endif; //if for all news posts?>
+									endif; //if for all news posts
+									wp_reset_postdata();?>
 								</div><!--.project .wrapper-->
 							</li><!--.slide-->
 						</ul><!--.slides-->

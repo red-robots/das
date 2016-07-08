@@ -19,7 +19,7 @@ get_header(); ?>
 				<div class="isotope-pagination wrapper">
 					<div class="isotope left-column">
 						<div class="is-container news wrapper">
-							<?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>7,'order'=>'DESC'));
+							<?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>1,'order'=>'DESC','paged'=>get_query_var('paged')));
 							if($query->have_posts()):
 								while($query->have_posts()):$query->the_post(); ?>
 									<div class="news item">
@@ -39,8 +39,12 @@ get_header(); ?>
 										</div><!--.link .full-article-->
 									</div><!--.news .item-->
 								<?php endwhile; //while for all news posts; 
-							endif; //if for all news posts?>
+							endif; //if for all news posts ?>
 						</div><!--.is-container .news .wrapper-->
+						<div class="pagination wrapper">
+							<?php pagi_posts_nav($query);
+							wp_reset_postdata();?>
+						</div>
 					</div><!--.isotope .left-column-->
 					<div class="right-column pagination">
 						<!--img here-->
