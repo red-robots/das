@@ -10,7 +10,7 @@
 			top: 0;
 			display: block;
 			margin: 0;
-			width: 100%-$size__pagination-column;
+			width: 100%-$size__portfolio-landing-pagination-column-width;
 			/*-----------------------------
 			 * Portfolio Landing Specific
 			 ------------------------------*/
@@ -125,7 +125,7 @@
 			}
 		}
 		.right-column.pagination {
-			width: $size__pagination-column;
+			width: $size__portfolio-landing-pagination-column-width;
 			display: block;
 			position: absolute;
 			right: 0;
@@ -207,7 +207,7 @@
 			margin-bottom: 10px;
 			.featured-image.left-column {
 				position: relative;
-				width: $size__featured-image-width;
+				width: $size__portfolio-single-featured-image-width;
 				img {
 					width: 100%;
 					display: block;
@@ -217,10 +217,10 @@
 				position: absolute;
 				right: 0;
 				top: 0;
-				width: 100%-$size__featured-image-width;
+				width: 100%-$size__portfolio-single-featured-image-width;
 				.thumbnail {
-					width: (100%-($size__thumbnail-tile-margin*$size__thumbnail-tile-span))/$size__thumbnail-tile-span;
-					margin: 0 0 $size__thumbnail-tile-margin $size__thumbnail-tile-margin;
+					width: (100%-($size__portfolio-single-thumbnail-tile-margin*$size__portfolio-single-thumbnail-tile-span))/$size__portfolio-single-thumbnail-tile-span;
+					margin: 0 0 $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin;
 					display: block;
 					float: left;
 					.thumbnail-img{
@@ -249,7 +249,7 @@
 					color: white;
 					background-color: $color__box-dark;
 					display: inline-block;
-					padding: 5px;
+					padding: 5px 15px;
 					margin: 0;
 					font-size: $font__size-small;
 				}
@@ -270,7 +270,7 @@
 				display: block;
 				margin-top: 20px;
 				&:before {
-					width: $size__portfolio-video-column-width;
+					width: $size__portfolio-single-video-column-width;
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -280,7 +280,7 @@
 					content:"";
 				}
 				.video.wrapper.left-column {
-					width: $size__portfolio-video-column-width;
+					width: $size__portfolio-single-video-column-width;
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -300,8 +300,8 @@
 				}
 				.copy.right-column {
 					position: relative;
-					left: $size__portfolio-video-column-width;
-					width: 100%-$size__portfolio-video-column-width;
+					left: $size__portfolio-single-video-column-width;
+					width: 100%-$size__portfolio-single-video-column-width;
 					padding: 0 0 0 3/5*$size__page-right-margin;
 				}
 				&:after {
@@ -313,6 +313,59 @@
 			.copy.no-column {
 				width: 100%;
 			}
+		}
+	}
+	/*-------------------------------------
+	 * News individual specific
+	 --------------------------------------*/
+	.news-social-sidebar.wrapper {
+		position: relative;
+		.news.left-column {
+			width: 100%-$size__news-single-sidebar-width;
+			position: relative;
+			top: 0;
+			left: 0;
+			header {
+				display: block;
+				width: 100%;
+				.date.box {
+					color: white;
+					background-color: $color__box-dark;
+					display: inline-block;
+					padding: 5px 15px;
+					margin: 0 0 5px 0;
+					font-size: $font__size-small;
+				}
+				.featured-news-image {
+					margin: 5px 0 20px 0;
+					display: block;
+				}
+				.title {
+					display: block;
+					font-size: $font__size-medium-large;
+					margin: 20px 0;
+				}
+			}
+			.copy {
+				display: block;
+				width: 100%;
+				margin: 20px 0;
+			}
+			.box.link.next-news {
+					color: white;
+					background-color: $color__box-dark;
+					display: inline-block;
+					padding: 8px 20px;
+					text-transform: uppercase;
+					margin: 0;
+					font-size: $font__size-medium;				
+			}
+		}
+		.sidebar.social.right-column {
+			width: $size__news-single-sidebar-width;
+			position: absolute;
+			right: 0;
+			top: 0;
 		}
 	}
 }

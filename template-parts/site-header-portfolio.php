@@ -38,7 +38,7 @@
                 <span class="descriptor">Filter:</span>
                 <?php $cats = get_categories(array('taxonomy'=>'project_type'));?>
                 <?php foreach($cats as $cat): ?>
-                    <li><a href="<?php get_category_link(get_cat_ID($cat->slug));?>"><?php echo $cat->name;?></a></li>
+                    <li><a href="<?php echo get_category_link($cat->ID);?>"><?php echo $cat->name;?></a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>

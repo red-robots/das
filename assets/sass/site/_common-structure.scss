@@ -27,8 +27,8 @@ h1 {font-size: $font__size-large;}
 h2 {font-size: $font__size-medium;}
 h3 {font-size: $font__size-small;}
 
-p {font-size: $font__size-medium;}
-
+p {font-size: $font__size-medium;margin: .5em 0;}
+.copy a  {color: $color__text-main;}
 a.surrounding {
 	position: absolute;
 	width: 100%;
