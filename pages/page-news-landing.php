@@ -19,7 +19,7 @@ get_header(); ?>
 				<div class="isotope-pagination wrapper">
 					<div class="isotope left-column">
 						<div class="is-container news wrapper">
-							<?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>1,'order'=>'DESC','paged'=>get_query_var('paged')));
+							<?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1,'order'=>'DESC','paged'=>get_query_var('paged')));
 							if($query->have_posts()):
 								while($query->have_posts()):$query->the_post(); ?>
 									<div class="news item">

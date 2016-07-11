@@ -15,7 +15,7 @@
 	</div><!--.false-logo-wrapper .wrapper-->
 	<div class="logo wrapper">	
 		<img src="<?php echo wp_get_attachment_url(get_field("blank_logo","option"));?>" alt="false logo" class="false logo">
-		<a href="<?php get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
+		<a href="<?php echo get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
     </div><!--.logo .wrapper-->
     <div class="company-info-nav wrapper">
         <div class="company-info">
