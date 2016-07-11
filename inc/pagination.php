@@ -1,12 +1,7 @@
 <?php
 // Pagination
 
-function pagi_posts_nav() {
-
-	if( is_singular() )
-		return;
-
-	global $wp_query;
+function pagi_posts_nav($wp_query) {
 
 	/** Stop execution if there's only 1 page */
 	if( $wp_query->max_num_pages <= 1 )
@@ -22,15 +17,15 @@ function pagi_posts_nav() {
 	/**	Add the pages around the current page to the array */
 	if ( $paged >= 3 ) {
 		$links[] = $paged - 1;
-		$links[] = $paged - 2;
+		//$links[] = $paged - 2;
 	}
 
 	if ( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 2;
+		//$links[] = $paged + 2;
 		$links[] = $paged + 1;
 	}
 
-	echo '<div class="navigation"><ul>' . "\n";
+	echo '<nav class="pagination"><ul>' . "\n";
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )
@@ -66,6 +61,6 @@ function pagi_posts_nav() {
 	if ( get_next_posts_link() )
 		printf( '<li>%s</li>' . "\n", get_next_posts_link() );
 
-	echo '</ul></div>' . "\n";
+	echo '</ul></nav>' . "\n";
 
 }

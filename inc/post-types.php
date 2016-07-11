@@ -36,9 +36,9 @@ function js_custom_init()
     'supports' => array('title','editor','custom-fields','thumbnail'),
 	
   ); 
-  register_post_type('portfolio',$args); // name used in query
-  
-  // Add more between here
+    register_post_type('portfolio',$args); // name used in query
+    
+    // Add more between here
   
   // and here
   

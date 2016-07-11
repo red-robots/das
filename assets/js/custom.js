@@ -24,8 +24,28 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$('.flexslider').flexslider({
-		animation: "slide",
-	}); // end register flexslider
+		animation: 'slide',
+		slideshow: false//disable rotation
+	});
+	
+	/*
+	 *
+	 *	Isotope
+	 *
+	 ----------------------------------*/
+	$('.is-container').each(function(){//for each is-container
+		$container = $(this).imagesLoaded(function(){
+			$container.isotope({//initialize isotope
+				// options
+				itemSelector: '.item', //.items are selector
+				percentPosition: true,
+				masonry: {
+					gutter: 0
+				}
+			});//end of initialize isotope
+		});
+	});//end of each
+	
 	
 	/*
 	*
@@ -38,21 +58,6 @@ jQuery(document).ready(function ($) {
 		height: '80%'
 	});
 	
-	/*
-	*
-	*	Isotope with Images Loaded
-	*
-	------------------------------------*/
-	var $container = $('#container').imagesLoaded( function() {
-  	$container.isotope({
-    // options
-	 itemSelector: '.item',
-		  masonry: {
-			gutter: 15
-			}
- 		 });
-	});
-
 	/*
 	*
 	*	Smooth Scroll to Anchor
@@ -88,5 +93,15 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	new WOW().init();
+	
+	/*
+	 *
+	 * Custom gallery thumbnail switcher
+	 *
+	 */	
+	$('.gallery .thumbnail img.thumbnail-img').on('click',function(){
+		var url = $(this).attr('data-full-url');
+		$('.gallery .featured-image img').attr('src',url);
+	});
 
 });// END #####################################    END

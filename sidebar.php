@@ -1,17 +1,17 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * The sidebar for every page except the homepage.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package ACStarter
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<aside id="sidebar" class="sidebar" role="complementary">
+    <div class="nav wrapper">
+        <nav id="site-nav">
+            <?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+        </nav><!-- .homepage-nav-->
+    </div><!-- .nav-info .wrapper -->
+</aside><!-- #sidebar -->

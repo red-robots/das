@@ -2,3 +2,27 @@
 .archive .format-aside .entry-title {
 	display: none;
 }
+
+.sidebar.wrapper {
+	#sidebar {
+		padding: 150px 0;
+		.nav.wrapper {
+			#site-nav {
+				text-align: right;
+				margin-right: 15%;
+				font-size: $font__size-large;
+				ul {
+					margin: 0;
+					padding: 0;
+					> li {
+						list-style: none;
+						margin: 0;
+						padding: 10px;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+		
+}
