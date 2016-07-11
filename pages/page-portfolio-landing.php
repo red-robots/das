@@ -21,7 +21,20 @@ get_header(); ?>
 						<ul class="slides">
 							<li class="slide">
 								<div class="project wrapper">
-									<?php $query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1,'order'=>'DESC'));
+									<?php if(!empty(get_query_var('term'))):
+										$args = array('post_type'=>'portfolio','posts_per_page'=>-1,'order'=>'DESC',
+													'tax_query'=>array(
+														array(
+															'taxonomy'=>'project_type',
+															'field'=>'slug',
+															'terms'=>get_query_var('term')
+														)
+													)
+												);
+									else :
+										$args = array('post_type'=>'portfolio','posts_per_page'=>-1,'order'=>'DESC');
+									endif;
+									$query = new WP_Query($args);
 									if($query->have_posts()):
 										$max = $query->post_count;
 										for($i=0;$i<$max;$i++):$query->the_post();?>
