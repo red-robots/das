@@ -88,33 +88,50 @@ jQuery(document).ready(function ($) {
 	$('.js-blocks').matchHeight();
 	
 	/*----------------------------------
-	 * Adjustments for header and fixed sidebar
+	 * Adjustments for header, logo, and fixed sidebar
 	 -----------------------------------*/
-	function init_header(){
-		var logo_wrapper = $('#sidebar .logo.wrapper');
-		var site_header = $('#site-header');
-		var logo = $('#logo');
-		var bottom_percent = Number(logo.css('bottom').replace(/[^\d|\.|-]/g,''))/Number(logo_wrapper.height());
+	function init_header(){ //provide scope for variables
+		var logo_wrapper = $('#sidebar .logo.wrapper'); //get logo wrapper
+		var site_header = $('#site-header'); // get site header
+		var logo = $('#logo'); //get logo
+		var bottom_percent = Number(logo.css('bottom').replace(/[^\d|\.|-]/g,''))/Number(logo_wrapper.height());//determing css bottom by percentage
 		$(window).on('resize ready',function(){
-			if($(this).width()>500){
+			if($(this).width()>500){ //if not mobile
 				logo_wrapper.css({
-					"height":site_header.css('height')
+					"height":site_header.css('height')//change css of logo wrapper to match site header
 				});
 				logo.css({
-					"bottom": Number(logo.width())*bottom_percent+"px"
+					"bottom": Number(logo.width())*bottom_percent+"px" //change bottom based on width of self instead of height of parent
 				});
 			}
-			else {
+			else { //if mobile
 				logo_wrapper.css({
-					"height": ""
+					"height": "" //cancel out previous work
 				});
 				logo.css({
-					"bottom": ""
+					"bottom": "" //cancel out previous work
 				});
 			}
 		});
 	}
 	init_header();//call function to init header
+	
+	/*---------------------------------------
+	 * Initialization for footer 
+	 --------------------------------------*/
+	function init_footer(){ //provide scope for variables
+		var footer = $('#colophon');//get footer
+		var sidebar = $('#sidebar');//get sidebar
+		$(window).on('scroll resize',function(){
+			if($(this).width()>500){ //if not mobile
+				//if scroll to bottom of page fix sidebar in place
+			}
+			else { //if mobile
+				//undo for mobile
+			}
+		});
+	}
+	init_footer();//call function to init footer
 	
 	/*
 	*
