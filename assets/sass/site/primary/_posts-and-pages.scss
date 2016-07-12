@@ -21,9 +21,10 @@
 					.project.wrapper {
 						.project {
 							height: auto;
-							width: (98%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
+							width: (100%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
 							margin: $size__portfolio-landing-tile-margin;
-							display: inline-block;
+							display: block;
+							float: left;
 							position: relative;
 							&:hover {
 								.title-type.wrapper {

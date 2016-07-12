@@ -57,12 +57,12 @@ a.surrounding {
 #primary {
 	width: 100%;
 	margin: 0px auto;
-	#site-header {
+	#site-header.clear-bottom {
 		width: 100%;
 		display: block;
 		position:relative;
 		min-height: $size__header-height;
-		.false-logo.wrapper {
+		.false-logo.wrapper.left-column {
 			width: $size__main-sidebar;
 			position: relative;
 			float: left;
@@ -73,9 +73,10 @@ a.surrounding {
 				padding: 0;
 			}
 		}
-		.company-info-nav.wrapper {
+		.company-info-nav.wrapper.right-column {
 			width: 100%-$size__main-sidebar;
-			margin: 0 0 0 auto;
+			margin: 0;
+			float: right;
 			padding-right: $size__page-right-margin;
 			padding-top: 30px;
 			.company-info {

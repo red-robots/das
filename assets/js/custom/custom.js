@@ -90,18 +90,31 @@ jQuery(document).ready(function ($) {
 	/*----------------------------------
 	 * Adjustments for header and fixed sidebar
 	 -----------------------------------*/
-	$(window).on('resize ready',function(){
-		if($(this).width()>500){
-			$('#sidebar .logo.wrapper').css({
-				"height":$('#site-header').css('height')
-			});
-		}
-		else {
-			$('#sidebar .logo.wrapper').css({
-				"height": ""
-			});
-		}
-	});
+	function init_header(){
+		var logo_wrapper = $('#sidebar .logo.wrapper');
+		var site_header = $('#site-header');
+		var logo = $('#logo');
+		var bottom_percent = Number(logo.css('bottom').replace(/[^\d|\.|-]/g,''))/Number(logo_wrapper.height());
+		$(window).on('resize ready',function(){
+			if($(this).width()>500){
+				logo_wrapper.css({
+					"height":site_header.css('height')
+				});
+				logo.css({
+					"bottom": Number(logo.width())*bottom_percent+"px"
+				});
+			}
+			else {
+				logo_wrapper.css({
+					"height": ""
+				});
+				logo.css({
+					"bottom": ""
+				});
+			}
+		});
+	}
+	init_header();//call function to init header
 	
 	/*
 	*

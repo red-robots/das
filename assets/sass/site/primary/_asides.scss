@@ -7,8 +7,10 @@
 	width: $size__main-sidebar;
 	background-color: $color__das-blue;
 	position: fixed;
+	z-index: 0;
 	height: 100%;
 	top:0;
+	left: 0;
 	.logo.wrapper {
 		background-color: white;
 		position: relative;
@@ -20,7 +22,7 @@
 			margin: 0;
 			padding: 0;
 			position: absolute;
-			bottom: -12%;
+			bottom: -25%;
 			left: (100%-$size__logo-width)/2;
 		}
 	}

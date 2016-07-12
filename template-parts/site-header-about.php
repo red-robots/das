@@ -10,10 +10,10 @@
 ?>
 
 <div id="site-header" class="clear-bottom">
-	<div class="false-logo wrapper">	
+	<div class="false-logo wrapper left-column">	
 		<img src="<?php echo wp_get_attachment_url(get_field("blank_logo","option"));?>" alt="false logo" class="false logo">
 	</div><!--.false-logo .wrapper-->
-    <div class="company-info-nav wrapper">
+    <div class="company-info-nav wrapper right-column">
         <div class="company-info">
             <p class="info">
                 <span class="company-name"><?php the_field("company_name","option");?></span>
