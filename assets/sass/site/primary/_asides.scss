@@ -3,26 +3,43 @@
 	display: none;
 }
 
-.sidebar.wrapper {
-	#sidebar {
-		padding: 150px 0;
-		.nav.wrapper {
-			#site-nav {
-				text-align: right;
-				margin-right: 15%;
-				font-size: $font__size-large;
-				ul {
+#sidebar {
+	width: $size__main-sidebar;
+	background-color: $color__das-blue;
+	position: fixed;
+	height: 100%;
+	top:0;
+	.logo.wrapper {
+		background-color: white;
+		position: relative;
+		.false.logo {
+			width: $size__logo-width;
+		}
+		#logo {
+			width: $size__logo-width;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			bottom: -12%;
+			left: (100%-$size__logo-width)/2;
+		}
+	}
+	.nav.wrapper {
+		padding: 50px 0;
+		#site-nav {
+			text-align: right;
+			margin-right: 15%;
+			font-size: $font__size-large;
+			ul {
+				margin: 0;
+				padding: 0;
+				> li {
+					list-style: none;
 					margin: 0;
-					padding: 0;
-					> li {
-						list-style: none;
-						margin: 0;
-						padding: 10px;
-						color: white;
-					}
+					padding: 10px;
+					color: white;
 				}
 			}
 		}
 	}
-		
 }

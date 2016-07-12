@@ -17,6 +17,11 @@ div {
 	hyphens: auto;
 }
 .clear {clear: both;}
+.clear-bottom:after {
+	clear: both;
+	content: "";
+	display: block;
+}
 .float-left {float: left;}
 .float-right{float: right;}
 .wrapper {
@@ -57,7 +62,7 @@ a.surrounding {
 		display: block;
 		position:relative;
 		min-height: $size__header-height;
-		.false-logo-wrapper.wrapper {
+		.false-logo.wrapper {
 			width: $size__main-sidebar;
 			position: relative;
 			float: left;
@@ -66,27 +71,6 @@ a.surrounding {
 				min-width: $size__logo-width;
 				margin: 0 auto;
 				padding: 0;
-			}
-		}
-		.logo.wrapper {
-			width: $size__main-sidebar;
-			position:absolute;
-			bottom:0;
-			left:0;
-			.false.logo {
-				width: $size__logo-width;
-				min-width: $size__logo-width;
-				margin: 0 auto;
-				padding: 0;
-			}
-			#logo {
-				width: $size__logo-width;
-				min-width: $size__logo-width;
-				margin: 0 auto;
-				padding: 0;
-				position: absolute;
-				left: (100%-$size__logo-width)/2;
-				bottom: -25%;
 			}
 		}
 		.company-info-nav.wrapper {
@@ -138,38 +122,13 @@ a.surrounding {
 			}
 		}
 	}
-	#site-header:after {
-		content:"";
-		display: block;
-		clear:both;
-	}
-	.main-sidebar.wrapper {
+	.main-sidebar.wrapper.clear-bottom {
 		display: block;
 		position: relative;
 		width: 100%;
-		&:before {
-			content: "";
-			position: absolute;
-			top:0;
-			left: 0;
-			width: $size__main-sidebar;
-			height: 100%;
-			background-color: $color__das-blue;
-			z-index: -1;
-		}
-		.sidebar.wrapper {
-			position: absolute;
-			top:0;
-			left:0;
-			width: $size__main-sidebar;
-			#sidebar {
-				width: 100%;
-			}
-		}
-		#main {
+		#main.right-column {
 			width: 100%-$size__main-sidebar;
-			position: relative;
-			left: $size__main-sidebar;
+			float: right;
 			padding: 1px $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
 			min-height: 800px;
 		}
@@ -208,7 +167,7 @@ a.surrounding {
 			}
 		}
 	}
-	.footer.wrapper {
+	.footer.wrapper.clear-bottom {
 		padding: 75px;
 		.company-info-footer-links.wrapper {
 			text-align: left;
@@ -260,11 +219,6 @@ a.surrounding {
 					}
 				}
 			}
-		}
-		&:after {
-			content:"";
-			display: block;
-			clear:both;
 		}
 	}
 	.background-image.wrapper {		

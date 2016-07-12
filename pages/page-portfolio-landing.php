@@ -11,11 +11,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<?php get_template_part("/template-parts/site-header","portfolio"); ?>
-        <div class="main-sidebar wrapper">
-        	<div class="sidebar wrapper">
-					<?php get_sidebar(); ?>
-			</div><!-- .sidebar .wrapper-->
-			<main id="main" class="site-main" role="main">
+		<div class="main-sidebar wrapper clear-bottom">
+			<?php get_sidebar(); ?>
+			<main id="main" class="site-main right-column" role="main">
 				<div class ="flexslider-pagination wrapper">
 					<div class="flexslider left-column">
 						<ul class="slides">
@@ -40,7 +38,6 @@ get_header(); ?>
 										for($i=0;$i<$max;$i++):$query->the_post();?>
 											<?php if(get_field("featured_image")): ?>
 												<div class="project">
-													<img src="<?php echo wp_get_attachment_image_src(get_field("featured_image"), 'full')[0]; ?>" alt="<?php echo $thumbnail->post_title;?>">
 													<?php $project_types = get_the_terms($query->post->ID,"project_type"); ?>
 													<div class="title-type wrapper">
 														<?php if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
@@ -50,6 +47,7 @@ get_header(); ?>
 													</div><!--.title-type .wrapper-->
 													<div class="background wrapper"></div>
 													<a href="<?php echo get_the_permalink();?>" class="surrounding full-article"></a>
+													<img src="<?php echo wp_get_attachment_image_src(get_field("featured_image"), 'full')[0]; ?>" alt="<?php echo $thumbnail->post_title;?>">
 												</div><!--.project-->    
 											<?php endif;//if featured image?> 
 											<?php if($i%9==0&&$i<($max-1)&&$i!==0):?>
@@ -69,8 +67,8 @@ get_header(); ?>
 						<!--img here-->
 					</div><!--.pagination .right-column-->
 				</div><!--.flexslider-pagination .wrapper-->
-            </main><!-- #main -->
-        </div><!--.main-sidebar .wrapper-->
+			</main><!-- #main -->
+		</div><!--.main-sidebar .wrapper-->
 	</div><!-- #primary -->
 
 <?php

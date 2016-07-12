@@ -86,7 +86,23 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$('.js-blocks').matchHeight();
-
+	
+	/*----------------------------------
+	 * Adjustments for header and fixed sidebar
+	 -----------------------------------*/
+	$(window).on('resize ready',function(){
+		if($(this).width()>500){
+			$('#sidebar .logo.wrapper').css({
+				"height":$('#site-header').css('height')
+			});
+		}
+		else {
+			$('#sidebar .logo.wrapper').css({
+				"height": ""
+			});
+		}
+	});
+	
 	/*
 	*
 	*	Wow Animation

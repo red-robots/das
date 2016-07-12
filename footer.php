@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="footer wrapper">
+		<div class="footer wrapper clear-bottom">
 			<div class="float-left company-info-footer-links wrapper">
 				<div class="company-info">
 					<?php if(get_field("company_name","option")): ?>

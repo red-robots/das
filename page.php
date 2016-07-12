@@ -11,11 +11,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<?php get_template_part("/template-parts/site-header","about"); ?>
-        <div class="main-sidebar wrapper">
-			<div class="sidebar wrapper">
-					<?php get_sidebar(); ?>
-			</div><!-- .sidebar .wrapper-->
-            <main id="main" class="site-main" role="main">
+        <div class="main-sidebar wrapper clear-bottom">
+			<?php get_sidebar(); ?>
+            <main id="main" class="site-main right-column" role="main">
                 <?php if(have_posts()):
                     while(have_posts()):the_post(); ?>
 						<div class="video-copy-affiliation wrapper">

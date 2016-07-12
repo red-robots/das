@@ -68,7 +68,7 @@ get_header(); ?>
 					<?php if(get_field("process_graphic")): ?>
 						<img src="<?php wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic">
 					<?php endif; ?>
-				</div><!--.process-->
+				</div><!--.process .left-column-->
 				<div class="featured-video right-column">
 					<h2>Featured Video</h2>
 					<div class="video-section wrapper">
@@ -85,7 +85,8 @@ get_header(); ?>
 							<?php endif; ?>
 						</div><!--.description-->
 					</div><!--.video-section-->
-				</div><!-- .featured-video-->
+				</div><!-- .featured-video .right-column-->
+				<div class="clear"></div>
 			</section><!--.homepage-featured-project-->
 			<section class="news">
 				<div class="link box">

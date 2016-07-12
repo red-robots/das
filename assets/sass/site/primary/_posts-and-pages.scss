@@ -20,11 +20,11 @@
 					display: block;
 					.project.wrapper {
 						.project {
-							position: relative;
 							height: auto;
 							width: (98%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
 							margin: $size__portfolio-landing-tile-margin;
 							display: inline-block;
+							position: relative;
 							&:hover {
 								.title-type.wrapper {
 									display: block;
@@ -131,7 +131,7 @@
 			right: 0;
 			top: 0;
 		}
-		&:after {
+		/*&:after {
 			content: "";
 			display: block;
 			clear: both;
@@ -140,7 +140,7 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-		}
+		}*/
 	}
 	/* ----------------------
 	 * Main Page
@@ -224,7 +224,7 @@
 				top: 0;
 				width: 100%-$size__portfolio-single-featured-image-width;
 				.thumbnail {
-					width: (100%-($size__portfolio-single-thumbnail-tile-margin*$size__portfolio-single-thumbnail-tile-span))/$size__portfolio-single-thumbnail-tile-span;
+					width: (98%-($size__portfolio-single-thumbnail-tile-margin*$size__portfolio-single-thumbnail-tile-span))/$size__portfolio-single-thumbnail-tile-span;
 					margin: 0 0 $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin;
 					display: block;
 					float: left;

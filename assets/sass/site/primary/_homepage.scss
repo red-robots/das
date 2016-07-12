@@ -43,30 +43,15 @@
 		}
 	}
 	section.featured-project {
-		position: relative;
 		display: block;
 		margin: 0;
 		.process.left-column {
 			width: $size__homepage-process-width;
-			position: absolute;
-			top: 0;
-			left: 0;
+			float: left;
 		}
 		.featured-video.right-column {
 			width: 100%-$size__homepage-process-width;
-			position: relative;
-			left: $size__homepage-process-width;
-			top: 0;
-		}
-		&:after {
-			content: "";
-			display: block;
-			clear: both;
-			top: 0;
-			left:0;
-			position: absolute;
-			width: 100%;
-			height: 100%;
+			float: right;
 		}
 	}
 	section.news {

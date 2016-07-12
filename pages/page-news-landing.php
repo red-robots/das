@@ -11,11 +11,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
         <?php get_template_part("/template-parts/site-header","news"); ?>
-        <div class="main-sidebar wrapper">
-        	<div class="sidebar wrapper">
-					<?php get_sidebar(); ?>
-			</div><!-- .sidebar .wrapper-->
-			<main id="main" class="site-main" role="main">
+        <div class="main-sidebar wrapper clear-bottom">
+			<?php get_sidebar(); ?>
+			<main id="main" class="site-main right-column" role="main">
 				<div class="isotope-pagination wrapper">
 					<div class="isotope left-column">
 						<div class="is-container news wrapper">

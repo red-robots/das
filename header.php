@@ -18,6 +18,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+<style>html {
+	margin-top: 0 !important;
+}</style>
 </head>
 
 <body <?php body_class(); ?>>
