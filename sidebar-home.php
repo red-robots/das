@@ -34,7 +34,7 @@
                     <p class="toll-free-line">toll free <?php the_field("toll_free_line_number","option");?></p>
                 <?php endif; ?>
                 <?php if(get_field("contact_email","option")): ?>
-                    <p class="contact-email"><?php the_field("contact_email","option");?></p>
+                    <p class="contact-email"><span><?php the_field("contact_email","option");?></span></p>
                 <?php endif; ?>
             </div><!-- .electronic-info -->
             <div class="address">

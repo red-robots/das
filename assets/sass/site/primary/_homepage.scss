@@ -32,7 +32,7 @@
 					}
 				}
 				.nav-info.wrapper {
-					padding: 50px 20px 0 20px;
+					padding: 70px 15% 50px 0;
 					position: relative;
 					&:before {
 						content: "";
@@ -45,33 +45,74 @@
 						top: 0;
 						left: 0;
 					}
+					#site-nav {
+						text-align: right;
+						margin: 0 0 50px 0;
+						font-size: $font__size-large;
+						ul {
+							margin: 0;
+							padding: 0;
+							> li {
+								list-style: none;
+								margin: 0;
+								padding: 10px;
+								color: $color__das-white;
+							}
+						}
+					}
+					.company-info {
+						text-align: right;
+						margin: 50px 0 0 0;
+						p {
+							margin: 0;
+							color: $color__das-white;
+							font-size: $font__size-medium-small;
+							padding: 0 0 0 5px;
+						}
+						.social.wrapper {
+							margin: 15px 0;
+						}
+						.electronic-info {
+							margin: 15px 0 ;
+							.company-name {
+								margin: 15px 0 ;	
+							}
+							.contact-email span {
+								@include border5;
+								display: inline-block;
+								padding: 0 0 0 5px;
+							}
+						}
+						.address {
+							margin: 15px 0 0 0;
+						}
+					}
 				}
 			}
-			.flexsider {
+			.flexslider {
 				width: 100%;
+				margin: 0 !important;
 				.slides {
 					.slide {
-						.image-info.wrapper {
-							position: relative;
-							img {
-								width: 100%;
+						position: relative;
+						background-position: center;
+						background-size: cover;
+						height: 100%;
+						.info {
+							position: absolute;
+							bottom: 10%;
+							right: 10%;
+							.type.box {
+								background-color: $color__das-grey;
+								padding: 5px 15px;
+								font-size: $font__size-medium-small;
+								display: inline-block;
+								color: $color__text-dark;
+								margin: 10px 0;
 							}
-							.info {
-								position: absolute;
-								bottom: 10%;
-								right: 10%;
-								.type.box {
-									background-color: $color__das-grey;
-									padding: 5px 15px;
-									font-size: $font__size-medium-small;
-									display: inline-block;
-									color: $color__text-dark;
-									margin: 10px 0;
-								}
-								.title {
-									color: white;
-									font-size: $font__size-medium;
-								}
+							.title {
+								color: $color__das-white;
+								font-size: $font__size-medium;
 							}
 						}
 					}
@@ -80,32 +121,99 @@
 		}
 	}
 	section.featured-project.clear-bottom {
-		display: block;
+		display: table;
 		margin: 0;
+		padding: 40px;
+		width: 100%;
 		.process.left-column {
 			width: $size__homepage-process-width;
-			float: left;
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0 110px 0 20px;
+			@include border4;
+			.company-name {
+				font-size: $font__size-medium-small;
+				color: $color__das-blue;
+				text-transform: uppercase;
+			}
+			.process-description p {
+				font-size: $font__size-extra-extra-large;
+			}
+			.link.box {
+				color: $color__das-white;
+				background-color: $color__das-blue;
+				padding: 5px;
+				display: inline-block;
+				.process-link-text a {
+					font-size: $font__size-medium-small;
+					color: inherit;
+				}
+			}
+			.process-image {
+			
+			}
 		}
 		.featured-video.right-column {
 			width: 100%-$size__homepage-process-width;
-			float: right;
+			display: table-cell;
+			vertical-align: middle;
+			header.box {
+				display: inline-block;
+				margin: 10px 0;
+				color: $color__das-white;
+				background-color: $color__das-blue;
+				padding: 5px;
+				h2 {
+					margin: 0;
+					font-weight: 500;
+					text-transform: uppercase;
+					font-size: $font__size-medium-small;
+				}
+			}
+			.video-section.wrapper {
+				.video.left-column { 
+					float: left;
+					width: $size__homepage-process-featured-video-width;
+					iframe {
+						width: 100%;
+					}
+				}
+				.description.right-column {
+					float: right;
+					width: 100%-$size__homepage-process-featured-video-width;
+					padding: 0 20px;
+					.video-description p {
+						font-size: $font__size-medium-small;
+					}
+					.full-article.link {
+						color: $color__text-main;
+						@include border1;
+						display: inline-block;
+						a {
+							color: inherit;
+						}
+					}
+				}
+			}
 		}
 	}
 	section.news {
 		position: relative;
-		padding: 30px;
+		padding: 30px 70px;
 		background-color: $color__das-yellow;
 		.link.box {
 			position: absolute;
 			top: 0;
 			left: 50%;
 			@include translateX(-50%);
-			color: white;
+			color: $color__das-white;
 			background-color: $color__das-blue;
 			padding: 5px;
 			h2 {
 				margin: 0;
 				font-weight: 500;
+				text-transform: uppercase;
+				font-size: $font__size-medium-small;
 			}
 		}
 		.news.wrapper.is-container {

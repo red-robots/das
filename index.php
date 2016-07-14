@@ -28,20 +28,15 @@ get_header(); ?>
 						if($image_url && $project_selector):
 							$post=get_post($project_selector);
 							setup_postdata($post); ?>
-							<a href="<?php the_permalink();?>">
-								<li class="slide">
-									<div class="image-info wrapper">
-										<img src="<?php echo $image_url;?>" alt="<?php echo $project_title?>" class="image">
-										<div class="info">
-											<?php $project_types = get_the_terms($project_selector,"project_type");
-											if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
-												<div class="type box"><?php echo $project_types[0]->name; ?></div>
-											<?php endif; ?>
-											<h2 class="title"><?php the_title(); ?></h2>	
-										</div><!--.info-->
-									</div><!--.image-info .wrapper-->
+								<li class="slide" style="background-image: url('<?php echo $image_url;?>');">
+									<div class="info">
+										<?php $project_types = get_the_terms($project_selector,"project_type");
+										if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
+											<div class="type box"><?php echo $project_types[0]->name; ?></div>
+										<?php endif; ?>
+										<a href="<?php the_permalink();?>"><h2 class="title"><?php the_title(); ?></h2></a>	
+									</div><!--.info-->
 								</li><!--.slide-->
-							</a>
 							<?php $post = get_post(244);
 							setup_postdata($post); 
 						endif; //if for the slide ?>
@@ -53,20 +48,20 @@ get_header(); ?>
 		<section class="featured-project clear-bottom">
 			<div class="process left-column">
 				<?php if(get_field("company_name","option")): ?>
-					<p><?php echo get_field("company_name","option");?></p>
+					<p class="company-name"><?php echo get_field("company_name","option");?></p>
 				<?php endif; ?>
 				<?php if(get_field("process_description")): ?>
-					<?php echo get_field("process_description");?>
+					<div class="process-description"><?php echo get_field("process_description");?></div><!--.process-description-->
 				<?php endif; ?>
 				<?php if(get_field("process_link_text")): ?>
-					<a href="<?php the_permalink(38); ?>"><?php echo get_field("process_link_text");?></a>
+					<div class="link box"><a href="<?php the_permalink(38); ?>" class="link full-article"><?php echo get_field("process_link_text");?></a></div><!--.link.box-->
 				<?php endif; ?>
 				<?php if(get_field("process_graphic")): ?>
-					<img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic">
+					<img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic" class="process-image">
 				<?php endif; ?>
 			</div><!--.process .left-column-->
 			<div class="featured-video right-column">
-				<?php if(get_field("featured_video_title")) echo "<h2>".get_field("featured_video_title")."</h2>";?>
+				<header class="box"><?php if(get_field("featured_video_title")) echo "<h2>".get_field("featured_video_title")."</h2>";?></header>
 				<div class="video-section wrapper">
 					<?php $portfolio_w_video = array();
 					$query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
@@ -83,25 +78,25 @@ get_header(); ?>
 						$selection = $portfolio_w_video[rand(0,count($portfolio_w_video)-1)];//get random portfolio
 						$post=get_post($selection);
 						setup_postdata($post);?>
-						<div class="video">
+						<div class="video left-column">
 							<?php $video = get_field("video");
 							preg_match("/src=\"(.+)\"/i",$video,$matches); ?>
 							<iframe src="<?php echo $matches[1];?>"></iframe>
 						</div><!--.video-->
-						<div class="description">
+						<div class="description right-column">
 							<?php $video_desc = get_field("video_description");		
 							$post = get_post(244);
 							setup_postdata($post);
 							$link_text = get_field("featured_video_link_text");		
 							if($video_desc): ?>
-								<p><?php if(strlen($video_desc)>200):
+								<div class="video-description"><?php if(strlen($video_desc)>200):
 										echo trim(substr($video_desc,0,200))."...";
 									else:
 										echo $video_desc;
-									endif;?></p>
+									endif;?></div><!--.video-description-->
 							<?php endif;
 							if($link_text):?>
-								<a href="<?php the_permalink(82); ?>">
+								<a href="<?php the_permalink(82); ?>" class="full-article link">
 									<?php echo $link_text;?>
 								</a>
 							<?php endif;//end if for has link text?>
@@ -112,10 +107,10 @@ get_header(); ?>
 		</section><!--.homepage-featured-project-->
 		<section class="news">
 			<?php if(get_field("news_link_text")):?>
-				<div class="link box">
+				<header class="link box">
 					<a href="<?php echo get_the_permalink(26);?>"><h2>
 					<?php echo get_field("news_link_text");?></h2></a>
-				</div><!--.link .box-->
+				</header><!--.link .box-->
 			<?php endif; ?>
 			<div class="news wrapper is-container">
 				<?php $query= new WP_Query(array('post_type'=>'post','posts_per_page'=>3));
