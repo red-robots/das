@@ -34,8 +34,9 @@ get_header(); ?>
 									endif;
 									$query = new WP_Query($args);
 									if($query->have_posts()):
-										$max = $query->post_count;
-										for($i=0;$i<$max;$i++):$query->the_post();?>
+										$max = $query->post_count - 1;
+										$i = 0;
+										while($query->have_posts()):$query->the_post();?>
 											<?php if(get_field("featured_image")): ?>
 												<div class="project">
 													<?php $project_types = get_the_terms($query->post->ID,"project_type"); ?>
@@ -48,15 +49,16 @@ get_header(); ?>
 													<div class="background wrapper"></div>
 													<a href="<?php echo get_the_permalink();?>" class="surrounding full-article"></a>
 													<img src="<?php echo wp_get_attachment_image_src(get_field("featured_image"), 'full')[0]; ?>" alt="<?php echo $thumbnail->post_title;?>">
-												</div><!--.project-->    
+												</div><!--.project-->
+												<?php $i++;//if project incriment $i?>
 											<?php endif;//if featured image?> 
-											<?php if($i%9==0&&$i<($max-1)&&$i!==0):?>
+											<?php if($i%9==0&&$i<($max-1)):?>
 													</div><!--.project .wrapper-->
 												</li><!--.slide-->
 												<li class="slide">
 													<div class="project wrapper">
-											<?php endif; ?>
-										<?php endfor; //while for all news posts; 
+											<?php endif; //if 9 blocks ?>
+										<?php endwhile; //while for all news posts; 
 									endif; //if for all news posts ?>
 								</div><!--.project .wrapper-->
 							</li><!--.slide-->

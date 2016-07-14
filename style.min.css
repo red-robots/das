@@ -1506,7 +1506,7 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #sidebar.left-column{width:25%;background-color:#005fbb;position:fixed;z-index:0;height:100%;top:0;left:0}
 #sidebar.left-column .logo.wrapper{background-color:white;position:relative}
 #sidebar.left-column .logo.wrapper .false.logo{width:70%}
-#sidebar.left-column .logo.wrapper #logo{width:70%;margin:0;padding:0;position:absolute;bottom:-25%;left:15%}
+#sidebar.left-column .logo.wrapper #logo{width:70%;margin:0;padding:0;position:absolute;bottom:0;left:15%;-ms-transform:translateY(27%);-webkit-transform:translateY(27%);transform:translateY(27%)}
 #sidebar.left-column .nav.wrapper{padding:50px 0}
 #sidebar.left-column .nav.wrapper #site-nav{text-align:right;margin-right:15%;font-size:16pt}
 #sidebar.left-column .nav.wrapper #site-nav ul{margin:0;padding:0}
@@ -1515,6 +1515,11 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 .bypostauthor{display:block}
 #home-primary #main section.slider{position:relative;display:block;margin:0}
 #home-primary #main section.slider #homepage-sidebar{width:25%;position:absolute;top:0;left:0;z-index:1}
+#home-primary #main section.slider #homepage-sidebar .logo.wrapper{position:relative}
+#home-primary #main section.slider #homepage-sidebar .logo.wrapper:before{content:"";background-color:white;opacity:.3;width:100%;height:100%;z-index:-1;position:absolute;top:0;left:0}
+#home-primary #main section.slider #homepage-sidebar .logo.wrapper #logo{width:70%;margin:0 auto;padding:0;display:block;-ms-transform:translateY(27%);-webkit-transform:translateY(27%);transform:translateY(27%)}
+#home-primary #main section.slider #homepage-sidebar .nav-info.wrapper{padding:50px 20px 0 20px;position:relative}
+#home-primary #main section.slider #homepage-sidebar .nav-info.wrapper:before{content:"";background-color:#005fbb;opacity:.3;width:100%;height:100%;z-index:-1;position:absolute;top:0;left:0}
 #home-primary #main section.slider .flexsider{width:100%}
 #home-primary #main section.slider .flexsider .slides .slide .image-info.wrapper{position:relative}
 #home-primary #main section.slider .flexsider .slides .slide .image-info.wrapper img{width:100%}
@@ -1525,7 +1530,7 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #home-primary section.featured-project.clear-bottom .process.left-column{width:45%;float:left}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column{width:55%;float:right}
 #home-primary section.news{position:relative;padding:30px;background-color:palegoldenrod}
-#home-primary section.news .link.box{position:absolute;top:0;left:48%;color:white;background-color:#005fbb;padding:5px}
+#home-primary section.news .link.box{position:absolute;top:0;left:50%;-ms-transform:translateX(-50%);-webkit-transform:translateX(-50%);transform:translateX(-50%);color:white;background-color:#005fbb;padding:5px}
 #home-primary section.news .link.box h2{margin:0;font-weight:500}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom{background-color:white;display:inline-block;width:29.33333%;margin:2%;position:relative}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper{padding:15px}

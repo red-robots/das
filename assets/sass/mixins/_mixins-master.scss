@@ -35,6 +35,14 @@
 @mixin border4 {
 	border-left: 3px solid $color__das-blue;
 }
+
+@mixin translateX($value){
+	-ms-transform: translateX($value);
+	-moz-transform: translateX($value);
+	-webkit-transform: translateX($value);
+	-o-transform: translateX($value);
+	transform: translateX($value);
+}
 @mixin translateY($value){
 	-ms-transform: translateY($value);
 	-moz-transform: translateY($value);

@@ -53,18 +53,16 @@ get_header(); ?>
 		<section class="featured-project clear-bottom">
 			<div class="process left-column">
 				<?php if(get_field("company_name","option")): ?>
-					<p><?php the_field("company_name","option");?></p>
+					<p><?php echo get_field("company_name","option");?></p>
 				<?php endif; ?>
 				<?php if(get_field("process_description")): ?>
-					<p><?php the_field("process description");?></p>
+					<?php echo get_field("process_description");?>
 				<?php endif; ?>
 				<?php if(get_field("process_link_text")): ?>
-					<a href="<?php the_permalink(38); ?>">
-						<?php the_field("process_link_text");?>
-					</a>
+					<a href="<?php the_permalink(38); ?>"><?php echo get_field("process_link_text");?></a>
 				<?php endif; ?>
 				<?php if(get_field("process_graphic")): ?>
-					<img src="<?php wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic">
+					<img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic">
 				<?php endif; ?>
 			</div><!--.process .left-column-->
 			<div class="featured-video right-column">
@@ -96,7 +94,11 @@ get_header(); ?>
 							setup_postdata($post);
 							$link_text = get_field("featured_video_link_text");		
 							if($video_desc): ?>
-								<p><?php echo $video_desc;?></p>
+								<p><?php if(strlen($video_desc)>200):
+										echo trim(substr($video_desc,0,200))."...";
+									else:
+										echo $video_desc;
+									endif;?></p>
 							<?php endif;
 							if($link_text):?>
 								<a href="<?php the_permalink(82); ?>">

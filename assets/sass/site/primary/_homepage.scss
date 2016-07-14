@@ -10,6 +10,42 @@
 				top: 0;
 				left: 0;
 				z-index: 1;
+				.logo.wrapper {
+					position: relative;
+					&:before {
+						content: "";
+						background-color: white;
+						opacity: 0.3;
+						width: 100%;
+						height: 100%;
+						z-index: -1;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+					#logo {
+						width: $size__logo-width;
+						margin: 0 auto;
+						padding: 0;
+						display: block;
+						@include translateY(27%);
+					}
+				}
+				.nav-info.wrapper {
+					padding: 50px 20px 0 20px;
+					position: relative;
+					&:before {
+						content: "";
+						background-color: $color__das-blue;
+						opacity: 0.3;
+						width: 100%;
+						height: 100%;
+						z-index: -1;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
 			}
 			.flexsider {
 				width: 100%;
@@ -62,7 +98,8 @@
 		.link.box {
 			position: absolute;
 			top: 0;
-			left: 48%;
+			left: 50%;
+			@include translateX(-50%);
 			color: white;
 			background-color: $color__das-blue;
 			padding: 5px;

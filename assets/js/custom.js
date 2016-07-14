@@ -101,16 +101,10 @@ jQuery(document).ready(function ($) {
 				$logo_wrapper.css({
 					"height":$site_header.css('height')//change css of logo wrapper to match site header
 				});
-				$logo.css({
-					"bottom": Number($logo.width())*bottom_percent+"px" //change bottom based on width of self instead of height of parent
-				});
 			}
 			else { //if mobile
 				$logo_wrapper.css({
 					"height": "" //cancel out previous work
-				});
-				$logo.css({
-					"bottom": "" //cancel out previous work
 				});
 			}
 		});
