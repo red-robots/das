@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
 	$('.flexslider').flexslider({
 		animation: 'slide',
 		slideshow: false//disable rotation
-	});
+	}).parents(".clear-bottom").eq(0).find(".js-f-blocks").matchHeight();
 	
 	/*
 	 *
@@ -43,6 +43,7 @@ jQuery(document).ready(function ($) {
 					gutter: 0
 				}
 			});//end of initialize isotope
+			$container.parents(".clear-bottom").eq(0).find(".js-i-blocks").matchHeight();
 		});
 	});//end of each
 	
@@ -91,24 +92,24 @@ jQuery(document).ready(function ($) {
 	 * Adjustments for header, logo, and fixed sidebar
 	 -----------------------------------*/
 	function init_header(){ //provide scope for variables
-		var logo_wrapper = $('#sidebar .logo.wrapper'); //get logo wrapper
-		var site_header = $('#site-header'); // get site header
-		var logo = $('#logo'); //get logo
-		var bottom_percent = Number(logo.css('bottom').replace(/[^\d|\.|-]/g,''))/Number(logo_wrapper.height());//determing css bottom by percentage
+		var $logo_wrapper = $('#sidebar .logo.wrapper'); //get logo wrapper
+		var $site_header = $('#site-header'); // get site header
+		var $logo = $('#logo'); //get logo
+		var bottom_percent = Number($logo.css('bottom').replace(/[^\d|\.|-]/g,''))/Number($logo_wrapper.height());//determing css bottom by percentage
 		$(window).on('resize ready',function(){
 			if($(this).width()>500){ //if not mobile
-				logo_wrapper.css({
-					"height":site_header.css('height')//change css of logo wrapper to match site header
+				$logo_wrapper.css({
+					"height":$site_header.css('height')//change css of logo wrapper to match site header
 				});
-				logo.css({
-					"bottom": Number(logo.width())*bottom_percent+"px" //change bottom based on width of self instead of height of parent
+				$logo.css({
+					"bottom": Number($logo.width())*bottom_percent+"px" //change bottom based on width of self instead of height of parent
 				});
 			}
 			else { //if mobile
-				logo_wrapper.css({
+				$logo_wrapper.css({
 					"height": "" //cancel out previous work
 				});
-				logo.css({
+				$logo.css({
 					"bottom": "" //cancel out previous work
 				});
 			}
@@ -120,14 +121,41 @@ jQuery(document).ready(function ($) {
 	 * Initialization for footer 
 	 --------------------------------------*/
 	function init_footer(){ //provide scope for variables
-		var footer = $('#colophon');//get footer
-		var sidebar = $('#sidebar');//get sidebar
-		$(window).on('scroll resize',function(){
+		var $footer = $('#colophon');//get footer
+		var $sidebar = $('#sidebar');//get sidebar
+		var $window = $(window);
+		$window.on('scroll resize',function(){
+			var footerOffsetTop = Number($footer.offset().top);
+			var windowBottom = Number($window.scrollTop())+Number($window.height());
+			var sidebarHeight = Number($sidebar.height());
 			if($(this).width()>500){ //if not mobile
-				//if scroll to bottom of page fix sidebar in place
+				if(windowBottom>=footerOffsetTop){
+					$sidebar.css({
+						"position": "absolute",
+						"bottom": 0,
+						"left": 0,
+						"height": sidebarHeight,
+						"top": "inherit"
+					});
+				}
+				if(windowBottom<footerOffsetTop){
+					$sidebar.css({
+						"position": "",
+						"bottom": "",
+						"left": "",
+						"height": "",
+						"top": ""
+					});
+				}
 			}
 			else { //if mobile
-				//undo for mobile
+				$sidebar.css({
+					"position": "",
+					"bottom": "",
+					"left": "",
+					"height": "",
+					"top": ""
+				});
 			}
 		});
 	}

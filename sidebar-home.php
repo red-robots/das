@@ -8,7 +8,7 @@
  */
 ?>
 
-<aside id="homepage-sidebar" class="sidebar" role="complementary">
+<aside id="homepage-sidebar" class="sidebar js-blocks" role="complementary">
     <div class="logo wrapper">
        <a href="<?php get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
     </div><!--.logo .wrapper-->
@@ -50,4 +50,4 @@
             </div><!--.address-->
         </div><!--.company-info-->
     </div><!-- .nav-info .wrapper -->
-</aside><!-- #homepagesidebar -->
+</aside><!-- #homepagesidebar .sidebar .js-blocks-->

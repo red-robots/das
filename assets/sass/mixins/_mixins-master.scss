@@ -22,3 +22,23 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin border1 {
+	border-bottom: 5px solid $color__das-blue;
+}
+@mixin border2 {
+	border-bottom: 1px solid $color__das-grey;
+}
+@mixin border3 {
+	border-bottom: 1px dotted $color__das-grey;
+}
+@mixin border4 {
+	border-left: 3px solid $color__das-blue;
+}
+@mixin translateY($value){
+	-ms-transform: translateY($value);
+	-moz-transform: translateY($value);
+	-webkit-transform: translateY($value);
+	-o-transform: translateY($value);
+	transform: translateY($value);
+}

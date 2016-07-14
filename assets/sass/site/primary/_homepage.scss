@@ -4,11 +4,12 @@
 			position: relative;
 			display: block;
 			margin: 0;
-			.sidebar.wrapper {
+			#homepage-sidebar{
 				width: $size__main-sidebar;
 				position: absolute;
 				top: 0;
 				left: 0;
+				z-index: 1;
 			}
 			.flexsider {
 				width: 100%;
@@ -42,7 +43,7 @@
 			}
 		}
 	}
-	section.featured-project {
+	section.featured-project.clear-bottom {
 		display: block;
 		margin: 0;
 		.process.left-column {
@@ -57,6 +58,7 @@
 	section.news {
 		position: relative;
 		padding: 30px;
+		background-color: $color__das-yellow;
 		.link.box {
 			position: absolute;
 			top: 0;
@@ -64,47 +66,49 @@
 			color: white;
 			background-color: $color__das-blue;
 			padding: 5px;
+			h2 {
+				margin: 0;
+				font-weight: 500;
+			}
 		}
-		.news.wrapper {
-			position: relative;
-			.news {
+		.news.wrapper.is-container {
+			.news.item.clear-bottom {
+				background-color: $color__box-background-1;
 				display: inline-block;
 				width: (100%-(2*$size__homepage-news-margin-width*$size__homepage-news-span))/$size__homepage-news-span;
 				margin: $size__homepage-news-margin-width;
 				position: relative;
-				.featured-news-image.wrapper {
-					position: absolute;
-					right: 0;
-					top: 0;
-					width: $size__homepage-news-featured-image-width;
-				}
 				.info.wrapper {
-					position: relative;
-					width: 100%-$size__homepage-news-featured-image-width;
-					left: 0;
-					right: 0;
-					padding: 5px;
+					padding: 15px;
 					.date.box {
 						color: $color__das-blue;
 						font-size: $font__size-small;
 					}
 					.title {
 						font-size: $font__size-medium-small;
+						font-weight: 500;
 					}
 					.link.full-article {
 						font-size: $font__size-medium-small;
 						text-transform: uppercase;
+						a {
+							color: $color__text-main;
+							@include border1;
+						}
 					}
 				}
-				&:after {
-					content: "";
-					display: block;
-					clear: both;
-					top: 0;
-					left:0;
-					position: absolute;
+				.info.wrapper.left-column {
+					width: 100%-$size__homepage-news-featured-image-width;
+					float: left;
+				}
+				.info.wrapper.no-column {
 					width: 100%;
-					height: 100%;
+				}
+				.featured-news-image.wrapper.right-column {
+					float: right;
+					width: $size__homepage-news-featured-image-width;
+					background-size: cover;
+					background-position: center;
 				}
 			}
 		}

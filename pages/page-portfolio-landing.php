@@ -14,8 +14,8 @@ get_header(); ?>
 		<div class="main-sidebar wrapper clear-bottom">
 			<?php get_sidebar(); ?>
 			<main id="main" class="site-main right-column" role="main">
-				<div class ="flexslider-pagination wrapper">
-					<div class="flexslider left-column">
+				<div class ="flexslider-pagination wrapper clear-bottom">
+					<div class="flexslider left-column js-f-blocks">
 						<ul class="slides">
 							<li class="slide">
 								<div class="project wrapper">
@@ -57,14 +57,14 @@ get_header(); ?>
 													<div class="project wrapper">
 											<?php endif; ?>
 										<?php endfor; //while for all news posts; 
-									endif; //if for all news posts
-									wp_reset_postdata();?>
+									endif; //if for all news posts ?>
 								</div><!--.project .wrapper-->
 							</li><!--.slide-->
 						</ul><!--.slides-->
 					</div><!--.flexslider .left-column-->
-					<div class="right-column pagination">
-						<!--img here-->
+					<div class="right-column pagination js-f-blocks">
+						<?php //pagi_posts_arrow_nav($query);
+						wp_reset_postdata();?>
 					</div><!--.pagination .right-column-->
 				</div><!--.flexslider-pagination .wrapper-->
 			</main><!-- #main -->

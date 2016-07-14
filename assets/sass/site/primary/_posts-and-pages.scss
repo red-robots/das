@@ -2,12 +2,10 @@
 	/* --------------------------
 	 * Landing pages
 	 ----------------------------*/
-	.flexslider-pagination.wrapper, .isotope-pagination.wrapper, {
+	.flexslider-pagination.wrapper.clear-bottom, .isotope-pagination.wrapper.clear-bottom {
 		position: relative;
 		.flexslider.left-column, .isotope.left-column {
-			position: relative;
-			left: 0;
-			top: 0;
+			float: left;
 			display: block;
 			margin: 0;
 			width: 100%-$size__portfolio-landing-pagination-column-width;
@@ -80,7 +78,7 @@
 				.news {
 					width: (100%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
 					margin: 0 $size__news-landing-tile-margin $size__news-landing-tile-margin*4 $size__news-landing-tile-margin;
-					border-bottom: 1px dotted $color__das-grey;
+					@include border3;
 					min-width: 150px; 
 					header {
 						display: block;
@@ -117,7 +115,7 @@
 						text-transform: lowercase;
 						padding: 0 8px;
 						margin: 15px 0;
-						border-left: 3px solid $color__das-blue;
+						@include border4;
 						a {
 							color: $color__text-dark;
 						}
@@ -128,20 +126,22 @@
 		.right-column.pagination {
 			width: $size__portfolio-landing-pagination-column-width;
 			display: block;
-			position: absolute;
-			right: 0;
-			top: 0;
+			float: right;
+			.pagination.next-link {
+				position: relative;
+				top: 50%;
+				text-align: center;
+				font-size: 40pt;
+				color: $color__das-grey;
+				@include translateY(-50%);
+				a {
+					color: inherit;	
+					&:hover {
+						color: $color__text-dark; 
+					}				
+				}
+			}
 		}
-		/*&:after {
-			content: "";
-			display: block;
-			clear: both;
-			top: 0;
-			left:0;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}*/
 	}
 	/* ----------------------
 	 * Main Page
@@ -181,7 +181,7 @@
 					width: 300px;
 					height: 130px;
 					margin-bottom: 20px;
-					border-bottom: 1px solid $color__das-grey;
+					@include border2;
 					img {
 						max-width: 250px;
 						max-height: 70px;
@@ -207,22 +207,20 @@
 	 ------------------------------------*/
 	.gallery-portfolio.wrapper {
 		position: relative;
-		.gallery.wrapper {
+		.gallery.wrapper.clear-bottom {
 			position: relative;
 			width: 100%;
 			margin-bottom: 10px;
-			.featured-image.left-column {
-				position: relative;
+			.featured-image.left-column.js-blocks {
+				float: left;
 				width: $size__portfolio-single-featured-image-width;
 				img {
 					width: 100%;
 					display: block;
 				}
 			}
-			.thumbnail.wrapper.right-column {
-				position: absolute;
-				right: 0;
-				top: 0;
+			.thumbnail.wrapper.right-column.js-blocks {
+				float: right;
 				width: 100%-$size__portfolio-single-featured-image-width;
 				.thumbnail {
 					width: (98%-($size__portfolio-single-thumbnail-tile-margin*$size__portfolio-single-thumbnail-tile-span))/$size__portfolio-single-thumbnail-tile-span;
@@ -233,27 +231,7 @@
 						width: 100%;
 						display: block;
 					}
-					&:after {
-						content: "";
-						display: block;
-						clear: both;
-						top: 0;
-						left:0;
-						position: absolute;
-						width: 100%;
-						height: 100%;
-					}
 				}
-			}
-			&:after {
-				content: "";
-				display: block;
-				clear: both;
-				top: 0;
-				left:0;
-				position: absolute;
-				width: 100%;
-				height: 100%;
 			}
 		}
 		.portfolio {
@@ -285,22 +263,10 @@
 				position: relative;
 				display: block;
 				margin-top: 20px;
-				&:before {
+				.video.wrapper.left-column.js-blocks {
 					width: $size__portfolio-single-video-column-width;
-					position: absolute;
-					top: 0;
-					left: 0;
-					height: 100%;
+					float: left;
 					background-color: $color__das-grey;
-					z-index: -1;
-					content:"";
-				}
-				.video.wrapper.left-column {
-					width: $size__portfolio-single-video-column-width;
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: 0;
 					.video {
 						display: block;
 						width: 100%;
@@ -314,21 +280,10 @@
 						padding: 3%;
 					}
 				}
-				.copy.right-column {
-					position: relative;
-					left: $size__portfolio-single-video-column-width;
+				.copy.right-column.js-blocks {
+					float: right;
 					width: 100%-$size__portfolio-single-video-column-width;
 					padding: 0 0 0 3/5*$size__page-right-margin;
-				}
-				&:after {
-					content: "";
-					display: block;
-					clear: both;
-					top: 0;
-					left:0;
-					position: absolute;
-					width: 100%;
-					height: 100%;
 				}
 			}
 			.copy.no-column {
@@ -339,13 +294,11 @@
 	/*-------------------------------------
 	 * News individual specific
 	 --------------------------------------*/
-	.news-social-sidebar.wrapper {
+	.news-social-sidebar.wrapper.clear-bottom {
 		position: relative;
-		.news.left-column {
+		.news.left-column.js-blocks {
 			width: 100%-$size__news-single-sidebar-width;
-			position: relative;
-			top: 0;
-			left: 0;
+			float: left;
 			header {
 				display: block;
 				width: 100%;
@@ -382,11 +335,9 @@
 					font-size: $font__size-medium;				
 			}
 		}
-		.sidebar.social.right-column {
+		.sidebar.social.right-column.js-blocks {
 			width: $size__news-single-sidebar-width;
-			position: absolute;
-			right: 0;
-			top: 0;
+			float: right;
 		}
 	}
 }

@@ -15,12 +15,12 @@ function pagi_posts_nav($wp_query) {
 		$links[] = $paged;
 
 	/**	Add the pages around the current page to the array */
-	if ( $paged >= 3 ) {
+	if ( $paged >= 2 ) {
 		$links[] = $paged - 1;
 		//$links[] = $paged - 2;
 	}
 
-	if ( ( $paged + 2 ) <= $max ) {
+	if ( ( $paged + 1 ) <= $max ) {
 		//$links[] = $paged + 2;
 		$links[] = $paged + 1;
 	}
@@ -63,4 +63,23 @@ function pagi_posts_nav($wp_query) {
 
 	echo '</ul></nav>' . "\n";
 
+}
+
+function pagi_posts_arrow_nav($wp_query) {
+
+	/** Stop execution if there's only 1 page */
+	if( $wp_query->max_num_pages <= 1 )
+		$link = "";
+	else {
+		$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+		$max   = intval( $wp_query->max_num_pages );
+	
+		if ( ( $paged + 1 ) <= $max ) {
+			$link = esc_url( get_pagenum_link( $paged + 1 ) );
+		}
+		else {
+			$link = esc_url( get_pagenum_link( 1 ) );
+		}
+	}
+	printf('<div class="pagination next-link"><a href="%s"><i class="fa fa-angle-right"></i></a></div><!--.pagination .next-link-->',$link);
 }

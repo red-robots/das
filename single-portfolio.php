@@ -20,11 +20,11 @@ get_header(); ?>
 							<?php if(get_field("gallery")): 
 								$images = get_field("gallery");
 								if($images!=null && count($images)>0): ?>
-									<div class="gallery wrapper">
-										<div class="featured-image left-column">
+									<div class="gallery wrapper clear-bottom">
+										<div class="featured-image left-column js-blocks">
 											<img src="<?php echo $images[0][url];?>" alt="<?php echo $images[0]['title'];?>">
 										</div><!--.featured-image-->
-										<div class="thumbnail wrapper right-column">
+										<div class="thumbnail wrapper right-column js-blocks">
 											<?php for($i=0;$i<14&&$i<count($images);$i++):?>
 												<div class="thumbnail"><img src="<?php echo $images[$i]['sizes']['thumbnail'];?>" data-full-url="<?php echo $images[$i]['url'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img"></div><!--.thumbnail-->
 											<?php endfor;?>
@@ -43,7 +43,7 @@ get_header(); ?>
 								</header>
 								<?php if(get_field("video")): ?>
 									<div class="video-copy column wrapper">
-										<div class="video wrapper left-column">
+										<div class="video wrapper left-column js-blocks">
 											<div class="video">
 												<?php $video = get_field("video");
 												preg_match("/src=\"(.+)\"/i",$video,$matches); ?>
@@ -55,7 +55,7 @@ get_header(); ?>
 												</section><!--.video-description-->
 											<?php endif; ?>
 										</div><!--.video .wrapper .left-column-->
-										<div class="right-column copy">
+										<div class="right-column copy js-blocks">
 									<?php else: ?>
 										<div class="copy no-column">
 									<?php endif; ?>

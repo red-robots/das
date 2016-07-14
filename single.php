@@ -17,8 +17,8 @@ get_header(); ?>
 			<main id="main" class="site-main right-column" role="main">
                 <?php if(have_posts()):
 					while(have_posts()):the_post();?>
-						<div class="news-social-sidebar wrapper">
-							<article class="news left-column">
+						<div class="news-social-sidebar wrapper clear-bottom">
+							<article class="news left-column js-blocks">
 								<header>
 									<div class="date box"><?php the_date("n.j.Y");?></div>
 									<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id());?>" class="featured-news-image">
@@ -48,7 +48,7 @@ get_header(); ?>
 									?>
 								</div>
 							</article><!--.news-->
-							<div class="sidebar social right-column">
+							<div class="sidebar social right-column js-blocks">
 								<?php get_sidebar("social");?>
 							</div><!--.right-column-->
 						</div><!--.news-social-sidebar .wrapper-->
