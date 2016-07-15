@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php get_sidebar(); ?>
 			<main id="main" class="site-main right-column" role="main">
 				<div class ="flexslider-pagination wrapper clear-bottom">
-					<div class="flexslider left-column js-f-blocks">
+					<div class="flexslider left-column">
 						<ul class="slides">
 							<li class="slide">
 								<div class="project wrapper">
@@ -38,7 +38,7 @@ get_header(); ?>
 										$i = 0;
 										while($query->have_posts()):$query->the_post();?>
 											<?php if(get_field("featured_image")): ?>
-												<div class="project">
+												<div class="project js-ff-blocks">
 													<?php $project_types = get_the_terms($query->post->ID,"project_type"); ?>
 													<div class="title-type wrapper">
 														<?php if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
@@ -52,21 +52,20 @@ get_header(); ?>
 												</div><!--.project-->
 												<?php $i++;//if project incriment $i?>
 											<?php endif;//if featured image?> 
-											<?php if($i%9==0&&$i<($max-1)):?>
+											<?php if($i%9==0&&$i<=($max-1)):?>
 													</div><!--.project .wrapper-->
 												</li><!--.slide-->
 												<li class="slide">
 													<div class="project wrapper">
 											<?php endif; //if 9 blocks ?>
-										<?php endwhile; //while for all news posts; 
-									endif; //if for all news posts ?>
+										<?php endwhile; //while for all portfolio posts; 
+										wp_reset_postdata();
+									endif; //if for all portfolio posts ?>
 								</div><!--.project .wrapper-->
 							</li><!--.slide-->
 						</ul><!--.slides-->
 					</div><!--.flexslider .left-column-->
-					<div class="right-column pagination js-f-blocks">
-						<?php //pagi_posts_arrow_nav($query);
-						wp_reset_postdata();?>
+					<div class="right-column pagination">
 					</div><!--.pagination .right-column-->
 				</div><!--.flexslider-pagination .wrapper-->
 			</main><!-- #main -->

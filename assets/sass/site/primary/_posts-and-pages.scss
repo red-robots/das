@@ -8,7 +8,7 @@
 			float: left;
 			display: block;
 			margin: 0;
-			width: 100%-$size__portfolio-landing-pagination-column-width;
+			width: 100%-$size__portfolio-news-video-landing-pagination-column-width;
 			/*-----------------------------
 			 * Portfolio Landing Specific
 			 ------------------------------*/
@@ -69,6 +69,18 @@
 							}
 						}
 					}
+					.video.wrapper {
+						.video {
+							height: auto;
+							width: (100%-($size__video-landing-tile-margin*2*$size__video-landing-tile-span))/$size__video-landing-tile-span;
+							margin: $size__video-landing-tile-margin;
+							display: block;
+							float: left;
+							iframe {
+								
+							}
+						}
+					}
 				}
 			}
 			/* ---------------------
@@ -124,7 +136,7 @@
 			}
 		}
 		.right-column.pagination {
-			width: $size__portfolio-landing-pagination-column-width;
+			width: $size__portfolio-news-video-landing-pagination-column-width;
 			display: block;
 			float: right;
 			.pagination.next-link {

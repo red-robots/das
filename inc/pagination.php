@@ -69,7 +69,7 @@ function pagi_posts_arrow_nav($wp_query) {
 
 	/** Stop execution if there's only 1 page */
 	if( $wp_query->max_num_pages <= 1 )
-		$link = "";
+		$link = "#";
 	else {
 		$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 		$max   = intval( $wp_query->max_num_pages );

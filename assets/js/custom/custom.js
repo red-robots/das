@@ -23,11 +23,15 @@ jQuery(document).ready(function ($) {
 	*	Flexslider
 	*
 	------------------------------------*/
-	$('.flexslider').flexslider({
+	$('.js-ff-blocks').matchHeight().parents(document).find('.flexslider')//rectify heights of ff elements first before flex
+	.flexslider({
 		animation: 'slide',
-		slideshow: false//disable rotation
-	}).parents(".clear-bottom").eq(0).find(".js-f-blocks").matchHeight();
-	
+		slideshow: false,//disable rotation
+		directionNav: true,
+		start: function(){
+			$('.flexslider').parents(".clear-bottom").eq(0).find(".js-f-blocks").matchHeight();//rectify heights of f elements after flex
+		}
+	});
 	/*
 	 *
 	 *	Isotope
@@ -42,8 +46,7 @@ jQuery(document).ready(function ($) {
 				masonry: {
 					gutter: 0
 				}
-			});//end of initialize isotope
-			$container.parents(".clear-bottom").eq(0).find(".js-i-blocks").matchHeight();
+			}).parents(".clear-bottom").eq(0).find(".js-i-blocks").matchHeight();//rectify height of i elements after isotope
 		});
 	});//end of each
 	
@@ -63,14 +66,14 @@ jQuery(document).ready(function ($) {
 	*
 	*	Smooth Scroll to Anchor
 	*
-	------------------------------------*/
+	------------------------------------
 	 $('a').click(function(){
 	    $('html, body').animate({
 	        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
 	    }, 500);
 	    return false;
 	});
-
+*/
 	/*
 	*
 	*	Nice Page Scroll
