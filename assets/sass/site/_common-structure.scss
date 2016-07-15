@@ -112,11 +112,14 @@ a.surrounding {
 						a {	
 							color: $color__das-grey;
 							padding: 5px 0;
-						}
-						a.active {
-							color: $color__text-dark;
-							font-weight: 700;
-							border-bottom: 3px solid $color__text-dark;
+							&.active {
+								color: $color__text-dark;
+								font-weight: 700;
+								border-bottom: 3px solid $color__text-dark;
+							}
+							&:hover {
+								color: $color__das-blue;
+							}
 						}
 					}
 				}
@@ -132,6 +135,9 @@ a.surrounding {
 			float: right;
 			padding: 1px $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
 			min-height: 800px;
+			a:hover {
+				color: $color__das-blue;
+			}
 		}
 	}
 }

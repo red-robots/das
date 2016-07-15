@@ -38,6 +38,9 @@
 @mixin border5 {
 	border-bottom: 2px solid $color__das-white;
 }
+@mixin border6 {
+	border-bottom: 5px solid $color__das-white;
+}
 
 @mixin translateX($value){
 	-ms-transform: translateX($value);
@@ -52,4 +55,11 @@
 	-webkit-transform: translateY($value);
 	-o-transform: translateY($value);
 	transform: translateY($value);
+}
+@mixin translateXY($xvalue,$yvalue){
+	-ms-transform: translate($xvalue,$yvalue);
+	-moz-transform: translate($xvalue,$yvalue);
+	-webkit-transform: translate($xvalue,$yvalue);
+	-o-transform: translate($xvalue,$yvalue);
+	transform: translate($xvalue,$yvalue);
 }

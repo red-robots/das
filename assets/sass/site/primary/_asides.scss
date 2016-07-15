@@ -41,6 +41,18 @@
 					margin: 0;
 					padding: 10px;
 					color: white;
+					&.current_page_item {
+						@include translateX($size__homepage-sidebar-active-bar-width);
+						a.active {
+							&:after {
+								content: "";
+								display: inline-block;
+								@include border6;
+								width: $size__homepage-sidebar-active-bar-width;
+								@include translateXY(30%,-100%);
+							}
+						}
+					}
 				}
 			}
 		}
