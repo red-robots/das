@@ -180,25 +180,27 @@ jQuery(document).ready(function ($) {
 		width = 0.95*width;
 		var mouseX = e.pageX - offset_left - width_offset;
 		var click_step=0;
-		if(mouseX<=width*0.25&&mouseX>=0){
-			click_step=1;
-		}else if (mouseX<=width*0.5){
-			click_step=2;
-		}else if (mouseX<=width*0.75){
-			click_step=3;
-		}else if(mouseX<=width){
-			click_step=4;
-		}
-		if(click_step!==0){
-			$('.process-steps.wrapper span').each(function(){
-			$this = $(this);
-			var this_step = Number($this.attr("data-step"));
-			if(this_step<=click_step){
-				$this.addClass("active");
-			} else {
-				$this.removeClass("active");
+		if(mouseX>=0){
+			if(mouseX<=width*0.25){
+				click_step=1;
+			}else if (mouseX<=width*0.5){
+				click_step=2;
+			}else if (mouseX<=width*0.75){
+				click_step=3;
+			}else if(mouseX<=width){
+				click_step=4;
 			}
-		});
+			if(click_step!==0){
+				$('.process-steps.wrapper span').each(function(){
+					$this = $(this);
+					var this_step = Number($this.attr("data-step"));
+					if(this_step<=click_step){
+						$this.addClass("active");
+					} else {
+						$this.removeClass("active");
+					}
+				});
+			}
 		}
 	});
 	
