@@ -191,6 +191,9 @@
 						display: inline-block;
 						a {
 							color: inherit;
+							&:hover {
+								color: $color__das-blue;
+							}
 						}
 					}
 				}
@@ -239,6 +242,9 @@
 						a {
 							color: $color__text-main;
 							@include border1;
+							&:hover {
+								color: $color__das-blue;
+							}
 						}
 					}
 				}

@@ -1471,6 +1471,15 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation img{max-width:250px;max-height:70px;width:auto;margin:0 auto;height:auto;display:block}
 #main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation header{width:100%}
 #main .video-copy-affiliation.wrapper .affiliation .affiliation.wrapper .affiliation header h3{font-size:10pt;text-transform:uppercase;text-align:center}
+#main .copy.wrapper .graphic-steps.wrapper{margin:0 10%;width:80%}
+#main .copy.wrapper .graphic-steps.wrapper .process-image{display:block;width:100%;margin:0 auto}
+#main .copy.wrapper .graphic-steps.wrapper .process-title.wrapper.clear-bottom{border-bottom:3px solid lightgrey}
+#main .copy.wrapper .graphic-steps.wrapper .process-title.wrapper.clear-bottom ul{text-align:center;padding:0;margin:0 auto;width:95%}
+#main .copy.wrapper .graphic-steps.wrapper .process-title.wrapper.clear-bottom ul li{display:block;float:left;border-left:3px solid lightgrey;width:25%;margin:10px 0}
+#main .copy.wrapper .graphic-steps.wrapper .process-title.wrapper.clear-bottom ul li:first-child{border:0}
+#main .copy.wrapper .graphic-steps.wrapper .process-title.wrapper.clear-bottom ul li:hover{color:#005fbb}
+#main .copy.wrapper .graphic-steps.wrapper .process-steps.wrapper span{display:none}
+#main .copy.wrapper .graphic-steps.wrapper .process-steps.wrapper span.active{display:block}
 #main .gallery-portfolio.wrapper{position:relative}
 #main .gallery-portfolio.wrapper .gallery.wrapper.clear-bottom{position:relative;width:100%;margin-bottom:10px}
 #main .gallery-portfolio.wrapper .gallery.wrapper.clear-bottom .featured-image.left-column.js-blocks{float:left;width:84%}
@@ -1549,6 +1558,7 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .video-description p{font-size:9pt}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link{color:black;border-bottom:5px solid #005fbb;display:inline-block}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link a{color:inherit}
+#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link a:hover{color:#005fbb}
 #home-primary section.news{position:relative;padding:30px 70px;background-color:palegoldenrod}
 #home-primary section.news .link.box{position:absolute;top:0;left:50%;-ms-transform:translateX(-50%);-webkit-transform:translateX(-50%);transform:translateX(-50%);color:white;background-color:#005fbb;padding:5px}
 #home-primary section.news .link.box h2{margin:0;font-weight:500;text-transform:uppercase;font-size:9pt}
@@ -1558,6 +1568,7 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .title{font-size:9pt;font-weight:500}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .link.full-article{font-size:9pt;text-transform:uppercase}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .link.full-article a{color:black;border-bottom:5px solid #005fbb}
+#home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .link.full-article a:hover{color:#005fbb}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper.left-column{width:60%;float:left}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper.no-column{width:100%}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .featured-news-image.wrapper.right-column{float:right;width:40%;background-size:cover;background-position:center}

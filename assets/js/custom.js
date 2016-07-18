@@ -157,6 +157,52 @@ jQuery(document).ready(function ($) {
 	}
 	init_footer();//call function to init footer
 	
+	/*-------------------------------------------
+	 * Initialization for process template
+	 --------------------------------------------*/
+	$('.process-title.wrapper li').on('click',function(){
+		var click_step = Number($(this).attr("data-step"));
+		$('.process-steps.wrapper span').each(function(){
+			var $this = $(this);
+			var this_step = Number($this.attr("data-step"));
+			if(this_step<=click_step){
+				$this.addClass("active");
+			} else {
+				$this.removeClass("active");
+			}
+		});
+	});
+	$('.graphic-steps .process-image').on('click',function(e){
+		var $this = $(this);
+		var offset_left = $this.offset().left;
+		var width = $this.width();
+		var width_offset = 0.025*width;
+		width = 0.95*width;
+		var mouseX = e.pageX - offset_left - width_offset;
+		var click_step=0;
+		if(mouseX<=width*0.25&&mouseX>=0){
+			click_step=1;
+		}else if (mouseX<=width*0.5){
+			click_step=2;
+		}else if (mouseX<=width*0.75){
+			click_step=3;
+		}else if(mouseX<=width){
+			click_step=4;
+		}
+		if(click_step!==0){
+			$('.process-steps.wrapper span').each(function(){
+			$this = $(this);
+			var this_step = Number($this.attr("data-step"));
+			if(this_step<=click_step){
+				$this.addClass("active");
+			} else {
+				$this.removeClass("active");
+			}
+		});
+		}
+	});
+	
+	
 	/*
 	*
 	*	Wow Animation

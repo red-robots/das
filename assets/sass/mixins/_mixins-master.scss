@@ -41,6 +41,12 @@
 @mixin border6 {
 	border-bottom: 5px solid $color__das-white;
 }
+@mixin border7 {
+	border-left: 3px solid $color__das-grey;
+}
+@mixin border8 {
+	border-bottom: 3px solid $color__das-grey;
+}
 
 @mixin translateX($value){
 	-ms-transform: translateX($value);
