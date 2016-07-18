@@ -10,12 +10,13 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<?php get_template_part("/template-parts/site-header","about"); ?>
-        <div class="main-sidebar wrapper clear-bottom">
-			<?php get_sidebar(); ?>
-            <main id="main" class="site-main right-column" role="main">
-                <?php if(have_posts()):
-                    while(have_posts()):the_post(); ?>
+      <?php if(have_posts()):
+	      the_post(); ?>
+			<?php get_template_part("/template-parts/site-header","about"); ?>
+		      <div class="main-sidebar wrapper clear-bottom">
+					<?php get_sidebar(); ?>
+		         <main id="main" class="site-main right-column" role="main">
+						<h1 class="title"><?php echo get_the_title();?></h1>
 						<div class="video-copy-affiliation wrapper">
 							<div class="video-copy wrapper">
 								<div class="video wrapper">
@@ -70,10 +71,9 @@ get_header(); ?>
 								</section><!--.affiliation-->
 							<?php endif; //if for have affiliations?>
 						</div><!--.video-copy-affiliation .wrapper-->
-                    <?php endwhile; //while for intializing page 
-                endif; //if for initializing page?>
-            </main><!-- #main -->
-        </div><!--.main-sidebar .wrapper-->
+		            </main><!-- #main -->
+		        </div><!--.main-sidebar .wrapper-->
+        <?php endif; //if for initializing page?>
 	</div><!-- #primary -->
 
 <?php

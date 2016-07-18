@@ -12,7 +12,7 @@
 <div id="site-header" class="clear-bottom">
 	<div class="false-logo wrapper left-column">	
 		<img src="<?php echo wp_get_attachment_url(get_field("blank_logo","option"));?>" alt="false logo" class="false logo">
-	</div><!--.false-logo-wrapper .wrapper-->
+	</div><!--.false-logo .wrapper-->
     <div class="company-info-nav wrapper right-column">
         <div class="company-info">
             <p class="info">
@@ -29,17 +29,5 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-		<h1 class="title"><?php echo get_the_title();?></h1>
-        <nav class="portfolio w-title">
-            <ul>
-                <span class="descriptor">Filter:</span>
-                <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
-                <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
-					<?php foreach($terms as $term): ?>
-					    <li><a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
-					<?php endforeach; ?>
-				<?php endif; ?>
-            </ul>
-        </nav>
     </div><!--.company-info-nav .wrapper-->
 </div><!--#site-header-->

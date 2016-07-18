@@ -1,4 +1,14 @@
 #main {
+	/*
+	 * Title at top of pages
+	 */
+	> h1.title {
+		font-size: $font__size-medium-large;
+		color: $color__das-blue;
+		text-align: left;
+		margin: 10px 0;
+		text-transform: uppercase;
+	}
 	/* --------------------------
 	 * Landing pages
 	 ----------------------------*/
@@ -172,7 +182,7 @@
 	}
 	/* ----------------------
 	 * Main Page
-	 ------------------------*/ 
+	 ------------------------*/
 	.video-copy-affiliation.wrapper{
 		.video-copy.wrapper {
 			.video.wrapper {

@@ -29,8 +29,7 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-		<h1 class="title"><?php echo get_the_title();?></h1>
-        <nav class="portfolio w-title">
+        <nav class="portfolio">
             <ul>
                 <span class="descriptor">Filter:</span>
                 <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>

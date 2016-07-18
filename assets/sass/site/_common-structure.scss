@@ -97,11 +97,21 @@ a.surrounding {
 					font-size: $font__size-medium-large;
 				}
 			}
+			h1.title {
+				text-align: right;
+				color: $color__das-blue;
+				text-transform: uppercase;
+				font-size: $font__size-medium-large;
+				margin: 20px 0 0 0;
+			}
 			nav {
 				clear:right;
 				display: block;
 				padding: 0 0 10px 0;
 				margin: 5% 0 0 0;
+				&.w-title {
+					margin: 0;
+				}
 				ul {
 					margin: 0 0 0 auto;
 					padding: 0;

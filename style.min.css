@@ -1401,7 +1401,9 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column .company-info p{margin:10px 0}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column .company-info p.info{font-size:9pt}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column .company-info p.main-line{font-size:14pt}
+#primary #site-header.clear-bottom .company-info-nav.wrapper.right-column h1.title{text-align:right;color:#005fbb;text-transform:uppercase;font-size:14pt;margin:20px 0 0 0}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column nav{clear:right;display:block;padding:0 0 10px 0;margin:5% 0 0 0}
+#primary #site-header.clear-bottom .company-info-nav.wrapper.right-column nav.w-title{margin:0}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column nav ul{margin:0 0 0 auto;padding:0;display:table}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column nav ul .descriptor{color:black}
 #primary #site-header.clear-bottom .company-info-nav.wrapper.right-column nav ul li{display:table-cell;margin:0;padding:0 5px}
@@ -1433,6 +1435,7 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #colophon .footer.wrapper.clear-bottom .company-location-sitemap-bw.wrapper .sitemap-bw-menu{margin:20px 0 0 0}
 #colophon .footer.wrapper.clear-bottom .company-location-sitemap-bw.wrapper .sitemap-bw-menu ul>li{display:inline-block}
 #colophon .background-image.wrapper{background-size:cover;background-repeat:no-repeat;background-position:left top;position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2}
+#main>h1.title{font-size:14pt;color:#005fbb;text-align:left;margin:10px 0;text-transform:uppercase}
 #main .isotope-footer-pagination.wrapper.clear-bottom{position:relative}
 #main .isotope-footer-pagination.wrapper.clear-bottom>.left-column{float:left;display:block;margin:0;width:90%}
 #main .isotope-footer-pagination.wrapper.clear-bottom .isotope-side-pagination.wrapper{position:relative}
