@@ -29,7 +29,12 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-		<h1 class="title"><?php echo get_the_title();?></h1>
+		<h1 class="title"><?php if(is_tax()):
+			$obj = get_queried_object();
+			echo $obj->name;
+		else:	
+			echo get_the_title();
+		endif;?></h1>
         <nav class="portfolio w-title">
             <ul>
                 <span class="descriptor">Filter:</span>
