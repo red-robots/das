@@ -23,8 +23,7 @@ jQuery(document).ready(function ($) {
 	*	Flexslider
 	*
 	------------------------------------*/
-	$('.js-ff-blocks').matchHeight().parents(document).find('.flexslider')//rectify heights of ff elements first before flex
-	.flexslider({
+	$('.flexslider').flexslider({
 		animation: 'slide',
 		slideshow: false,//disable rotation
 		directionNav: true,

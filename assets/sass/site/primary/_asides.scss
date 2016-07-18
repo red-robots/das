@@ -43,7 +43,7 @@
 					color: white;
 					&.current_page_item {
 						@include translateX($size__homepage-sidebar-active-bar-width);
-						a.active {
+						> a {
 							&:after {
 								content: "";
 								display: inline-block;

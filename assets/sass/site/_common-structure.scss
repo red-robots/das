@@ -53,7 +53,11 @@ a.surrounding {
 		padding: 0;
 	}
 }
-
+.site-main {
+	a:hover {
+		color: $color__das-blue;
+	}
+}
 #primary {
 	width: 100%;
 	margin: 0px auto;
@@ -135,9 +139,6 @@ a.surrounding {
 			float: right;
 			padding: 1px $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
 			min-height: 800px;
-			a:hover {
-				color: $color__das-blue;
-			}
 		}
 	}
 }

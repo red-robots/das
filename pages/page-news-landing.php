@@ -14,12 +14,12 @@ get_header(); ?>
         <div class="main-sidebar wrapper clear-bottom">
 			<?php get_sidebar(); ?>
 			<main id="main" class="site-main right-column" role="main">
-				<div class="isotope-pagination wrapper clear-bottom">
-					<div class="isotope left-column js-i-blocks">
-						<div class="is-container news wrapper">
-							<?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1,'order'=>'DESC','paged'=>get_query_var('paged')));
-							if($query->have_posts()):
-								while($query->have_posts()):$query->the_post(); ?>
+				<div class="isotope-footer-pagination wrapper clear-bottom">
+					<?php $query = new WP_Query(array('post_type'=>'post','posts_per_page'=>6,'order'=>'DESC','paged'=>get_query_var('paged')));
+					if($query->have_posts()): ?>
+						<div class="isotope-side-pagination wrapper clear-bottom">
+							<div class="is-container news left-column">
+								<?php while($query->have_posts()):$query->the_post(); ?>
 									<div class="news item">
 										<header>
 											<div class="box date"><?php echo get_the_date("n.j.Y");?></div><!--.box .date-->
@@ -36,18 +36,18 @@ get_header(); ?>
 											<a href="<?php the_permalink();?>">Continue Reading</a>
 										</div><!--.link .full-article-->
 									</div><!--.news .item-->
-								<?php endwhile; //while for all news posts; 
-							endif; //if for all news posts ?>
-						</div><!--.is-container .news .wrapper-->
+								<?php endwhile; //while for all news posts;?> 
+							</div><!--.is-container .news .left-column-->
+							<div class="right-column pagination wrapper">
+								<?php pagi_posts_arrow_nav($query);?>
+							</div><!--.pagination .right-column .wrapper-->
+						</div><!--.isotope-side-pagination .wrapper-->
 						<div class="pagination wrapper">
 							<?php pagi_posts_nav($query);?>
-						</div>
-					</div><!--.isotope .left-column-->
-					<div class="right-column pagination js-i-blocks">
-						<?php pagi_posts_arrow_nav($query);
-						wp_reset_postdata();?>
-					</div><!--.pagination .right-column-->
-				</div><!--.flexslider-pagination .wrapper-->
+						</div><!--.pagination .wrapper-->
+						<?php wp_reset_postdata();?>
+					<?php endif; //if for all news posts ?>
+				</div><!--.isotope-footer-pagination .wrapper-->
             </main><!-- #main -->
         </div><!--.main-sidebar .wrapper-->
 	</div><!-- #primary -->
