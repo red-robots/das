@@ -37,6 +37,10 @@
 			echo $obj->name;
 		else:	
 			echo get_the_title();
-		endif;?></h1>
+		endif;?></h1><i class="mobile hamburger fa fa-bars"></i>
+		<nav class="mobile">
+			<i class="mobile hamburger fa fa-bars"></i>
+			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+		</nav>
     </div><!--.company-info-nav .wrapper-->
 </div><!--#site-header-->

@@ -32,7 +32,8 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-        <nav class="portfolio">
+		<i class="mobile hamburger fa fa-bars"></i>
+        <nav class="desktop portfolio">
             <ul>
                 <span class="descriptor">Filter:</span>
                 <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
@@ -43,5 +44,18 @@
 				<?php endif; ?>
             </ul>
         </nav>
+		<nav class="mobile">
+			<i class="mobile hamburger fa fa-bars"></i>
+			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+			<ul>
+                <span class="descriptor">Filter:</span>
+                <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
+                <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
+					<?php foreach($terms as $term): ?>
+					    <li><a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
+					<?php endforeach; ?>
+				<?php endif; ?>
+            </ul>
+		</nav>
     </div><!--.company-info-nav .wrapper-->
 </div><!--#site-header-->

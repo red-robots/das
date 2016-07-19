@@ -32,5 +32,10 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
+		<i class="mobile hamburger fa fa-bars"></i>
+		<nav class="mobile">
+			<i class="mobile hamburger fa fa-bars"></i>
+			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+		</nav>
     </div><!--.company-info-nav .wrapper-->
 </div><!--#site-header-->

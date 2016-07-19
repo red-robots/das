@@ -37,8 +37,9 @@
 			echo $obj->name;
 		else:	
 			echo get_the_title();
-		endif;?></h1>
-        <nav class="portfolio w-title">
+		endif;?>
+			</h1><i class="mobile hamburger fa fa-bars"></i>
+        <nav class="desktop portfolio w-title">
             <ul>
                 <span class="descriptor">Filter:</span>
                 <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
@@ -49,5 +50,18 @@
 				<?php endif; ?>
             </ul>
         </nav>
+		<nav class="mobile">
+			<i class="mobile hamburger fa fa-bars"></i>
+			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+			<ul>
+                <span class="descriptor">Filter:</span>
+                <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
+                <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
+					<?php foreach($terms as $term): ?>
+					    <li><a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
+					<?php endforeach; ?>
+				<?php endif; ?>
+            </ul>
+		</nav>
     </div><!--.company-info-nav .wrapper-->
 </div><!--#site-header-->

@@ -93,7 +93,7 @@ a.surrounding {
 			}
 		}
 		.mobile-logo.wrapper.left-column {
-			width: $size__main-sidebar;
+			width: $size__logo-width-mobile;
 			display: none;
 			float: left;
 			padding: 10px 0 0 10px;
@@ -101,8 +101,7 @@ a.surrounding {
 				display: block;
 			}
 			#mobilelogo {
-				width: $size__logo-width;
-				min-width: $size__logo-width;
+				width: 100%;
 				margin: 0 auto;
 			}
 		}
@@ -114,6 +113,8 @@ a.surrounding {
 			padding-top: 30px;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				padding-top: 0;
+				text-align: right;
+				width: 100%-$size__logo-width-mobile;
 			}
 			.company-info {
 				padding: 1px;
@@ -138,8 +139,21 @@ a.surrounding {
 				text-transform: uppercase;
 				font-size: $font__size-medium-large;
 				margin: 20px 0 0 0;
+				@media screen and (max-width: $mobilelandscapewidth) {
+					display: inline-block;
+				}
 			}
-			nav {		
+			.mobile.hamburger {
+				color: $color__das-blue;
+				text-transform: uppercase;
+				font-size: $font__size-medium-large;
+				margin: 20px 0 0 10px;
+				display: none;
+				@media screen and (max-width: $mobilelandscapewidth) {
+					display: inline-block;
+				}
+			}
+			nav.desktop {		
 				clear:right;
 				display: block;
 				padding: 0 0 10px 0;
@@ -178,6 +192,52 @@ a.surrounding {
 							&:hover {
 								color: $color__das-blue;
 							}
+						}
+					}
+				}
+			}
+			nav.mobile {
+				display: none;
+				position: fixed;
+				right: -1*$size__mobile-sidebar;
+				top: 0;
+				width: $size__mobile-sidebar;
+				background-color: $color__das-blue;
+				z-index: 2;
+				overflow: scroll;
+				height: 100%;
+				padding: 30px 0 0 0;
+				text-align: left;
+				@media screen and (max-width: $mobilelandscapewidth) {
+					display: block;
+				}
+				@media screen and (max-width: $mobileportraitwidth) {
+					font-size: $font__size-medium-small;
+				}
+				@media screen and (max-width: $mobiletinywidth) {
+					font-size: $font__size-small;
+				}
+				.mobile.hamburger {
+					color: $color__das-white;
+					text-transform: uppercase;
+					font-size: $font__size-medium-large;
+					margin: 0 0 20px 10%;
+				}
+				ul {
+					margin: 0;
+					padding: 0;
+					.descriptor {
+						padding: 0 0 0 10%;
+					}
+					li {
+						margin: 0;
+						padding: 0 0 0 10%;
+						list-style-type: none;
+						@media screen and (max-width: $mobileportraitwidth) {
+							padding-top: 5px;
+						}
+						@media screen and (max-width: $mobiletinywidth) {
+							padding-top: 8px;
 						}
 					}
 				}

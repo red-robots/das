@@ -80,6 +80,7 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	$(function(){	
 		$("html").niceScroll();
+		$('nav.mobile').niceScroll();
 	});
 	
 	
@@ -204,12 +205,23 @@ jQuery(document).ready(function ($) {
 	});
 	
 	
-	/*
-	*
-	*	Wow Animation
-	*
-	------------------------------------*/
-	new WOW().init();
+	/*-----------------------------------
+	 * Custom mobile navigation
+	 ------------------------------------*/
+	$('#site-header .company-info-nav.wrapper.right-column > i.mobile.hamburger')
+	.on('click',function(){
+		$('#site-header .company-info-nav.wrapper.right-column > nav.mobile').animate({
+			"right": 0,
+		});
+	});
+	$('#site-header .company-info-nav.wrapper.right-column > nav.mobile > i.mobile.hamburger')
+	.on('click',function(){
+		var $nav = $('#site-header .company-info-nav.wrapper.right-column > nav.mobile');
+		$nav.animate({
+			"right": 100*(-1*$nav.width()/$(window).width())-2+"%"
+		});
+	});
+	
 	
 	/*
 	 *
@@ -220,5 +232,12 @@ jQuery(document).ready(function ($) {
 		var url = $(this).attr('data-full-url');
 		$('.gallery .featured-image img').attr('src',url);
 	});
+	
+	/*
+	*
+	*	Wow Animation
+	*
+	------------------------------------*/
+	new WOW().init();
 
 });// END #####################################    END
