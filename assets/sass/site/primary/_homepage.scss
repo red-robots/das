@@ -9,7 +9,7 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				z-index: 1;
+				z-index: 1;				
 				.logo.wrapper {
 					position: relative;
 					&:before {
@@ -33,7 +33,10 @@
 				}
 				.nav-info.wrapper {
 					padding: 70px 15% 50px 0;
-					position: relative;
+					position: relative;	
+					@media screen and (max-width: $mobilelandscapewidth) {
+						display: none;
+					}
 					&:before {
 						content: "";
 						background-color: $color__das-blue;
@@ -125,12 +128,25 @@
 		margin: 0;
 		padding: 40px;
 		width: 100%;
+		@media screen and (max-width: $mobilelandscapewidth) {
+			display: block;
+			padding: 0;
+		}
 		.process.left-column {
 			width: $size__homepage-process-width;
 			display: table-cell;
 			vertical-align: middle;
 			padding: 0 110px 0 20px;
 			@include border4;
+			@media screen and (max-width: $midwidth) {
+				width: 50%;
+				padding: 0 55px 0 20px;
+			}
+			@media screen and (max-width: $mobilelandscapewidth) {
+				width: 100%;
+				display: block;
+				padding: 20px;
+			}
 			.company-name {
 				font-size: $font__size-medium-small;
 				color: $color__das-blue;
@@ -138,25 +154,35 @@
 			}
 			.process-description p {
 				font-size: $font__size-extra-extra-large;
+				@media screen and (max-width: $mobilelandscapewidth) {
+					font-size: $font__size-medium;
+				}
 			}
 			.link.box {
 				color: $color__das-white;
 				background-color: $color__das-blue;
 				padding: 5px;
 				display: inline-block;
-				.process-link-text a {
+				a.link.full-article {
 					font-size: $font__size-medium-small;
 					color: inherit;
+					text-transform: uppercase;
 				}
 			}
-			.process-image {
-			
-			}
+			.process-image {}
 		}
 		.featured-video.right-column {
 			width: 100%-$size__homepage-process-width;
 			display: table-cell;
 			vertical-align: middle;
+			@media screen and (max-width: $midwidth) {
+				width: 50%;
+			}
+			@media screen and (max-width: $mobilelandscapewidth) {
+				width: 100%;
+				display: block;
+				padding: 20px;
+			}
 			header.box {
 				display: inline-block;
 				margin: 10px 0;
@@ -204,6 +230,10 @@
 		position: relative;
 		padding: 30px 70px;
 		background-color: $color__das-yellow;
+		@media screen and (max-width: $mobilelandscapewidth) {
+			width: 100%;
+			padding: 35px 35px;
+		}
 		.link.box {
 			position: absolute;
 			top: 0;
@@ -226,6 +256,15 @@
 				width: (100%-(2*$size__homepage-news-margin-width*$size__homepage-news-span))/$size__homepage-news-span;
 				margin: $size__homepage-news-margin-width;
 				position: relative;
+				min-width: 220px;
+				@media screen and (max-width: $tabwidth) {
+					width: (100%-(2*$size__homepage-news-margin-width*2))/2;
+					display: block;
+					min-width: 0;
+				}
+				@media screen and (max-width: $mobilelandscapewidth) {
+					width: 100%-(2*$size__homepage-news-margin-width);
+				}
 				.info.wrapper {
 					padding: 15px;
 					.date.box {

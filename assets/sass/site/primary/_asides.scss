@@ -11,6 +11,9 @@
 	height: 100%;
 	top:0;
 	left: 0;
+	@media screen and (max-width: $mobilelandscapewidth) {
+		display: none;
+	}
 	.logo.wrapper {
 		background-color: white;
 		position: relative;

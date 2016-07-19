@@ -55,6 +55,13 @@
 	-o-transform: translateX($value);
 	transform: translateX($value);
 }
+@mixin transformNone{
+	-ms-transform: none;
+	-moz-transform: none;
+	-webkit-transform: none;
+	-o-transform: none;
+	transform: none;
+}
 @mixin translateY($value){
 	-ms-transform: translateY($value);
 	-moz-transform: translateY($value);

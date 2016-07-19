@@ -39,6 +39,15 @@
 					display: block;
 					float: left;
 					position: relative;
+					@media screen and (max-width: $tabwidth) {
+						width: (100%-($size__portfolio-landing-tile-margin*2*2))/2;
+					}
+					@media screen and (max-width: $mobilelandscapewidth) {
+						width: (100%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
+					}
+					@media screen and (max-width: $mobileportraitwidth) {
+						width: (100%-($size__portfolio-landing-tile-margin*2*2))/2;
+					}
 					&:hover {
 						.title-type.wrapper {
 							display: block;
@@ -95,6 +104,15 @@
 					margin: $size__video-landing-tile-margin;
 					display: block;
 					float: left;
+					@media screen and (max-width: $tabwidth) {
+						width: (100%-($size__video-landing-tile-margin*2*2))/2;
+					}
+					@media screen and (max-width: $mobilelandscapewidth) {
+						width: (100%-($size__video-landing-tile-margin*2*$size__video-landing-tile-span))/$size__video-landing-tile-span;
+					}
+					@media screen and (max-width: $mobileportraitwidth) {
+						width: (100%-($size__video-landing-tile-margin*2*2))/2;
+					}
 					iframe {
 						
 					}
@@ -108,8 +126,16 @@
 					width: (100%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
 					margin: 0 $size__news-landing-tile-margin $size__news-landing-tile-margin*4 $size__news-landing-tile-margin;
 					@include border3;
-					min-width: 150px;
 					display: inline-block;
+					@media screen and (max-width: $tabwidth) {
+						width: (100%-($size__news-landing-tile-margin*2*2))/2;
+					}
+					@media screen and (max-width: $mobilelandscapewidth) {
+						width: (100%-($size__news-landing-tile-margin*2*$size__news-landing-tile-span))/$size__news-landing-tile-span;
+					}
+					@media screen and (max-width: $mobileportraitwidth) {
+						width: (100%-($size__news-landing-tile-margin*2*2))/2;
+					}
 					header {
 						display: block;
 						.box.date {
@@ -177,7 +203,7 @@
 			}
 		}
 		.pagination.wrapper {
-			margin: 20px 0 0 0;
+			margin: 20px 0;
 		}
 	}
 	/* ----------------------
@@ -189,6 +215,9 @@
 				width: 35%;
 				float: right;
 				margin: 0 0 10px 20px;
+				@media screen and (max-width: $mobileportraitwidth) {
+					margin: 0 0 10px 10px;
+				}
 				.video {
 					width: 100%;
 					height: auto;

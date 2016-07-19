@@ -13,7 +13,10 @@
 	<div class="false-logo wrapper left-column">	
 		<img src="<?php echo wp_get_attachment_url(get_field("blank_logo","option"));?>" alt="false logo" class="false logo">
 	</div><!--.false-logo .wrapper-->
-    <div class="company-info-nav wrapper right-column">
+	<div class="mobile-logo wrapper left-column">
+		<a href="<?php echo get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo_mobile","option"));?>" alt="logo" id="mobilelogo"></a>
+	</div><!--.mobile-logo .wrapper .left-column-->
+	<div class="company-info-nav wrapper right-column">
         <div class="company-info">
             <p class="info">
                 <span class="company-name"><?php the_field("company_name","option");?></span>
@@ -29,7 +32,7 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-		<h1 class="title"><?php if(is_category()):
+		<h1 class="title"><?php if(is_category()||is_tax()):
 			$obj = get_queried_object();
 			echo $obj->name;
 		else:	

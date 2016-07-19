@@ -42,7 +42,9 @@ a.surrounding {
 	top: 0;
 	left: 0;
 }
-
+.video {
+	min-width: 150px;
+}
 .copy {
 	> *:first-child {
 		margin-top: 0;
@@ -66,15 +68,35 @@ a.surrounding {
 		display: block;
 		position:relative;
 		min-height: $size__header-height;
+		@media screen and (max-width: $mobilelandscapewidth) {
+			min-height: 0;
+		}
 		.false-logo.wrapper.left-column {
 			width: $size__main-sidebar;
 			position: relative;
 			float: left;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				display: none;
+			}
 			.false.logo {
 				width: $size__logo-width;
 				min-width: $size__logo-width;
 				margin: 0 auto;
 				padding: 0;
+			}
+		}
+		.mobile-logo.wrapper.left-column {
+			width: $size__main-sidebar;
+			display: none;
+			float: left;
+			padding: 10px 0 0 10px;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				display: block;
+			}
+			#mobilelogo {
+				width: $size__logo-width;
+				min-width: $size__logo-width;
+				margin: 0 auto;
 			}
 		}
 		.company-info-nav.wrapper.right-column {
@@ -83,10 +105,16 @@ a.surrounding {
 			float: right;
 			padding-right: $size__page-right-margin;
 			padding-top: 30px;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				padding-top: 0;
+			}
 			.company-info {
 				padding: 1px;
 				text-align: right;
 				color: $color__das-grey;
+				@media screen and (max-width: $mobilelandscapewidth) {
+					display: none;
+				}
 				p {
 					margin: 10px 0;
 				}
@@ -104,11 +132,14 @@ a.surrounding {
 				font-size: $font__size-medium-large;
 				margin: 20px 0 0 0;
 			}
-			nav {
+			nav {		
 				clear:right;
 				display: block;
 				padding: 0 0 10px 0;
 				margin: 5% 0 0 0;
+				@media screen and (max-width: $mobilelandscapewidth) {
+					display: none;
+				}
 				&.w-title {
 					margin: 0;
 				}
@@ -149,13 +180,17 @@ a.surrounding {
 			float: right;
 			padding: 1px $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
 			min-height: 800px;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				float: none;
+				min-height: 0;
+				width: 100%;
+			}
 		}
 	}
 }
 
 #colophon {
 	width: 100%;
-	display: table;
 	position: relative;
 	min-height: 300px;
 	color: white;
@@ -187,9 +222,15 @@ a.surrounding {
 	}
 	.footer.wrapper.clear-bottom {
 		padding: 75px;
-		.company-info-footer-links.wrapper {
+		.float-left.company-info-footer-links.wrapper {
 			text-align: left;
 			width: auto;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				float:none;
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+			}
 			.company-info {
 				font-weight: 600;
 				.company-name {
@@ -209,9 +250,15 @@ a.surrounding {
 				margin: 20px 0 0 0;
 			}
 		}
-		.company-location-sitemap-bw.wrapper {
+		.float-right.company-location-sitemap-bw.wrapper {
 			text-align: right;
 			width: auto;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				float:none;
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+			}
 			.company-location {
 				.location {
 					margin-bottom: 20px;

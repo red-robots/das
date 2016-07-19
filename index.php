@@ -62,7 +62,7 @@ get_header(); ?>
 			</div><!--.process .left-column-->
 			<div class="featured-video right-column">
 				<header class="box"><?php if(get_field("featured_video_title")) echo "<h2>".get_field("featured_video_title")."</h2>";?></header>
-				<div class="video-section wrapper">
+				<div class="video-section wrapper clear-bottom">
 					<?php $portfolio_w_video = array();
 					$query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
 					if($query->have_posts()):

@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
 		var $logo_wrapper = $('#sidebar .logo.wrapper'); //get logo wrapper
 		var $site_header = $('#site-header'); // get site header
 		$(window).on('resize ready',function(){
-			if($(this).width()>500){ //if not mobile
+			if($(this).width()>600){ //if not mobile
 				$logo_wrapper.css({
 					"height":$site_header.css('height')//change css of logo wrapper to match site header
 				});
@@ -122,7 +122,7 @@ jQuery(document).ready(function ($) {
 			var footerOffsetTop = Number($footer.offset().top);
 			var windowBottom = Number($window.scrollTop())+Number($window.height());
 			var sidebarHeight = Number($sidebar.height());
-			if($(this).width()>500){ //if not mobile
+			if($(this).width()>600){ //if not mobile
 				if(windowBottom>=footerOffsetTop){
 					$sidebar.css({
 						"position": "absolute",
