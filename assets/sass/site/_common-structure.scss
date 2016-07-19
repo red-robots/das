@@ -28,11 +28,18 @@ div {
 	width: 100%;
 	margin: 0px auto;
 }
-h1 {font-size: $font__size-large;}
-h2 {font-size: $font__size-medium;}
+h1 {
+	font-size: $font__size-large;
+}
+h2 {
+	font-size: $font__size-medium;
+}
 h3 {font-size: $font__size-small;}
 
-p {font-size: $font__size-medium;margin: .5em 0;}
+p {
+	font-size: $font__size-medium;
+	margin: .5em 0;	
+}
 .copy a  {color: $color__text-main;}
 a.surrounding {
 	position: absolute;
@@ -137,6 +144,9 @@ a.surrounding {
 				display: block;
 				padding: 0 0 10px 0;
 				margin: 5% 0 0 0;
+				@media screen and (max-width: $midwidth) {
+					font-size: $font__size-small;
+				}
 				@media screen and (max-width: $mobilelandscapewidth) {
 					display: none;
 				}
@@ -153,7 +163,10 @@ a.surrounding {
 					li {
 						display: table-cell;
 						margin: 0;
-						padding: 0 5px;
+						padding: 0 5px;		
+						@media screen and (max-width: $tabwidth) {
+							padding: 2px;
+						}
 						a {	
 							color: $color__das-grey;
 							padding: 5px 0;
@@ -178,7 +191,7 @@ a.surrounding {
 		#main.right-column {
 			width: 100%-$size__main-sidebar;
 			float: right;
-			padding: 1px $size__page-right-margin 3/10*$size__page-right-margin 3/5*$size__page-right-margin;
+			padding: 1px $size__page-right-margin $size__page-right-margin 3/5*$size__page-right-margin;
 			min-height: 800px;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				float: none;
@@ -222,6 +235,9 @@ a.surrounding {
 	}
 	.footer.wrapper.clear-bottom {
 		padding: 75px;
+		@media screen and (max-width: $mobilelandscapewidth) {
+			padding: 15px;
+		}
 		.float-left.company-info-footer-links.wrapper {
 			text-align: left;
 			width: auto;
@@ -260,6 +276,9 @@ a.surrounding {
 				margin: 0 auto;
 			}
 			.company-location {
+				@media screen and (max-width: $mobilelandscapewidth) {
+					margin: 20px 0 0 0;
+				}
 				.location {
 					margin-bottom: 20px;
 					p {
@@ -281,6 +300,7 @@ a.surrounding {
 				ul {
 					> li {
 						display: inline-block;
+						margin: 0 0 0 5px;
 					}
 				}
 			}

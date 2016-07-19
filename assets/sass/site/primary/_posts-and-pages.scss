@@ -246,19 +246,27 @@
 				width: auto;
 				display: table;
 				margin: 0 auto;
+				text-align: center;
 				.affiliation {
 					display: inline-block;
 					width: 300px;
 					height: 130px;
 					margin-bottom: 20px;
-					@include border2;
+					@include border2;				
+					@media screen and (max-width: $mobilelandscapewidth) {
+						width: 180px;
+						height: auto;
+					}
 					img {
 						max-width: 250px;
 						max-height: 70px;
 						width: auto;
 						margin: 0 auto;
 						height: auto;
-						display: block;
+						display: block;					
+						@media screen and (max-width: $mobilelandscapewidth) {
+							max-width: 150px;
+						}
 					}
 					header {
 						width: 100%;
@@ -331,6 +339,11 @@
 			.featured-image.left-column.js-blocks {
 				float: left;
 				width: $size__portfolio-single-featured-image-width;
+				@media screen and (max-width: $tabwidth) {
+					float:none;
+					width: 100% !important;
+					height: auto !important;
+				}
 				img {
 					width: 100%;
 					display: block;
@@ -339,11 +352,20 @@
 			.thumbnail.wrapper.right-column.js-blocks {
 				float: right;
 				width: 100%-$size__portfolio-single-featured-image-width;
+				@media screen and (max-width: $tabwidth) {
+					float:none;
+					width: 100% !important;
+					height: auto !important;
+				}
 				.thumbnail {
-					width: (98%-($size__portfolio-single-thumbnail-tile-margin*$size__portfolio-single-thumbnail-tile-span))/$size__portfolio-single-thumbnail-tile-span;
+					width: (100%-($size__portfolio-single-thumbnail-tile-margin*$size__portfolio-single-thumbnail-tile-span))/$size__portfolio-single-thumbnail-tile-span;
 					margin: 0 0 $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin;
 					display: block;
-					float: left;
+					float: left;	
+					@media screen and (max-width: $tabwidth) {
+						width: (100%-($size__portfolio-single-thumbnail-tile-margin*7))/7 !important;
+						margin: $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin 0;
+					}
 					.thumbnail-img{
 						width: 100%;
 						display: block;
