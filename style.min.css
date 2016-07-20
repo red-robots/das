@@ -1587,11 +1587,18 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #home-primary #main section.slider #homepage-sidebar .nav-info.wrapper .company-info .electronic-info .company-name{margin:15px 0}
 #home-primary #main section.slider #homepage-sidebar .nav-info.wrapper .company-info .electronic-info .contact-email span{border-bottom:2px solid white;display:inline-block;padding:0 0 0 5px}
 #home-primary #main section.slider #homepage-sidebar .nav-info.wrapper .company-info .address{margin:15px 0 0 0}
-#home-primary #main section.slider .flexslider{width:100%;margin:0 !important}
-#home-primary #main section.slider .flexslider .slides .slide{position:relative;background-position:center;background-size:cover;height:100%}
-#home-primary #main section.slider .flexslider .slides .slide .info{position:absolute;bottom:10%;right:10%}
-#home-primary #main section.slider .flexslider .slides .slide .info .type.box{background-color:lightgrey;padding:5px 15px;font-size:9pt;display:inline-block;color:black;margin:10px 0}
-#home-primary #main section.slider .flexslider .slides .slide .info .title{color:white;font-size:12pt}
+#home-primary #main section.slider .das-slider{width:100%;margin:0 !important;min-height:300px}
+#home-primary #main section.slider .das-slider .slides .slide{background-position:center;background-size:cover}
+#home-primary #main section.slider .das-slider .slides .slide .info{position:absolute;bottom:10%;right:10%;width:30%;z-index:2}
+@media screen and (max-width:600px){#home-primary #main section.slider .das-slider .slides .slide .info{width:50%}
+}@media screen and (max-width:350px){#home-primary #main section.slider .das-slider .slides .slide .info{width:100%;right:0;text-align:center}
+}#home-primary #main section.slider .das-slider .slides .slide .info .type.box{background-color:lightgrey;padding:5px 10px;font-size:8pt;display:inline-block;color:black;margin:5px 0}
+#home-primary #main section.slider .das-slider .slides .slide .info .title{color:white;font-size:14pt;font-weight:normal;margin:5px 0}
+#home-primary #main section.slider .slider-nav{position:absolute;right:0;bottom:0;color:lightgrey;text-align:right;padding:0 10% 2% 0;font-size:40pt;width:100%}
+@media screen and (max-width:600px){#home-primary #main section.slider .slider-nav{font-size:25pt;padding-bottom:0}
+}#home-primary #main section.slider .slider-nav ul{margin:0;padding:0}
+#home-primary #main section.slider .slider-nav ul li{margin:0 0 0 10px;padding:0;display:inline-block}
+#home-primary #main section.slider .slider-nav ul li:hover,#home-primary #main section.slider .slider-nav ul li.active{color:#005fbb}
 #home-primary section.featured-project.clear-bottom{display:table;margin:0;padding:40px;width:100%}
 @media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom{display:block;padding:0}
 }#home-primary section.featured-project.clear-bottom .process.left-column{width:43%;display:table-cell;vertical-align:middle;padding:0 110px 0 20px;border-left:3px solid #005fbb}

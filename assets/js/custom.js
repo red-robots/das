@@ -90,7 +90,14 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$('.js-blocks').matchHeight();
-	
+
+	/*
+	*
+	*	Wow Animation
+	*
+	------------------------------------*/
+	new WOW().init();
+
 	/*----------------------------------
 	 * Adjustments for header, logo, and fixed sidebar
 	 -----------------------------------*/
@@ -233,11 +240,90 @@ jQuery(document).ready(function ($) {
 		$('.gallery .featured-image img').attr('src',url);
 	});
 	
-	/*
-	*
-	*	Wow Animation
-	*
-	------------------------------------*/
-	new WOW().init();
-
+	/*--------------------------------------------
+	 * Custom slider for homepage
+	 ------------------------------------------*/
+	function init_slider(){
+		var $container = $('#home-primary .slider .das-slider');
+		var $slides = $container.css({
+			"position":"relative",
+			"overflow":"hidden"
+		}).find(".slides .slide");
+		if($slides.length<1){
+			return;
+		}else if($slides.length===1){
+			$slides.eq(0).clone.addClass("clone").appendTo($container);
+			$slides = $container.find(".slides .slide");
+		}
+		$slides.eq(0).css({
+			"position":"absolute",
+			"width":"100%",
+			"height":"100%",
+			"top": 0,
+			"left": 0,
+		}).addClass("active");
+		var $li = $('<li><i class="fa fa-minus"></i></li>');
+		var $ul = $('<ul></ul>').append($li.clone());
+		for(var i=1;i<$slides.length;i++){
+			var $this = $slides.eq(i);
+			$this.css({
+				"position":"absolute",
+				"width":"100%",
+				"height":"100%",
+				"top":0,
+				"left": "100%",
+			});
+			$ul.append($li.clone());
+		}
+		$('#home-primary .slider').append($('<div class="slider-nav"></div>').append($ul));
+		$custom_navigation = $('#home-primary .slider .slider-nav ul li');
+		$custom_navigation.eq(0).addClass("active");
+		var timeout;
+		function slide(){
+			timeout = setTimeout(function(){
+				var $active_slide = $slides.filter(".active").animate({
+					"left":"-100%"
+				},1000,function(){
+					$(this).css({
+						"left":"100%"
+					}).removeClass("active");
+					$custom_navigation.filter(".active").removeClass("active");
+				});
+				var $next_slide = $active_slide.index() !== $slides.length-1 ? $active_slide.next() : $slides.eq(0);
+				$next_slide.animate({
+					"left":"0"
+				},1000,function(){
+					$(this).addClass("active");
+					$custom_navigation.eq($(this).index()).addClass("active");
+				});
+				slide();
+			},6000);
+		}
+		slide();
+		$custom_navigation.on('click',function(){
+			var index = $(this).index();
+			console.log($slides.index($slides.filter('.active'))+":"+index);
+			clearTimeout(timeout);
+			timeout = setTimeout(function(){
+				if($slides.index($slides.filter('.active'))!==index) {
+					$slides.filter(".active").removeClass("active").animate({
+						"left":"-100%"
+					},1000,function(){
+						$(this).css({
+							"left":"100%"
+						});
+						$custom_navigation.filter(".active").removeClass("active");
+					});
+					$slides.eq(index).addClass("active").animate({
+						"left":"0"
+					},1000, function(){
+						$custom_navigation.eq($(this).index()).addClass("active");
+					});
+				}
+			},100);
+		});
+	}
+	init_slider();
+	
+	
 });// END #####################################    END

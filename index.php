@@ -19,7 +19,7 @@ get_header(); ?>
 		setup_postdata($post); ?>
 		<section class="slider">
 			<?php get_sidebar("home"); ?>
-			<div class="flexslider js-blocks">
+			<div class="das-slider js-blocks">
 				<?php if(have_rows("project_slider")): ?>
 					<ul class="slides">
 					<?php while(have_rows("project_slider")): the_row();
@@ -43,7 +43,7 @@ get_header(); ?>
 					<?php endwhile; // while for slides as a whole ?>
 					</ul><!--.slides-->
 				<?php endif; //if for if have slides ?>
-			</div><!--.flexslider-->
+			</div><!--.das-slider .js-blocks-->
 		</section><!--.homepage-slider-->
 		<section class="featured-project clear-bottom">
 			<div class="process left-column">

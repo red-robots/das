@@ -11,10 +11,10 @@
 
 <div id="site-header" class="clear-bottom">
 	<div class="false-logo wrapper left-column">	
-		<img src="<?php echo wp_get_attachment_url(get_field("blank_logo","option"));?>" alt="false logo" class="false logo">
-	</div><!--.false-logo-wrapper .wrapper-->
+		<img src="<?php echo wp_get_attachment_image_src(get_field("blank_logo","option"),"full")[0];?>" alt="false logo" class="false logo">
+	</div><!--.false-logo .wrapper-->
 	<div class="mobile-logo wrapper left-column">
-		<a href="<?php echo get_site_url();?>"><img src="<?php echo wp_get_attachment_url(get_field("logo_mobile","option"));?>" alt="logo" id="mobilelogo"></a>
+		<a href="<?php echo get_site_url();?>"><img src="<?php echo wp_get_attachment_image_src(get_field("logo_mobile","option"),"full")[0];?>" alt="logo" id="mobilelogo"></a>
 	</div><!--.mobile-logo .wrapper .left-column-->
 	<div class="company-info-nav wrapper right-column">
         <div class="company-info">
