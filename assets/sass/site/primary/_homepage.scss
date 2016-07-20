@@ -104,10 +104,13 @@
 							position: absolute;
 							bottom: 10%;
 							right: 10%;
-							width: 30%;
+							width: 20%;
 							z-index: 2;
+							@media screen and (max-width: $midwidth) {
+								width: 30%;
+							}
 							@media screen and (max-width: $mobilelandscapewidth) {
-								width: 50%;
+								width: 43%;
 							}
 							@media screen and (max-width: $mobiletinywidth) {
 								width: 100%;

@@ -1589,8 +1589,9 @@ a.surrounding{position:absolute;width:100%;height:100%;z-index:2;top:0;left:0}
 #home-primary #main section.slider #homepage-sidebar .nav-info.wrapper .company-info .address{margin:15px 0 0 0}
 #home-primary #main section.slider .das-slider{width:100%;margin:0 !important;min-height:300px}
 #home-primary #main section.slider .das-slider .slides .slide{background-position:center;background-size:cover}
-#home-primary #main section.slider .das-slider .slides .slide .info{position:absolute;bottom:10%;right:10%;width:30%;z-index:2}
-@media screen and (max-width:600px){#home-primary #main section.slider .das-slider .slides .slide .info{width:50%}
+#home-primary #main section.slider .das-slider .slides .slide .info{position:absolute;bottom:10%;right:10%;width:20%;z-index:2}
+@media screen and (max-width:900px){#home-primary #main section.slider .das-slider .slides .slide .info{width:30%}
+}@media screen and (max-width:600px){#home-primary #main section.slider .das-slider .slides .slide .info{width:43%}
 }@media screen and (max-width:350px){#home-primary #main section.slider .das-slider .slides .slide .info{width:100%;right:0;text-align:center}
 }#home-primary #main section.slider .das-slider .slides .slide .info .type.box{background-color:lightgrey;padding:5px 10px;font-size:8pt;display:inline-block;color:black;margin:5px 0}
 #home-primary #main section.slider .das-slider .slides .slide .info .title{color:white;font-size:14pt;font-weight:normal;margin:5px 0}

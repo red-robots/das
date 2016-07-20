@@ -251,9 +251,6 @@ jQuery(document).ready(function ($) {
 		}).find(".slides .slide");
 		if($slides.length<1){
 			return;
-		}else if($slides.length===1){
-			$slides.eq(0).clone.addClass("clone").appendTo($container);
-			$slides = $container.find(".slides .slide");
 		}
 		$slides.eq(0).css({
 			"position":"absolute",
@@ -262,6 +259,9 @@ jQuery(document).ready(function ($) {
 			"top": 0,
 			"left": 0,
 		}).addClass("active");
+		if($slides.length<2){
+			return;
+		}
 		var $li = $('<li><i class="fa fa-minus"></i></li>');
 		var $ul = $('<ul></ul>').append($li.clone());
 		for(var i=1;i<$slides.length;i++){
