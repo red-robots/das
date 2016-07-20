@@ -132,7 +132,7 @@ jQuery(document).ready(function ($) {
 			var sidebarHeight = Number($sidebar.height());
 			if($(this).width()>600){ //if not mobile
 				if(windowBottom>=footerOffsetTop){
-					$sidebar.css({
+					$sidebar.css({ //fix sidebar to footer
 						"position": "absolute",
 						"bottom": 0,
 						"left": 0,
@@ -141,7 +141,7 @@ jQuery(document).ready(function ($) {
 					});
 				}
 				if(windowBottom<footerOffsetTop){
-					$sidebar.css({
+					$sidebar.css({ //cancel out previous work
 						"position": "",
 						"bottom": "",
 						"left": "",
@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
 					});
 				}
 			}
-			else { //if mobile
+			else { //if mobile cancel out previous work
 				$sidebar.css({
 					"position": "",
 					"bottom": "",
@@ -215,12 +215,14 @@ jQuery(document).ready(function ($) {
 	/*-----------------------------------
 	 * Custom mobile navigation
 	 ------------------------------------*/
+	//if hamburger clicked move menu into view
 	$('#site-header .company-info-nav.wrapper.right-column > i.mobile.hamburger')
 	.on('click',function(){
 		$('#site-header .company-info-nav.wrapper.right-column > nav.mobile').animate({
 			"right": 0,
 		});
 	});
+	//if hamburger clicked on menu move back out of view
 	$('#site-header .company-info-nav.wrapper.right-column > nav.mobile > i.mobile.hamburger')
 	.on('click',function(){
 		var $nav = $('#site-header .company-info-nav.wrapper.right-column > nav.mobile');
@@ -235,95 +237,93 @@ jQuery(document).ready(function ($) {
 	 * Custom gallery thumbnail switcher
 	 *
 	 */	
-	$('.gallery .thumbnail img.thumbnail-img').on('click',function(){
-		var url = $(this).attr('data-full-url');
-		$('.gallery .featured-image img').attr('src',url);
+	$('.gallery .thumbnail img.thumbnail-img').on('click',function(){ //on thumbnail click
+		var url = $(this).attr('data-full-url'); //get url from data attribute
+		$('.gallery .featured-image img').attr('src',url); //send url to featured image
 	});
 	
 	/*--------------------------------------------
 	 * Custom slider for homepage
 	 ------------------------------------------*/
 	function init_slider(){
-		var $container = $('#home-primary .slider .das-slider');
-		var $slides = $container.css({
+		var $container = $('#home-primary .slider .das-slider');//get container for slides
+		var $slides = $container.css({	//set container properties and get slides
 			"position":"relative",
 			"overflow":"hidden"
 		}).find(".slides .slide");
-		if($slides.length<1){
+		if($slides.length<1){ //if no slides don't don anything else
 			return;
 		}
-		$slides.eq(0).css({
+		$slides.eq(0).css({ //set first slide to active and in view
 			"position":"absolute",
 			"width":"100%",
 			"height":"100%",
 			"top": 0,
 			"left": 0,
 		}).addClass("active");
-		if($slides.length<2){
+		if($slides.length<2){ //if no more slides do nothing else, just show first slide
 			return;
 		}
-		var $li = $('<li><i class="fa fa-minus"></i></li>');
-		var $ul = $('<ul></ul>').append($li.clone());
-		for(var i=1;i<$slides.length;i++){
-			var $this = $slides.eq(i);
-			$this.css({
+		var $li = $('<li><i class="fa fa-minus"></i></li>'); //create a li element for the custom navigation
+		var $ul = $('<ul></ul>').append($li.clone()); //append one li to an ul node to hold it
+		for(var i=1;i<$slides.length;i++){//for each slide after the first
+			var $this = $slides.eq(i); //get slide as $this
+			$this.css({					//set css properties for slide
 				"position":"absolute",
 				"width":"100%",
 				"height":"100%",
 				"top":0,
 				"left": "100%",
 			});
-			$ul.append($li.clone());
+			$ul.append($li.clone());//add a button for it in the custom navigation
 		}
-		$('#home-primary .slider').append($('<div class="slider-nav"></div>').append($ul));
-		$custom_navigation = $('#home-primary .slider .slider-nav ul li');
-		$custom_navigation.eq(0).addClass("active");
-		var timeout;
-		function slide(){
-			timeout = setTimeout(function(){
-				var $active_slide = $slides.filter(".active").animate({
+		$('#home-primary .slider').append($('<div class="slider-nav"></div>').append($ul));//append the custom navigation to the slider
+		$custom_navigation = $('#home-primary .slider .slider-nav ul li');//get the elements in the custom navigation
+		$custom_navigation.eq(0).addClass("active");//change the first one to active to start
+		var timeout;//timeout with outer scope for when slides need to stop moving with clear timeout
+		function slide(){//recursive function to move slides
+			timeout = setTimeout(function(){ //set timeout
+				$custom_navigation.filter(".active").removeClass("active");//remove active from cooresponding custom nav icon
+				var $active_slide = $slides.filter(".active").removeClass("active").animate({//animate the active slide out of view and remove class active
 					"left":"-100%"
 				},1000,function(){
-					$(this).css({
+					$(this).css({//move back to the right with all the other slides off screen
 						"left":"100%"
-					}).removeClass("active");
-					$custom_navigation.filter(".active").removeClass("active");
+					});//remove the active declaration
 				});
+				//if last slide move to the first, otherwise get sibling slide
 				var $next_slide = $active_slide.index() !== $slides.length-1 ? $active_slide.next() : $slides.eq(0);
-				$next_slide.animate({
+				$custom_navigation.eq($next_slide.index()).addClass("active"); //add active declaration to cooresponding custom nav icon
+				$next_slide.addClass("active").animate({ //animate slide into view and add class active
 					"left":"0"
-				},1000,function(){
-					$(this).addClass("active");
-					$custom_navigation.eq($(this).index()).addClass("active");
-				});
-				slide();
+				},1000);
+				slide();//call self recursively
 			},6000);
 		}
 		slide();
 		$custom_navigation.on('click',function(){
-			var index = $(this).index();
-			console.log($slides.index($slides.filter('.active'))+":"+index);
-			clearTimeout(timeout);
-			timeout = setTimeout(function(){
-				if($slides.index($slides.filter('.active'))!==index) {
+			var index = $(this).index(); //get index of item clicked on
+			clearTimeout(timeout); //clear any existing timeouts
+			timeout = setTimeout(function(){ //set timeout so that the action can be cancled if repeat clicked
+				if($slides.index($slides.filter('.active'))!==index) {//if not clicked on the active slide
+					//this is the move guts from above
+					$custom_navigation.filter(".active").removeClass("active");
 					$slides.filter(".active").removeClass("active").animate({
 						"left":"-100%"
 					},1000,function(){
 						$(this).css({
 							"left":"100%"
 						});
-						$custom_navigation.filter(".active").removeClass("active");
 					});
+					$custom_navigation.eq(index).addClass("active");
 					$slides.eq(index).addClass("active").animate({
 						"left":"0"
-					},1000, function(){
-						$custom_navigation.eq($(this).index()).addClass("active");
-					});
+					},1000);
 				}
-			},100);
+			},1);//move immediately
 		});
 	}
-	init_slider();
+	init_slider();//call function to init slider
 	
 	
 });// END #####################################    END
