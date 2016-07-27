@@ -34,19 +34,19 @@
 			.project.is-container.left-column {
 				.project.item {
 					height: auto;
-					width: (100%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
-					margin: $size__portfolio-landing-tile-margin;
+					width: (100%-($size__portfolio-landing-tile-margin*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
+					margin: 0 $size__portfolio-landing-tile-margin $size__portfolio-landing-tile-margin 0;
 					display: block;
 					float: left;
 					position: relative;
 					@media screen and (max-width: $tabwidth) {
-						width: (100%-($size__portfolio-landing-tile-margin*2*2))/2;
+						width: (100%-($size__portfolio-landing-tile-margin*2))/2;
 					}
 					@media screen and (max-width: $mobilelandscapewidth) {
-						width: (100%-($size__portfolio-landing-tile-margin*2*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
+						width: (100%-($size__portfolio-landing-tile-margin*$size__portfolio-landing-tile-span))/$size__portfolio-landing-tile-span;
 					}
 					@media screen and (max-width: $mobileportraitwidth) {
-						width: (100%-($size__portfolio-landing-tile-margin*2*2))/2;
+						width: (100%-($size__portfolio-landing-tile-margin*2))/2;
 					}
 					&:hover {
 						.title-type.wrapper {
@@ -100,18 +100,18 @@
 			.video.is-container.left-column {
 				.video.item {
 					height: auto;
-					width: (100%-($size__video-landing-tile-margin*2*$size__video-landing-tile-span))/$size__video-landing-tile-span;
-					margin: $size__video-landing-tile-margin;
+					width: (100%-($size__video-landing-tile-margin*$size__video-landing-tile-span))/$size__video-landing-tile-span;
+					margin: 0 $size__video-landing-tile-margin $size__video-landing-tile-margin 0;
 					display: block;
 					float: left;
 					@media screen and (max-width: $tabwidth) {
-						width: (100%-($size__video-landing-tile-margin*2*2))/2;
+						width: (100%-($size__video-landing-tile-margin*2))/2;
 					}
 					@media screen and (max-width: $mobilelandscapewidth) {
-						width: (100%-($size__video-landing-tile-margin*2*$size__video-landing-tile-span))/$size__video-landing-tile-span;
+						width: (100%-($size__video-landing-tile-margin*$size__video-landing-tile-span))/$size__video-landing-tile-span;
 					}
 					@media screen and (max-width: $mobileportraitwidth) {
-						width: (100%-($size__video-landing-tile-margin*2*2))/2;
+						width: (100%-($size__video-landing-tile-margin*2))/2;
 					}
 					iframe {
 						
@@ -190,7 +190,7 @@
 					position: relative;
 					top: 50%;
 					text-align: center;
-					font-size: 40pt;
+					font-size: 100px;
 					color: $color__das-grey;
 					@include translateY(-50%);
 					a {
@@ -202,8 +202,8 @@
 				}
 			}
 		}
-		.pagination.wrapper {
-			margin: 20px 0;
+		> .pagination.wrapper {
+			margin: 0;
 		}
 	}
 	/* ----------------------

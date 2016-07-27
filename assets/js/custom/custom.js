@@ -264,7 +264,7 @@ jQuery(document).ready(function ($) {
 		if($slides.length<2){ //if no more slides do nothing else, just show first slide
 			return;
 		}
-		var $li = $('<li><i class="fa fa-minus"></i></li>'); //create a li element for the custom navigation
+		var $li = $('<li><div class="rectangle"></div></li>'); //create a li element for the custom navigation
 		var $ul = $('<ul></ul>').append($li.clone()); //append one li to an ul node to hold it
 		for(var i=1;i<$slides.length;i++){//for each slide after the first
 			var $this = $slides.eq(i); //get slide as $this
@@ -324,6 +324,21 @@ jQuery(document).ready(function ($) {
 		});
 	}
 	init_slider();//call function to init slider
+	
+	/*-------------------------------------------
+	 * Keep videos same porportion
+	 --------------------------------------------*/
+	$(window).on('ready resize', function(){
+		$('.video').each(function(){
+			var $this = $(this);
+			var height = Number($this.width())*2.7/4+"px";
+			$this.css({
+				"height": height,
+			}).find('iframe').css({
+				"height": height,
+			});
+		});
+	});
 	
 	
 });// END #####################################    END

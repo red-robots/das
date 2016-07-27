@@ -1,20 +1,7 @@
-
-div {
-	/* These are technically the same, but use both */
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
-	/* Instead use this non-standard one: */
-	word-break: break-word;
-
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
+body {
+	font-family: 'Quattrocento Sans', sans-serif;
+	word-break: keep-all;
+	@include hyphens(none);
 }
 .clear {clear: both;}
 .clear-bottom:after {
@@ -62,11 +49,6 @@ a.surrounding {
 		padding: 0;
 	}
 }
-.site-main {
-	a:hover {
-		color: $color__das-blue;
-	}
-}
 #primary {
 	width: 100%;
 	margin: 0px auto;
@@ -109,8 +91,7 @@ a.surrounding {
 			width: 100%-$size__main-sidebar;
 			margin: 0;
 			float: right;
-			padding-right: $size__page-right-margin;
-			padding-top: 30px;
+			padding: 30px $size__page-right-margin 0 20px;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				padding-top: 0;
 				text-align: right;
@@ -156,7 +137,7 @@ a.surrounding {
 			nav.desktop {		
 				clear:right;
 				display: block;
-				padding: 0 0 10px 0;
+				padding: 0 -1*(100%-$size__page-right-margin)/(100%)*1/4*$size__page-right-margin + (100%-$size__page-right-margin)/(100%-3/4*$size__page-right-margin)*$size__portfolio-news-video-landing-pagination-column-width + (100%-$size__page-right-margin)/((100%-3/4*$size__page-right-margin)/(100%)*(100%-$size__portfolio-news-video-landing-pagination-column-width))*$size__video-landing-tile-margin 20px 0;
 				margin: 5% 0 0 0;
 				@media screen and (max-width: $midwidth) {
 					font-size: $font__size-small;
@@ -177,7 +158,9 @@ a.surrounding {
 					li {
 						display: table-cell;
 						margin: 0;
-						padding: 0 5px;		
+						padding: 0 0 0 5px;
+						text-transform: uppercase;
+						font-size: $font__size-medium-small;
 						@media screen and (max-width: $tabwidth) {
 							padding: 2px;
 						}
@@ -210,6 +193,8 @@ a.surrounding {
 				text-align: left;
 				@media screen and (max-width: $mobilelandscapewidth) {
 					display: block;
+					width: $size__mobile-sidebar+10%;
+					right: (-1*$size__mobile-sidebar)-10%;
 				}
 				@media screen and (max-width: $mobileportraitwidth) {
 					font-size: $font__size-medium-small;
@@ -233,6 +218,7 @@ a.surrounding {
 						margin: 0;
 						padding: 0 0 0 10%;
 						list-style-type: none;
+						text-transform: uppercase;
 						@media screen and (max-width: $mobileportraitwidth) {
 							padding-top: 5px;
 						}
@@ -251,7 +237,7 @@ a.surrounding {
 		#main.right-column {
 			width: 100%-$size__main-sidebar;
 			float: right;
-			padding: 1px $size__page-right-margin $size__page-right-margin 3/5*$size__page-right-margin;
+			padding: 1px $size__page-right-margin*3/4 $size__page-right-margin 20px;
 			min-height: 800px;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				float: none;

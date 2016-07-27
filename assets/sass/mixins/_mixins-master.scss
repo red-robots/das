@@ -33,7 +33,7 @@
 	border-bottom: 1px dotted $color__das-grey;
 }
 @mixin border4 {
-	border-left: 3px solid $color__das-blue;
+	border-left: 8px solid $color__das-blue;
 }
 @mixin border5 {
 	border-bottom: 2px solid $color__das-white;
@@ -75,4 +75,10 @@
 	-webkit-transform: translate($xvalue,$yvalue);
 	-o-transform: translate($xvalue,$yvalue);
 	transform: translate($xvalue,$yvalue);
+}
+@mixin hypens($value){
+	-ms-hyphens: $value;
+	-moz-hypens: $value;
+	-webkit-hypens: $value;
+	hyphens: $value;
 }

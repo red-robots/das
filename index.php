@@ -57,7 +57,7 @@ get_header(); ?>
 					<div class="link box"><a href="<?php the_permalink(38); ?>" class="link full-article"><?php echo get_field("process_link_text");?></a></div><!--.link.box-->
 				<?php endif; ?>
 				<?php if(get_field("process_graphic")): ?>
-					<img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic" class="process-image">
+					<a href="<?php the_permalink(38); ?>" class="link full-article"><img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic" class="process-image"></a>
 				<?php endif; ?>
 			</div><!--.process .left-column-->
 			<div class="featured-video right-column">
