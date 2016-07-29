@@ -91,7 +91,7 @@ a.surrounding {
 			width: 100%-$size__main-sidebar;
 			margin: 0;
 			float: right;
-			padding: 30px $size__page-right-margin 0 20px;
+			padding: 30px $size__page-right-margin 0 2%;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				padding-top: 0;
 				text-align: right;
@@ -119,6 +119,7 @@ a.surrounding {
 				color: $color__das-blue;
 				text-transform: uppercase;
 				font-size: $font__size-medium-large;
+				padding: 0;
 				margin: 20px 0 0 0;
 				@media screen and (max-width: $mobilelandscapewidth) {
 					display: inline-block;
@@ -134,10 +135,13 @@ a.surrounding {
 					display: inline-block;
 				}
 			}
+			nav.desktop.portfolio, h1.title.portfolio {
+				padding-right: ((100%-3/4*$size__page-right-margin+-$size__page-left-margin+-1*(100%-3/4*$size__page-right-margin+-2%)/100%*($size__portfolio-news-video-landing-pagination-column-width))/100%*$size__portfolio-landing-tile-margin+(100%-3/4*$size__page-right-margin+-$size__page-left-margin)/100%*($size__portfolio-news-video-landing-pagination-column-width)-(1/4)*$size__page-right-margin)/(100%-$size__page-right-margin+-$size__page-left-margin)*100%;
+			}
 			nav.desktop {		
 				clear:right;
 				display: block;
-				padding: 0 -1*(100%-$size__page-right-margin)/(100%)*1/4*$size__page-right-margin + (100%-$size__page-right-margin)/(100%-3/4*$size__page-right-margin)*$size__portfolio-news-video-landing-pagination-column-width + (100%-$size__page-right-margin)/((100%-3/4*$size__page-right-margin)/(100%)*(100%-$size__portfolio-news-video-landing-pagination-column-width))*$size__video-landing-tile-margin 20px 0;
+				padding: 0 0 30px 0;
 				margin: 5% 0 0 0;
 				@media screen and (max-width: $midwidth) {
 					font-size: $font__size-small;
@@ -152,21 +156,35 @@ a.surrounding {
 					margin: 0 0 0 auto;
 					padding: 0;
 					display: table;
+					text-align: center;
 					.descriptor {
 						color: $color__text-main;
+						text-transform: uppercase;
+						font-size: $font__size-medium-small;
+						font-weight: 700;
 					}
 					li {
-						display: table-cell;
+						display: inline-block;
 						margin: 0;
-						padding: 0 0 0 5px;
+						padding: 0 0 10px 0 ;
 						text-transform: uppercase;
 						font-size: $font__size-medium-small;
 						@media screen and (max-width: $tabwidth) {
 							padding: 2px;
 						}
+						&:before {
+							content: "|";
+							padding: 0 7px;
+						}
+						&:nth-child(2) {
+							padding-left: 7px;
+							&:before {
+								display: none;
+							}
+						}
 						a {	
 							color: $color__das-grey;
-							padding: 5px 0;
+							padding: 0 0 5px 0;
 							&.active {
 								color: $color__text-dark;
 								font-weight: 700;
@@ -213,6 +231,8 @@ a.surrounding {
 					padding: 0;
 					.descriptor {
 						padding: 0 0 0 10%;
+						text-transform: uppercase;
+						font-weight: 700;
 					}
 					li {
 						margin: 0;
@@ -237,7 +257,7 @@ a.surrounding {
 		#main.right-column {
 			width: 100%-$size__main-sidebar;
 			float: right;
-			padding: 1px $size__page-right-margin*3/4 $size__page-right-margin 20px;
+			padding: 1px $size__page-right-margin*3/4 $size__page-right-margin*1.7 $size__page-left-margin;
 			min-height: 800px;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				float: none;

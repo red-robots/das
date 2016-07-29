@@ -20,11 +20,11 @@ get_header(); ?>
 						<?php if(get_field("gallery")): 
 							$images = get_field("gallery");
 							if($images!=null && count($images)>0): ?>
-								<div class="gallery wrapper clear-bottom">
-									<div class="featured-image left-column js-blocks">
+								<div class="gallery wrapper">
+									<div class="featured-image left-column">
 										<img src="<?php echo $images[0][url];?>" alt="<?php echo $images[0]['title'];?>">
 									</div><!--.featured-image-->
-									<div class="thumbnail wrapper right-column js-blocks">
+									<div class="thumbnail wrapper right-column">
 										<?php for($i=0;$i<14&&$i<count($images);$i++):?>
 											<div class="thumbnail"><img src="<?php echo $images[$i]['sizes']['thumbnail'];?>" data-full-url="<?php echo $images[$i]['url'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img"></div><!--.thumbnail-->
 										<?php endfor;?>

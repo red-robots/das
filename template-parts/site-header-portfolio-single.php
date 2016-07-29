@@ -33,13 +33,18 @@
             </p>
         </div><!--.company-info-->
 		<i class="mobile hamburger fa fa-bars"></i>
-        <nav class="desktop portfolio">
+        <nav class="desktop">
             <ul>
                 <span class="descriptor">Filter:</span>
-                <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
+                <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'title'));?>
                 <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
 					<?php foreach($terms as $term): ?>
-					    <li><a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
+					    <li><a class="<?php
+							foreach(get_the_terms($post->ID,"project_type") as $this_post_term):
+								if(strcmp($this_post_term->slug,$term->slug)===0)
+									echo "active";
+							endforeach;
+						?>" href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
 					<?php endforeach; ?>
 				<?php endif; ?>
             </ul>
@@ -49,10 +54,15 @@
 			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
 			<ul>
                 <span class="descriptor">Filter:</span>
-                <?php $terms = get_terms(array('taxonomy'=>'project_type'));?>
+                <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'title'));?>
                 <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
 					<?php foreach($terms as $term): ?>
-					    <li><a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
+					    <li><a class="<?php
+							foreach(get_the_terms($post->ID,"project_type") as $this_post_term):
+								if(strcmp($this_post_term->slug,$term->slug)===0)
+									echo "active";
+							endforeach;
+						?>" href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a></li>
 					<?php endforeach; ?>
 				<?php endif; ?>
             </ul>
