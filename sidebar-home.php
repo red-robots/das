@@ -18,7 +18,7 @@
         </nav><!-- .homepage-nav-->
         <div class="company-info">
             <div class="social wrapper">
-                <!-- social icons here -->
+                <?php get_template_part("/template-parts/social");?>
             </div><!--.social .wrapper-->
             <div class="electronic-info">
                 <?php if(get_field("company_name","option")): ?>

@@ -81,5 +81,5 @@ function pagi_posts_arrow_nav($wp_query) {
 			$link = 'href="'.esc_url( get_pagenum_link( 1 ) ).'"';
 		}
 	}
-	printf('<div class="pagination next-link"><a %s><i class="fa fa-angle-right"></i></a></div><!--.pagination .next-link-->',$link);
+	printf('<nav class="pagination next-link"><a %s><i class="fa fa-angle-right"></i></a></nav><!--.pagination .next-link-->',$link);
 }

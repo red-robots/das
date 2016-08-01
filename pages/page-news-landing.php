@@ -20,9 +20,11 @@ get_header(); ?>
 						<div class="isotope-side-pagination wrapper clear-bottom">
 							<div class="is-container news left-column">
 								<?php while($query->have_posts()):$query->the_post(); ?>
-									<div class="news item">
+									<article class="news item">
 										<header>
-											<div class="box date"><?php echo get_the_date("n.j.Y");?></div><!--.box .date-->
+											<div class="box date wrapper">
+												<div class="box date"><?php echo get_the_date("n.j.Y");?></div><!--.box .date-->
+											</div><!--.box .date .wrapper-->
 											<?php if(has_post_thumbnail()): ?>
 												<img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), array(150,150))[0]; ?>" alt="<?php echo $thumbnail->post_title;?>" class="featured-news-image">
 											<?php endif;//if has thumbnail?>
@@ -35,7 +37,7 @@ get_header(); ?>
 										<div class="link full-article">
 											<a href="<?php the_permalink();?>">Continue Reading</a>
 										</div><!--.link .full-article-->
-									</div><!--.news .item-->
+									</article><!--.news .item-->
 								<?php endwhile; //while for all news posts;?> 
 							</div><!--.is-container .news .left-column-->
 							<div class="right-column pagination wrapper">

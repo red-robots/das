@@ -29,7 +29,7 @@ get_header(); ?>
 					$query = new WP_Query(array('post__in'=>$portfolio_w_video,'post_type'=>'portfolio','posts_per_page'=>9,'order'=>'DESC','paged'=>get_query_var('paged')));
 					if($query->have_posts()): ?>							
 						<div class="isotope-side-pagination wrapper clear-bottom">
-							<div class="video is-container left-column">
+							<section class="video is-container left-column">
 								<?php while($query->have_posts()):$query->the_post();?>
 									<?php if(get_field("video")): ?>
 										<div class="video item">
@@ -39,7 +39,7 @@ get_header(); ?>
 										</div><!--.video-->
 									<?php endif;//if featured image?> 
 								<?php endwhile;//while have portfolio with videos ?>
-							</div><!--.video .is-container .left-column-->
+							</section><!--.video .is-container .left-column-->
 							<div class="right-column pagination wrapper">
 								<?php pagi_posts_arrow_nav($query);?>
 							</div><!--.pagination .right-column .wrapper-->	

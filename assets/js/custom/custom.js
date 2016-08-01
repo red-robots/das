@@ -332,7 +332,7 @@ jQuery(document).ready(function ($) {
 	 * Keep videos same porportion
 	 --------------------------------------------*/
 	$(window).on('ready resize', function(){
-		$('.video').each(function(){
+		$('.video').not('.wrapper').each(function(){
 			var $this = $(this);
 			var height = Number($this.width())*2.7/4+"px";
 			$this.css({

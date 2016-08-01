@@ -32,7 +32,7 @@
 					}
 				}
 				.nav-info.wrapper {
-					padding: 70px 15% 50px 0;
+					padding: 110px 15% 50px 0;
 					position: relative;	
 					@media screen and (max-width: $mobilelandscapewidth) {
 						display: none;
@@ -87,12 +87,23 @@
 							padding: 0 0 0 5px;
 						}
 						.social.wrapper {
-							margin: 15px 0;
+							margin: 15px 0 10px 0;
+							font-size: $font__size-extra-large;
+							.social {
+								padding: 0;
+								margin: 0;
+								width: 100%;
+								display: block;
+								li {
+									display: inline-block;
+									padding: 0 0 0 10px;
+								}
+							}
 						}
 						.electronic-info {
-							margin: 15px 0 ;
+							margin: 10px 0 15px 0;
 							.company-name {
-								margin: 15px 0 ;	
+								margin: 10px 0 15px 0;	
 							}
 							.contact-email span {
 								@include border5;
@@ -209,10 +220,18 @@
 				color: $color__das-blue;
 				text-transform: uppercase;
 			}
-			.process-description p {
-				font-size: $font__size-extra-extra-large;
-				@media screen and (max-width: $mobilelandscapewidth) {
-					font-size: $font__size-medium;
+			.process-description {
+				border: none;
+				margin: 0;
+				padding: 0;
+				font-weight: 500;
+				p {
+					margin: 0;
+					padding: 0;
+					font-size: $font__size-extra-extra-large;
+					@media screen and (max-width: $mobilelandscapewidth) {
+						font-size: $font__size-medium;
+					}
 				}
 			}
 			.link.box {
@@ -255,6 +274,7 @@
 					font-weight: 500;
 					text-transform: uppercase;
 					font-size: $font__size-medium-small;
+					color: white;
 				}
 			}
 			.video-section.wrapper {
@@ -335,6 +355,7 @@
 				font-weight: 500;
 				text-transform: uppercase;
 				font-size: $font__size-medium-small;
+				color: white;
 			}
 			&:hover {
 				background-color: $color__das-grey;

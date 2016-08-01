@@ -15,6 +15,9 @@ body {
 	width: 100%;
 	margin: 0px auto;
 }
+h2,h3,h4,h5,h6 {
+	color: $color__das-blue;
+}
 h1 {
 	font-size: $font__size-large;
 }
@@ -25,7 +28,7 @@ h3 {font-size: $font__size-small;}
 
 p {
 	font-size: $font__size-medium;
-	margin: .5em 0;	
+	margin: 20px 0;	
 }
 .copy a  {color: $color__text-main;}
 a.surrounding {
@@ -46,7 +49,24 @@ a.surrounding {
 	}
 	> *:last-child {
 		margin-bottom: 0;
-		padding: 0;
+		padding-bottom: 0;
+	}
+}
+a:hover, .thumbnail.wrapper .thumbnail:hover, .video.wrapper .video:hover, .link {
+	cursor: pointer;
+}
+blockquote {
+	@include border9;
+	font-size: $font__size-extra-large;
+	margin: 0;
+	padding: 0;
+	font-weight: 700;
+	@media screen and (max-width: $mobilelandscapewidth) {
+		font-size: $font__size-medium;
+	}
+	p {
+		font-size: inherit;
+		margin: 5px 10px;
 	}
 }
 #primary {
@@ -104,14 +124,36 @@ a.surrounding {
 				@media screen and (max-width: $mobilelandscapewidth) {
 					display: none;
 				}
-				p {
-					margin: 10px 0;
-				}
-				p.info {
-					font-size: $font__size-medium-small;
+				.info-social.wrapper {
+					margin: 40px 0 10px 0;
+					display: block;
+					p.info {
+						vertical-align: middle;
+						margin: 0;
+						font-size: $font__size-medium-small;
+						display: inline-block;
+					}
+					.social {
+						vertical-align: middle;
+						display: inline-block;
+						font-size: $font__size-large;
+						padding: 0;
+						margin: 0;
+						position: relative;
+						li {
+							padding: 0 0 0 10px;
+							display: block;
+							float: left;
+							list-style: none;
+							a {
+								color: inherit;
+							}
+						}
+					}
 				}
 				p.main-line {
 					font-size: $font__size-medium-large;
+					margin: 0 0 10px 0;
 				}
 			}
 			h1.title {
@@ -136,7 +178,7 @@ a.surrounding {
 				}
 			}
 			nav.desktop.portfolio, h1.title.portfolio {
-				padding-right: ((100%-3/4*$size__page-right-margin+-$size__page-left-margin+-1*(100%-3/4*$size__page-right-margin+-2%)/100%*($size__portfolio-news-video-landing-pagination-column-width))/100%*$size__portfolio-landing-tile-margin+(100%-3/4*$size__page-right-margin+-$size__page-left-margin)/100%*($size__portfolio-news-video-landing-pagination-column-width)-(1/4)*$size__page-right-margin)/(100%-$size__page-right-margin+-$size__page-left-margin)*100%;
+				padding-right: 6.0%;
 			}
 			nav.desktop {		
 				clear:right;
@@ -151,6 +193,30 @@ a.surrounding {
 				}
 				&.w-title {
 					margin: 0;
+				}
+				&.about {
+					ul {
+						li {
+							&:first-child {
+								padding-left: 7px;
+								&:before {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+				&.portfolio {
+					ul {
+						li {
+							&:nth-child(2) {
+								padding-left: 7px;
+								&:before {
+									display: none;
+								}
+							}
+						}
+					}
 				}
 				ul {
 					margin: 0 0 0 auto;
@@ -175,12 +241,6 @@ a.surrounding {
 						&:before {
 							content: "|";
 							padding: 0 7px;
-						}
-						&:nth-child(2) {
-							padding-left: 7px;
-							&:before {
-								display: none;
-							}
 						}
 						a {	
 							color: $color__das-grey;
@@ -257,12 +317,18 @@ a.surrounding {
 		#main.right-column {
 			width: 100%-$size__main-sidebar;
 			float: right;
-			padding: 1px $size__page-right-margin*3/4 $size__page-right-margin*1.7 $size__page-left-margin;
+			padding: 0 $size__page-right-margin*3/4 20px $size__page-left-margin;
 			min-height: 800px;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				float: none;
 				min-height: 0;
 				width: 100%;
+			}
+			&.single-portfolio {
+				padding-left: $size__page-left-margin/2;
+			}
+			&.about, &.process, &.single-page {
+				padding-left: $size__page-left-margin*2;
 			}
 		}
 	}

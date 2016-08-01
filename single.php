@@ -20,7 +20,9 @@ get_header(); ?>
 					<div class="news-social-sidebar wrapper clear-bottom">
 						<article class="news left-column js-blocks">
 							<header>
-								<div class="date box"><?php the_date("n.j.Y");?></div>
+								<div class="date box wrapper">
+									<div class="date box"><?php the_date("n.j.Y");?></div><!--.date .box-->
+								</div><!--.date .box .wrapper -->
 								<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id());?>" class="featured-news-image">
 								<h1 class="title"><?php the_title();?></h1>
 							</header>

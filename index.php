@@ -51,7 +51,7 @@ get_header(); ?>
 					<p class="company-name"><?php echo get_field("company_name","option");?></p>
 				<?php endif; ?>
 				<?php if(get_field("process_description")): ?>
-					<div class="process-description"><?php echo get_field("process_description");?></div><!--.process-description-->
+					<blockquote class="process-description"><?php echo get_field("process_description");?></blockquote><!--.process-description-->
 				<?php endif; ?>
 				<?php if(get_field("process_link_text")): ?>
 					<div class="link box"><a href="<?php the_permalink(38); ?>" class="link full-article"><?php echo get_field("process_link_text");?></a></div><!--.link.box-->

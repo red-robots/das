@@ -31,7 +31,7 @@ get_header(); ?>
 					$query = new WP_Query($args);
 					if($query->have_posts()):?>
 						<div class="isotope-side-pagination wrapper clear-bottom">
-							<div class="project is-container left-column">
+							<section class="project is-container left-column">
 								<?php while($query->have_posts()):$query->the_post();?>
 									<?php if(get_field("featured_image")): ?>
 										<div class="project item">
@@ -48,7 +48,7 @@ get_header(); ?>
 										</div><!--.project-->
 									<?php endif;//if featured image?> 
 								<?php endwhile; //while for all portfolio posts;?> 
-							</div><!--.project .is-container .left-column-->
+							</section><!--.project .is-container .left-column-->
 							<div class="right-column pagination wrapper">
 								<?php pagi_posts_arrow_nav($query);?>
 							</div><!--.pagination .right-column .wrapper-->
