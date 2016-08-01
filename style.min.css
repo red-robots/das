@@ -1650,8 +1650,9 @@ blockquote{border-left:4px solid #005fbb;font-size:18pt;margin:0;padding:0;font-
 @media screen and (max-width:900px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{width:100%;float:none;padding:20px 0 0 0}
 }@media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{float:right;width:40%;padding:0 20px}
 }@media screen and (max-width:500px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{width:100%;float:none;padding:20px 0 0 0}
-}#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .video-description p{font-size:9pt}
-#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link{color:black;border-bottom:5px solid #005fbb;display:inline-block}
+}#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .title{margin:0;color:black;font-size:12pt}
+#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .video-description p{font-size:9pt;margin:15px 0}
+#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link{color:black;font-size:9pt;border-bottom:5px solid #005fbb;display:inline-block}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link a{color:inherit}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .full-article.link a:hover{color:#005fbb}
 #home-primary section.news{position:relative;padding:30px 70px;background-color:#f6e298}
@@ -1664,7 +1665,7 @@ blockquote{border-left:4px solid #005fbb;font-size:18pt;margin:0;padding:0;font-
 }@media screen and (max-width:600px){#home-primary section.news .news.wrapper.is-container .news.item.clear-bottom{width:96%}
 }#home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper{padding:15px}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .date.box{color:#005fbb;font-size:8pt}
-#home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .title{font-size:9pt;font-weight:500}
+#home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .title{font-size:9pt;font-weight:500;color:black}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .link.full-article{font-size:9pt;text-transform:uppercase}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .link.full-article a{color:black;border-bottom:5px solid #005fbb}
 #home-primary section.news .news.wrapper.is-container .news.item.clear-bottom .info.wrapper .link.full-article a:hover{color:#005fbb}

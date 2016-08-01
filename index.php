@@ -83,17 +83,21 @@ get_header(); ?>
 							preg_match("/src=\"(.+)\"/i",$video,$matches); ?>
 							<iframe src="<?php echo $matches[1];?>"></iframe>
 						</div><!--.video-->
-						<div class="description right-column">
-							<?php $video_desc = get_field("video_description");		
-							$post = get_post(244);
+						<div class="description right-column">	
+							<?php $post = get_post(244);
 							setup_postdata($post);
+							$video_title  = get_field("video_technology_title");
+							$video_desc = get_field("video_technology_description");
 							$link_text = get_field("featured_video_link_text");		
+							if($video_title): ?>
+								<h3 class="title">
+									<?php echo $video_title;?>
+								</h3>
+							<?php endif;
 							if($video_desc): ?>
-								<div class="video-description"><?php if(strlen($video_desc)>200):
-										echo trim(substr($video_desc,0,200))."...";
-									else:
-										echo $video_desc;
-									endif;?></div><!--.video-description-->
+								<div class="video-description">
+									<?php echo $video_desc;?>
+								</div><!--.video-description-->
 							<?php endif;
 							if($link_text):?>
 								<a href="<?php the_permalink(82); ?>" class="full-article link">

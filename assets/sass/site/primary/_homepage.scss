@@ -316,11 +316,18 @@
 						float: none;
 						padding: 20px 0 0 0;
 					}
+					.title {
+						margin: 0;
+						color: $color__text-main;
+						font-size: $font__size-medium;
+					}
 					.video-description p {
 						font-size: $font__size-medium-small;
+						margin: 15px 0;
 					}
 					.full-article.link {
 						color: $color__text-main;
+						font-size: $font__size-medium-small;
 						@include border1;
 						display: inline-block;
 						a {
@@ -386,6 +393,7 @@
 					.title {
 						font-size: $font__size-medium-small;
 						font-weight: 500;
+						color: $color__text-main;
 					}
 					.link.full-article {
 						font-size: $font__size-medium-small;
