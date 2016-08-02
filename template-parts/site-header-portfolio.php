@@ -34,14 +34,14 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-		<h1 class="title portfolio"><?php if(is_tax()||is_category()):
+		<h1 class="title portfolio-landing"><?php if(is_tax()||is_category()):
 			$obj = get_queried_object();
 			echo $obj->name;
 		else:	
 			echo get_the_title();
 		endif;?>
 			</h1><i class="mobile hamburger fa fa-bars"></i>
-        <nav class="desktop portfolio w-title">
+        <nav class="desktop portfolio-landing w-title">
             <ul>
                 <span class="descriptor">Filter:</span>
                 <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'title'));?>

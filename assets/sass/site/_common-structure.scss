@@ -77,6 +77,9 @@ blockquote {
 		display: block;
 		position:relative;
 		min-height: $size__header-height;
+		@media screen and (max-width: $tabwidth) {
+			min-height: 0;
+		}
 		@media screen and (max-width: $mobilelandscapewidth) {
 			min-height: 0;
 		}
@@ -121,11 +124,11 @@ blockquote {
 				padding: 1px;
 				text-align: right;
 				color: $color__das-grey;
-				@media screen and (max-width: $mobilelandscapewidth) {
+				@media screen and (max-width: $tabwidth) {
 					display: none;
 				}
 				.info-social.wrapper {
-					margin: 40px 0 10px 0;
+					margin: 0 0 10px 0;
 					display: block;
 					p.info {
 						vertical-align: middle;
@@ -177,7 +180,7 @@ blockquote {
 					display: inline-block;
 				}
 			}
-			nav.desktop.portfolio, h1.title.portfolio {
+			nav.desktop.portfolio-landing, h1.title.portfolio-landing {
 				padding-right: 6.0%;
 			}
 			nav.desktop {		
@@ -187,6 +190,10 @@ blockquote {
 				margin: 5% 0 0 0;
 				@media screen and (max-width: $midwidth) {
 					font-size: $font__size-small;
+				}
+				@media screen and (max-width: $midwidth) {
+					margin: 2% 0 0 0;
+					padding: 0 0 10px 0;
 				}
 				@media screen and (max-width: $mobilelandscapewidth) {
 					display: none;
@@ -235,9 +242,6 @@ blockquote {
 						padding: 0 0 10px 0 ;
 						text-transform: uppercase;
 						font-size: $font__size-medium-small;
-						@media screen and (max-width: $tabwidth) {
-							padding: 2px;
-						}
 						&:before {
 							content: "|";
 							padding: 0 7px;
@@ -327,8 +331,8 @@ blockquote {
 			&.single-portfolio {
 				padding-left: $size__page-left-margin/2;
 			}
-			&.about, &.process, &.single-page {
-				padding-left: $size__page-left-margin*2;
+			&.about, &.process, &.single-page, &.single-news {
+				padding-left: $size__page-left-margin*1.6;
 			}
 		}
 	}

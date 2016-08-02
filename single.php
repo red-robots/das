@@ -16,7 +16,7 @@ get_header(); ?>
 			<?php get_template_part("/template-parts/site-header","news-single"); ?>    
 			<div class="main-sidebar wrapper clear-bottom">
 				<?php get_sidebar(); ?>
-				<main id="main" class="site-main right-column" role="main">
+				<main id="main" class="site-main right-column single-news" role="main">
 					<div class="news-social-sidebar wrapper clear-bottom">
 						<article class="news left-column js-blocks">
 							<header>

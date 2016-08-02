@@ -3,7 +3,7 @@
 	 * Title at top of pages
 	 */
 	article > header h1.title {
-		font-size: $font__size-medium-large;
+		font-size: $font__size-medium;
 		color: $color__das-blue;
 		text-align: left;
 		margin: 0 0 10px 0;
@@ -387,8 +387,8 @@
 					display: block;
 					float: left;	
 					@media screen and (max-width: $tabwidth) {
-						width: (100%-($size__portfolio-single-thumbnail-tile-margin*7))/7 !important;
-						margin: $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin $size__portfolio-single-thumbnail-tile-margin 0;
+						width: (100%-($size__portfolio-single-thumbnail-tile-margin))/7 !important;
+						margin: $size__portfolio-single-thumbnail-tile-margin/7 $size__portfolio-single-thumbnail-tile-margin/7 0 0;
 					}
 					.thumbnail-img{
 						width: 100%;
@@ -466,6 +466,10 @@
 		.news.left-column.js-blocks {
 			width: 100%-$size__news-single-sidebar-width;
 			float: left;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				float: none;
+				width: 100%;
+			}
 			header {
 				display: block;
 				width: 100%;
@@ -516,6 +520,10 @@
 		.sidebar.social.right-column.js-blocks {
 			width: $size__news-single-sidebar-width;
 			float: right;
+			@media screen and (max-width: $mobilelandscapewidth) {
+				float: none;
+				width: 100%;
+			}
 		}
 	}
 }
