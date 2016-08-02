@@ -128,7 +128,7 @@ jQuery(document).ready(function ($) {
 		var $footer = $('#colophon');//get footer
 		var $sidebar = $('#sidebar');//get sidebar
 		var $window = $(window);
-		$window.on('scroll resize',function(){
+		$window.on('scroll resize ready',function(){
 			var footerOffsetTop = Number($footer.offset().top);
 			var windowBottom = Number($window.scrollTop())+Number($window.height());
 			var sidebarHeight = Number($sidebar.height());

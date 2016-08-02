@@ -71,6 +71,9 @@ get_header(); ?>
 											</div><!--.affiliation .wrapper-->
 										</section><!--.affiliation-->
 									<?php endif; //if for have affiliations?>
+									<?php if(get_field("gallery")):?>
+									
+									<?php endif;?>
 								</div><!--.video-copy-affiliation .wrapper-->
 							</article>
 		        </main><!-- #main -->
