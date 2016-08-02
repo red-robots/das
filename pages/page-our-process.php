@@ -31,38 +31,38 @@ get_header(); ?>
 								<?php $post = get_post(244);
 								setup_postdata($post);
 								if(get_field("process_graphic")): ?>
-									<img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic" class="wow zoomIn process-image">
+									<img src="<?php echo wp_get_attachment_url(get_field("process_graphic"));?>" alt="process graphic" class="process-image">
 								<?php endif;
 								wp_reset_postdata();?>
 								<div class="process-title wrapper clear-bottom">
 									<ul>
-										<li><?php if(get_field("step_1_name")):
-											echo get_field("step_1_name");
-										endif; ?></li>
-										<li><?php if(get_field("step_2_name")):
-											echo get_field("step_2_name");
-										endif; ?></li>
-										<li><?php if(get_field("step_3_name")):
-											echo get_field("step_3_name");
-										endif; ?></li>
-										<li><?php if(get_field("step_4_name")):
-											echo get_field("step_4_name");
-										endif; ?></li>
+										<?php if(get_field("step_1_name")):
+											echo "<li>".get_field("step_1_name")."</li>";
+										endif; ?>
+										<?php if(get_field("step_2_name")):
+											echo "<li>".get_field("step_2_name")."</li>";
+										endif; ?>
+										<?php if(get_field("step_3_name")):
+											echo "<li>".get_field("step_3_name")."</li>";
+										endif; ?>
+										<?php if(get_field("step_4_name")):
+											echo "<li>".get_field("step_4_name")."</li>";
+										endif; ?>
 									</ul>
 								</div><!--.process-title wrapper-->
 								<div class="process-steps wrapper">
 									<ol>
 										<?php if(get_field("step_1")):
-											echo "<li>".get_field("step_1")."</li>";
+											echo '<li class="wow zoomIn">'.get_field("step_1")."</li>";
 										endif; ?>
 										<?php if(get_field("step_2")):
-											echo "<li>".get_field("step_2")."</li>";
+											echo '<li class="wow zoomIn" data-wow-delay=".5s">'.get_field("step_2")."</li>";
 										endif; ?>
 										<?php if(get_field("step_3")):
-											echo "<li>".get_field("step_3")."</li>";
+											echo '<li class="wow zoomIn" data-wow-delay="1s">'.get_field("step_3")."</li>";
 										endif; ?>
 										<?php if(get_field("step_4")):
-											echo "<li>".get_field("step_4")."</li>";
+											echo '<li class="wow zoomIn" data-wow-delay="1.5s">'.get_field("step_4")."</li>";
 										endif; ?>
 									</ol>
 								</div><!--.process-steps .wrapper-->
