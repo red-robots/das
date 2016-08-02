@@ -23,12 +23,16 @@ get_header(); ?>
 				<?php if(have_rows("project_slider")): ?>
 					<ul class="slides">
 					<?php while(have_rows("project_slider")): the_row();
-						$image_url= wp_get_attachment_image_src(get_sub_field("image"), "full")[0];
-						$project_selector=get_sub_field("project_selector");
-						if($image_url && $project_selector):
+						$background_url= wp_get_attachment_image_src(get_sub_field("image"), "full")[0];
+						$project_selector=get_sub_field("project_selector");		
+						if($project_selector):
 							$post=get_post($project_selector);
-							setup_postdata($post); ?>
-								<li class="slide" style="background-image: url('<?php echo $image_url;?>');">
+							setup_postdata($post);
+							if($background_url===null):
+								if(get_field("featured_image")) $background_url= wp_get_attachment_image_src(get_field("featured_image"), "full")[0];
+							endif;
+							if($background_url!==null):?>
+								<li class="slide" style="background-image: url('<?php echo $background_url;?>');">
 									<div class="info">
 										<?php $project_types = get_the_terms($project_selector,"project_type");
 										if(!is_wp_error($project_types)&&is_array($project_types)&&!empty($project_types)): ?>
@@ -37,7 +41,8 @@ get_header(); ?>
 										<a href="<?php the_permalink();?>"><h2 class="title"><?php the_title(); ?></h2></a>	
 									</div><!--.info-->
 								</li><!--.slide-->
-							<?php $post = get_post(244);
+							<?php endif;
+							$post = get_post(244);
 							setup_postdata($post); 
 						endif; //if for the slide ?>
 					<?php endwhile; // while for slides as a whole ?>
