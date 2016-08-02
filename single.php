@@ -29,26 +29,39 @@ get_header(); ?>
 							<section class="copy">
 								<?php the_content(); ?>
 							</section><!--.copy-->
-							<div class="box link next-news">
-								<?php $news_ids = array();
-								$query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1,'order'=>'ASC'));
-								if($query->have_posts()):
-									while($query->have_posts()):$query->the_post();
-										$news_ids[]=$query->post->ID;
-									endwhile;
-								endif; 
-								wp_reset_postdata();
-								$location_key = array_search($post->ID,$news_ids);
-								$max_key = count($news_ids)-1;
-								if($location_key !== false):
-									if($location_key>0):
-										echo '<a href="'.get_permalink($news_ids[$location_key-1]).'">Next</a>';
-									else:
-										echo '<a href="'.get_permalink($news_ids[$max_key]).'">Next</a>';
+							<div class="box link wrapper">
+								<div class="box link previous-news">
+									<?php $news_ids = array();
+									$query = new WP_Query(array('post_type'=>'post','posts_per_page'=>-1,'order'=>'ASC'));
+									if($query->have_posts()):
+										while($query->have_posts()):$query->the_post();
+											$news_ids[]=$query->post->ID;
+										endwhile;
+									endif; 
+									wp_reset_postdata();
+									$location_key = array_search($post->ID,$news_ids);
+									$max_key = count($news_ids)-1;
+									if($location_key !== false):
+										if($location_key<$max_key):
+											echo '<a href="'.get_permalink($news_ids[$location_key+1]).'">Previous</a>';
+										else:
+											echo '<a href="'.get_permalink($news_ids[0]).'">Previous</a>';
+										endif;
 									endif;
-								endif;
-								?>
-							</div>
+									?>
+								</div><!--.box .link .previous-news-->
+								<div class="box link next-news">
+									<?php $location_key = array_search($post->ID,$news_ids);
+									if($location_key !== false):
+										if($location_key>0):
+											echo '<a href="'.get_permalink($news_ids[$location_key-1]).'">Next</a>';
+										else:
+											echo '<a href="'.get_permalink($news_ids[$max_key]).'">Next</a>';
+										endif;
+									endif;
+									?>
+								</div><!--.box .link .next-news-->
+							</div><!--.box .link .wrapper-->
 						</article><!--.news-->
 						<div class="sidebar social right-column js-blocks">
 							<?php get_sidebar("social");?>

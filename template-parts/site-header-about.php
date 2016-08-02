@@ -14,7 +14,7 @@
 		<img src="<?php echo wp_get_attachment_image_src(get_field("blank_logo","option"),"full")[0];?>" alt="false logo" class="false logo">
 	</div><!--.false-logo .wrapper-->
 	<div class="mobile-logo wrapper left-column">
-		<a href="<?php echo get_site_url();?>"><img src="<?php echo wp_get_attachment_image_src(get_field("logo_mobile","option"),"full")[0];?>" alt="logo" id="mobilelogo"></a>
+		<a href="<?php echo get_bloginfo("url");?>"><img src="<?php echo wp_get_attachment_image_src(get_field("logo_mobile","option"),"full")[0];?>" alt="logo" id="mobilelogo"></a>
 	</div><!--.mobile-logo .wrapper .left-column-->
 	<div class="company-info-nav wrapper right-column">
         <div class="company-info">

@@ -2,7 +2,7 @@
 	/*
 	 * Title at top of pages
 	 */
-	> h1.title {
+	article > header h1.title {
 		font-size: $font__size-medium-large;
 		color: $color__das-blue;
 		text-align: left;
@@ -327,17 +327,19 @@
 						&:first-child {
 							border: none;
 						}
-						&:hover {
-							color: $color__das-blue;
-						}
 					}
 				}
 			}
 			.process-steps.wrapper {
-				span {
-					display: none;
-					&.active {
-						display: block;
+				ol {
+					padding: 0 0 0 10px;
+					margin: 0 auto;
+					width: 100%;
+					li {
+						padding: 0;
+						list-style-type: decimal;
+						display: list-item;
+						width: 100%;
 					}
 				}
 			}
@@ -493,16 +495,21 @@
 				width: 100%;
 				margin: 20px 0;
 			}
-			.box.link.next-news {
-				color: white;
-				background-color: $color__box-dark;
-				display: inline-block;
-				padding: 8px 20px;
-				text-transform: uppercase;
-				margin: 0;
-				font-size: $font__size-medium;				
-				&:hover {
-					background-color: $color__das-blue;
+			.box.link.wrapper {
+				.box.link.next-news, .box.link.previous-news {
+					color: white;
+					background-color: $color__box-dark;
+					display: inline-block;
+					padding: 8px 20px;
+					text-transform: uppercase;
+					margin: 0 0 0 10px;
+					font-size: $font__size-medium;
+					&:first-child {
+						margin: 0;
+					}
+					&:hover {
+						background-color: $color__das-blue;
+					}
 				}
 			}
 		}

@@ -166,55 +166,6 @@ jQuery(document).ready(function ($) {
 	}
 	init_footer();//call function to init footer
 	
-	/*-------------------------------------------
-	 * Initialization for process template
-	 --------------------------------------------*/
-	$('.process-title.wrapper li').on('click',function(){ //li on click 
-		var click_step = Number($(this).attr("data-step")); //find the desired step
-		$('.process-steps.wrapper span').each(function(){ //cycle through all steps only show those below or equal to desired
-			var $this = $(this);
-			var this_step = Number($this.attr("data-step")); 
-			if(this_step<=click_step){
-				$this.addClass("active");
-			} else {
-				$this.removeClass("active");
-			}
-		});
-	});
-	$('.graphic-steps .process-image').on('click',function(e){ //on image click
-		var $this = $(this); //this as jquery
-		var offset_left = $this.offset().left; //offset for image
-		var width = $this.width(); //width of image
-		var width_offset = 0.025*width; //factor in margin on image
-		width = 0.95*width; //factor in margin on image
-		var mouseX = e.pageX - offset_left - width_offset; //calculate offset for mouse click
-		var click_step=0;
-		if(mouseX>=0){
-			if(mouseX<=width*0.25){ //if first quarter of image
-				click_step=1;
-			}else if (mouseX<=width*0.5){ //if second quarter of image
-				click_step=2;
-			}else if (mouseX<=width*0.75){ //if third quarter of image
-				click_step=3;
-			}else if(mouseX<=width){ //if last quarter of image
-				click_step=4;
-			}
-			if(click_step!==0){
-				//steps from above for li
-				$('.process-steps.wrapper span').each(function(){
-					$this = $(this);
-					var this_step = Number($this.attr("data-step"));
-					if(this_step<=click_step){
-						$this.addClass("active");
-					} else {
-						$this.removeClass("active");
-					}
-				});
-			}
-		}
-	});
-	
-	
 	/*-----------------------------------
 	 * Custom mobile navigation
 	 ------------------------------------*/

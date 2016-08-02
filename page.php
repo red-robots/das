@@ -17,7 +17,7 @@ get_header(); ?>
 						<main id="main" class="site-main right-column single-page" role="main">
 							<article>
 								<header><h1 class="title"><?php echo get_the_title();?></h1></header>
-								<section>
+								<div class="video-copy-affiliation wrapper clear-bottom">
 									<section class="video-copy wrapper">
 										<div class="video wrapper">
 											<?php $portfolio_w_video = array();
