@@ -70,6 +70,22 @@ get_header(); ?>
 											</div><!--.affiliation .wrapper-->
 										</section><!--.affiliation-->
 									<?php endif; //if for have affiliations?>
+									<?php if(get_field("gallery")):
+										$images = get_field('gallery');?>
+										<?php if($images!=null && count($images)>0): ?>
+											<section class="gallery">
+												<div class="gallery wrapper clear-bottom">
+														<?php for($i=0;$i<count($images);$i++):?>
+															<div class="thumbnail">
+																<a class="gallery" href="<?php echo $images[$i]['url'];?>">
+																	<img src="<?php echo $images[$i]['sizes']['thumbnail'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
+																</a>
+															</div><!--.thumbnail-->
+														<?php endfor;?>
+												</div><!--.gallery .wrapper-->
+											</section>
+										<?php endif; //if images ?>
+									<?php endif;//if gallery?>
 								</div><!--.video-copy-affiliation .wrapper-->
 							</article>					
             </main><!-- #main -->

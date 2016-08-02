@@ -221,7 +221,7 @@
 	/* ----------------------
 	 * Main Page
 	 ------------------------*/
-	.video-copy-affiliation.wrapper{
+	.video-copy-affiliation-gallery.wrapper{
 		.video-copy.wrapper {
 			.video.wrapper {
 				width: 35%;
@@ -290,6 +290,24 @@
 							text-transform: capitalize;
 							text-align: center;
 							color: $color__text-main;
+						}
+					}
+				}
+			}
+		}
+		.gallery {
+			display: block;
+			width: 100%;
+			margin: 0;
+			.gallery.wrapper.clear-bottom {
+				margin: 0;
+				.thumbnail {
+					float: left;
+					width: (100%-($size__about-thumbnail-tile-margin*$size__about-thumbnail-tile-span))/$size__about-thumbnail-tile-span;
+					margin: 0 $size__about-thumbnail-tile-margin $size__about-thumbnail-tile-margin 0;
+					a.gallery {
+						img {
+							width: 100%;
 						}
 					}
 				}

@@ -18,7 +18,7 @@ get_header(); ?>
 		        <main id="main" class="site-main right-column about" role="main">
 							<article>
 								<header><h1 class="title"><?php echo get_the_title();?></h1></header>
-								<div class="video-copy-affiliation wrapper clear-bottom">
+								<div class="video-copy-affiliation-gallery wrapper clear-bottom">
 									<section class="video-copy wrapper">
 										<div class="video wrapper">
 											<?php $portfolio_w_video = array();
@@ -71,9 +71,22 @@ get_header(); ?>
 											</div><!--.affiliation .wrapper-->
 										</section><!--.affiliation-->
 									<?php endif; //if for have affiliations?>
-									<?php if(get_field("gallery")):?>
-									
-									<?php endif;?>
+									<?php if(get_field("gallery")):
+										$images = get_field('gallery');?>
+										<?php if($images!=null && count($images)>0): ?>
+											<section class="gallery">
+												<div class="gallery wrapper clear-bottom">
+														<?php for($i=0;$i<count($images);$i++):?>
+															<div class="thumbnail">
+																<a class="gallery" href="<?php echo $images[$i]['url'];?>">
+																	<img src="<?php echo $images[$i]['sizes']['thumbnail'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
+																</a>
+															</div><!--.thumbnail-->
+														<?php endfor;?>
+												</div><!--.gallery .wrapper-->
+											</section>
+										<?php endif; //if images ?>
+									<?php endif;//if gallery?>
 								</div><!--.video-copy-affiliation .wrapper-->
 							</article>
 		        </main><!-- #main -->
