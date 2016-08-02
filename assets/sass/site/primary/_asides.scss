@@ -36,6 +36,9 @@
 			text-align: right;
 			margin-right: 15%;
 			font-size: $font__size-medium;
+			@media screen and (max-width: $tabwidth) {
+				font-size: $font__size-medium-small;
+			}
 			ul {
 				margin: 0;
 				padding: 0;
@@ -54,7 +57,7 @@
 								height: 8px;
 								background-color: white;
 								width: $size__homepage-sidebar-active-bar-width;
-								@include translateXY(100%*(15%/(0.85*($size__homepage-sidebar-active-bar-width)))-100%,-15%);
+								@include translateXY(48%,-15%);
 							}
 						}
 					}

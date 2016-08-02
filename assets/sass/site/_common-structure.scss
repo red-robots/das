@@ -418,7 +418,12 @@ blockquote {
 					}
 				}
 				.google-maps-location {
-					margin: 20px 0 15px 0;
+					margin: 20px 0 15px auto;
+					width: 200px;
+					height: 150px;
+					@media screen and (max-width: $mobilelandscapewidth) {
+						margin: 20px auto 15px auto;
+					}
 				}
 				.address {
 					margin: 15px 0 0 0;

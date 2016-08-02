@@ -39,7 +39,7 @@
 					<?php if(get_field("location","option")): ?>
 						<div class="location"><?php  echo get_field("location","option");?></div>
 					<?php endif;?>
-					<?php if(get_field("google-maps-location","option")): ?>
+					<?php if(get_field("google_maps_location","option")): ?>
 						<div class="google-maps-location"><?php the_field("google_maps_location","option");?></div>
 					<?php endif; ?>
 					<?php if(get_field("address_line_1","option")&& get_field("address_line_2","option")): ?>

@@ -165,10 +165,10 @@
 			.slider-nav {
 				position: absolute;
 				right: 10%;
-				bottom: 5%;
+				bottom: 8%;
 				color: $color__das-grey;
-				text-align: right;
-				width: 100%;
+				text-align: left;
+				width: 35%;
 				ul {
 					margin: 0;
 					padding: 0;
@@ -176,6 +176,9 @@
 						margin: 0 0 0 5px;
 						padding: 0;
 						display: inline-block;
+						&:first-child {
+							margin: 0;
+						}
 						&:hover, &.active {
 							.rectangle {
 								background-color: $color__das-blue;
@@ -409,13 +412,17 @@
 				}
 				.info.wrapper.left-column {
 					width: 100%-$size__homepage-news-featured-image-width;
-					float: left;
+					margin: 0 auto 0 0;
 				}
 				.info.wrapper.no-column {
 					width: 100%;
 				}
 				.featured-news-image.wrapper.right-column {
-					float: right;
+					position: absolute;
+					top: 0;
+					right: 0;
+					height: 100%;
+					z-index: 1;
 					width: $size__homepage-news-featured-image-width;
 					background-size: cover;
 					background-position: center;

@@ -125,9 +125,9 @@ get_header(); ?>
 				<?php $query= new WP_Query(array('post_type'=>'post','posts_per_page'=>3));
 				if($query->have_posts()):
 					while($query->have_posts()): $query->the_post();?>
-						<div class="news item clear-bottom">
+						<div class="news item clear-bottom js-blocks">
 							<?php if(has_post_thumbnail()):?>
-								<div class="info wrapper left-column js-blocks">
+								<div class="info wrapper left-column">
 							<?php else: ?>
 								<div class="info wrapper no-column">
 							<?php endif; //if for image ?>
@@ -136,7 +136,7 @@ get_header(); ?>
 								<div class="link full-article"><a href="<?php the_permalink(); ?>">MORE</a></div><!--.link .full-article-->
 							</div><!--.info .wrapper-->
 							<?php if(has_post_thumbnail()):?>
-								<div class="featured-news-image wrapper right-column js-blocks" style="background-image: url('<?php echo  wp_get_attachment_image_src(get_post_thumbnail_id(), array(150,150))[0];?>');">
+								<div class="featured-news-image wrapper right-column" style="background-image: url('<?php echo  wp_get_attachment_image_src(get_post_thumbnail_id(), array(150,150))[0];?>');">
 								</div><!--.featured-news-image .wrapper-->
 							<?php endif; //if for image ?>
 						</div><!--.news_tile-->
