@@ -328,8 +328,11 @@
 				margin: 0;
 				.thumbnail {
 					float: left;
-					width: (100%-($size__about-thumbnail-tile-margin*$size__about-thumbnail-tile-span))/$size__about-thumbnail-tile-span;
+					width: (100%-($size__about-thumbnail-tile-margin*($size__about-thumbnail-tile-span+-1)))/$size__about-thumbnail-tile-span;
 					margin: 0 $size__about-thumbnail-tile-margin $size__about-thumbnail-tile-margin 0;
+                    &.count-3 {
+                        margin-right: 0;
+                    }
 					a.gallery {
                         margin: 0;
 						img {

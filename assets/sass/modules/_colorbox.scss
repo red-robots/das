@@ -64,7 +64,37 @@
         #cboxCurrent{position:absolute; bottom:-25px; left:58px; font-weight:bold; color:#7C7C7C;}
 
         /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
-        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {
+        #cboxPrevious{
+            border:0; 
+			padding:0; 
+			margin:0; 
+			overflow:visible;  
+			position:absolute; 
+			top:10px; 
+			background:url(images/x.png); 
+			background-size: 100% auto;
+			/*background-repeat: no-repeat;*/
+			width:25px; 
+			height:25px; 
+			text-indent:-9999px;
+			box-shadow:none;
+        }
+        #cboxNext {
+            border:0; 
+			padding:0; 
+			margin:0; 
+			overflow:visible;  
+			position:absolute; 
+			top:10px; 
+			background:url(images/x.png); 
+			background-size: 100% auto;
+			/*background-repeat: no-repeat;*/
+			width:25px; 
+			height:25px; 
+			text-indent:-9999px;
+			box-shadow:none;
+        }
+        #cboxSlideshow, #cboxClose {
 			border:0; 
 			padding:0; 
 			margin:0; 

@@ -1322,7 +1322,9 @@ a{color:white;text-decoration:none}
 #cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center}
 #cboxTitle{position:absolute;bottom:-25px;left:0;text-align:left;width:60%;font-weight:bold;color:#fff;padding:4% 20% 8% 20%;line-height:1.3;font-size:20px}
 #cboxCurrent{position:absolute;bottom:-25px;left:58px;font-weight:bold;color:#7c7c7c}
-#cboxPrevious,#cboxNext,#cboxSlideshow,#cboxClose{border:0;padding:0;margin:0;overflow:visible;position:absolute;top:10px;background:url(images/x.png);background-size:100% auto;width:25px;height:25px;text-indent:-9999px;box-shadow:none}
+#cboxPrevious{border:0;padding:0;margin:0;overflow:visible;position:absolute;top:10px;background:url(images/x.png);background-size:100% auto;width:25px;height:25px;text-indent:-9999px;box-shadow:none}
+#cboxNext{border:0;padding:0;margin:0;overflow:visible;position:absolute;top:10px;background:url(images/x.png);background-size:100% auto;width:25px;height:25px;text-indent:-9999px;box-shadow:none}
+#cboxSlideshow,#cboxClose{border:0;padding:0;margin:0;overflow:visible;position:absolute;top:10px;background:url(images/x.png);background-size:100% auto;width:25px;height:25px;text-indent:-9999px;box-shadow:none}
 #cboxPrevious:active,#cboxNext:active,#cboxSlideshow:active,#cboxClose:active{outline:0}
 #cboxPrevious{left:20px;background-position:-0 -0}
 #cboxNext{left:90px;background-position:-50px -0}
@@ -1553,7 +1555,8 @@ blockquote{border-left:4px solid #005fbb;font-size:18pt;margin:0;padding:0;font-
 #main .video-copy-affiliation-gallery.wrapper .affiliation .affiliation.wrapper .affiliation header h3{font-size:10pt;text-transform:capitalize;text-align:center;color:black}
 #main .video-copy-affiliation-gallery.wrapper .gallery{display:block;width:100%;margin:0}
 #main .video-copy-affiliation-gallery.wrapper .gallery .gallery.wrapper.clear-bottom{margin:0}
-#main .video-copy-affiliation-gallery.wrapper .gallery .gallery.wrapper.clear-bottom .thumbnail{float:left;width:23%;margin:0 2% 2% 0}
+#main .video-copy-affiliation-gallery.wrapper .gallery .gallery.wrapper.clear-bottom .thumbnail{float:left;width:23.5%;margin:0 2% 2% 0}
+#main .video-copy-affiliation-gallery.wrapper .gallery .gallery.wrapper.clear-bottom .thumbnail.count-3{margin-right:0}
 #main .video-copy-affiliation-gallery.wrapper .gallery .gallery.wrapper.clear-bottom .thumbnail a.gallery{margin:0}
 #main .video-copy-affiliation-gallery.wrapper .gallery .gallery.wrapper.clear-bottom .thumbnail a.gallery img{width:100%}
 #main .video-copy-super.wrapper .video-copy.wrapper .video.wrapper{width:35%;float:right;margin:0 0 10px 50px}

@@ -79,7 +79,7 @@ get_header(); ?>
 											<section class="gallery">
 												<div class="gallery wrapper clear-bottom">
 														<?php for($i=0;$i<count($images);$i++):?>
-															<div class="thumbnail">
+															<div class="thumbnail count-<?php echo $i%4;?>">
 																<a class="gallery" href="<?php echo $images[$i]['url'];?>">
 																	<img src="<?php echo $images[$i]['sizes']['medium'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
 																</a>
