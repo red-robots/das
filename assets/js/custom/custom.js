@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
 	$('a.gallery').colorbox({
 		rel:'gal',
 		width: '80%', 
-		height: '80%'
+		height: '80%',
 	});
 	
 	/*

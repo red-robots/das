@@ -236,7 +236,7 @@
 	}
 	
 	/* ----------------------
-	 * Main Page
+	 * About Page
 	 ------------------------*/
 	.video-copy-affiliation-gallery.wrapper{
 		.video-copy.wrapper {
@@ -272,6 +272,9 @@
 			}
 			.copy {
 				margin: 0 0 40px 0;
+                @media screen and (max-width: $mobilelandscapewidth) {
+                    margin: 0 0 20px 0;
+                }
 			}
 		}
 		.affiliation {
@@ -281,6 +284,9 @@
 				width: auto;
 				display: table;
 				margin: 60px auto 0 0;
+                @media screen and (max-width: $mobilelandscapewidth) {
+                    margin-top: 20px;
+                }
 				clear: both;
 				.affiliation {
 					display: inline-block;
@@ -325,6 +331,7 @@
 					width: (100%-($size__about-thumbnail-tile-margin*$size__about-thumbnail-tile-span))/$size__about-thumbnail-tile-span;
 					margin: 0 $size__about-thumbnail-tile-margin $size__about-thumbnail-tile-margin 0;
 					a.gallery {
+                        margin: 0;
 						img {
 							width: 100%;
 						}
@@ -333,6 +340,63 @@
 			}
 		}
 	}
+	/*
+     * Generic Page Template & 404
+     */
+    .video-copy-super.wrapper{
+		.video-copy.wrapper {
+			.video.wrapper {
+				width: 35%;
+				float: right;
+				margin: 0 0 10px 50px;
+				@media screen and (max-width: $mobilelandscapewidth) {
+                    width: 90%;
+                    margin: 0 auto 20px auto;
+                    float: none;
+                }
+				.video {
+					width: 100%;
+					height: auto;
+					iframe {
+						width: 100%;
+					}
+				}
+				.link.full-article {
+					text-align: right;
+					padding: 10px 0 0 0;
+					font-size: $font__size-medium-small;
+					text-transform: uppercase;
+					a {
+						color: $color__text-main;
+						@include border1;
+						&:hover {
+							color:$color__das-blue;
+						}
+					}
+				}
+			}
+			.copy {
+				margin: 0;
+                ul {
+                    margin: 20px 0 0 20px;
+                    padding: 0;
+                    &.sub-menu {
+                        margin-top: 0;
+                    }
+                    li {
+                        margin: 0;
+                        padding: 0 0 0 20px;
+                        a {
+                            border: none;
+                            &:hover {
+                                @include border1;
+                            }
+                        }
+                    }
+                }
+			}
+		}
+    }
 	/* ----------------------
 	 * Contact template Specific
 	 ------------------------*/
@@ -566,6 +630,9 @@
 					display: block;
 					font-size: $font__size-medium;
 					margin: 0 0 40px 0;
+                    @media screen and (max-width: $mobilelandscapewidth) { 
+                        margin: 0 0 20px 0;
+                    }
 				}
 				
 			}
@@ -577,6 +644,12 @@
 					width: $size__portfolio-single-video-column-width;
 					float: left;
 					background-color: $color__das-grey;
+                    @media screen and (max-width: $mobilelandscapewidth) { 
+                        width: 100%;
+                        float: none;
+                        height: auto !important;
+                        margin: 0 0 20px 0;
+                    }
 					.video {
 						display: block;
 						width: 100%;
@@ -591,6 +664,9 @@
                         color: white;
                         p {
                             font-size: 28px;
+                            @media screen and (max-width: $mobilelandscapewidth) {
+                                font-size: 18pt;
+                            }
                         }
                     }
 				}
@@ -598,6 +674,11 @@
 					float: right;
 					width: 100%-$size__portfolio-single-video-column-width;
 					padding: 0 0 0 3/5*$size__page-right-margin;
+                    @media screen and (max-width: $mobilelandscapewidth) { 
+                        width: 100%;
+                        float: none;
+                        height: auto !important;
+                    }
 				}
 			}
 			.copy.no-column {

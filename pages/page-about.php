@@ -19,7 +19,7 @@ get_header(); ?>
 							<article>
 								<header><h1 class="title"><?php echo get_the_title();?></h1></header>
 								<div class="video-copy-affiliation-gallery wrapper clear-bottom">
-									<section class="video-copy wrapper">
+									<section class="video-copy wrapper clear-bottom">
 										<div class="video wrapper">
 											<?php $portfolio_w_video = array();
 											$query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
@@ -52,9 +52,11 @@ get_header(); ?>
 									</section><!--.video-copy .wrapper-->
 									<?php if(have_rows("affiliations_")): ?>
 										<section class="affiliation">
-											<header>
-												<h2>Affiliations &amp; Certifications</h2>
-											</header>
+											<?php if(get_field("affiliation_title")):?>
+                                                <header>
+                                                    <h2><?php get_field("affiliation_title");?></h2>
+                                                </header>
+                                            <?php endif;?>
 											<div class="affiliation wrapper">
 												<?php while(have_rows("affiliations_")):the_row();?>
 													<?php $file = get_sub_field('logo');
@@ -79,7 +81,7 @@ get_header(); ?>
 														<?php for($i=0;$i<count($images);$i++):?>
 															<div class="thumbnail">
 																<a class="gallery" href="<?php echo $images[$i]['url'];?>">
-																	<img src="<?php echo $images[$i]['sizes']['thumbnail'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
+																	<img src="<?php echo $images[$i]['sizes']['medium'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
 																</a>
 															</div><!--.thumbnail-->
 														<?php endfor;?>

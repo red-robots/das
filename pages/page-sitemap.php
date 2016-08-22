@@ -1,7 +1,8 @@
 <?php
 /**
+ * Template Name: Sitemap
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package ACStarter
  */
@@ -9,14 +10,12 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-      <?php if(have_posts()):
-	      the_post(); ?>
 			<?php get_template_part("/template-parts/site-header","news-single"); ?>
 		      <div class="main-sidebar wrapper clear-bottom">
 						<?php get_sidebar(); ?>
 						<main id="main" class="site-main right-column single-page" role="main">
 							<article>
-								<header><h1 class="title"><?php echo get_the_title();?></h1></header>
+								<header><h1 class="title"><?php the_title();?></h1></header>
 								<div class="video-copy-super wrapper clear-bottom">
 									<section class="video-copy wrapper clear-bottom">
 										<div class="video wrapper">
@@ -46,16 +45,16 @@ get_header(); ?>
 											endif;//end of if for has videos?>
 										</div><!--.video-->
 										<div class="copy">
-											<?php the_content();?>
+                                            <?php the_content();?>
+                                            <?php wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); ?>
 										</div><!--.copy-->
 									</section><!--.video-copy .wrapper-->
 								</div><!--.video-copy.wrapper-->
 							</article>					
             </main><!-- #main -->
 	        </div><!--.main-sidebar .wrapper-->
-        <?php endif; //if for initializing page?>
 	</div><!-- #primary -->
 
+	
 <?php
 get_footer();
-?>

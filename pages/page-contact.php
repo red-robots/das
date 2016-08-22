@@ -19,7 +19,7 @@ get_header(); ?>
 							<article>
 								<header><h1 class="title"><?php echo get_the_title();?></h1></header>
 								<div class="map-copy-super wrapper clear-bottom">
-									<section class="map-copy wrapper">
+									<section class="map-copy wrapper clear-bottom">
 										<?php if(get_field("map")):?>
                                             <div class="map wrapper">
                                                 <div class="map">
