@@ -39,7 +39,11 @@ get_header(); ?>
 									<div class="type box"><?php echo $project_type[0]->name; ?></div>
 								<?php endif; ?>
 								<h1 class="title"><?php the_title();?></h1>
-								<p class="location-completion-date"><?php the_field("location");?> | Completion Date: <?php the_field("completion_date");?></p>
+								<p class="location-completion-date">
+                                    <?php if(get_field('location')) the_field("location");
+                                    if(get_field('location')&&get_field('completion_date')) echo ' | ';
+                                    if(get_field('completion_date')) echo 'Completion Date: '.get_field("completion_date");?>
+                                </p>
 							</header>
 								<?php if(get_field("video")): ?>
 									<section class="video-copy wrapper clear-bottom">

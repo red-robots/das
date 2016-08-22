@@ -19,4 +19,9 @@
 			<a href="<?php echo get_field("twitter_link","option");?>" target="_blank"><i class="fa fa-twitter"></i></a>
 		</li>
 	<?php endif;?>
+	<?php if(get_field("youtube_link","option")):?>
+		<li class="youtube">
+			<a href="<?php echo get_field("youtube_link","option");?>" target="_blank"><i class="fa fa-youtube"></i></a>
+		</li>
+	<?php endif;?>
 </ul>

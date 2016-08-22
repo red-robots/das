@@ -37,8 +37,8 @@
 		<i class="mobile hamburger fa fa-bars"></i>
         <nav class="desktop portfolio">
             <ul>
-                <span class="descriptor">Filter:</span>
-                <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'title'));?>
+                <span class="descriptor">Categories:</span>
+                <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'menu_order'));?>
                 <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
 					<?php foreach($terms as $term): ?>
 					    <li><a class="<?php
@@ -55,8 +55,8 @@
 			<i class="mobile hamburger fa fa-bars"></i>
 			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
 			<ul>
-                <span class="descriptor">Filter:</span>
-                <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'title'));?>
+                <span class="descriptor">Categories:</span>
+                <?php $terms = get_terms(array('taxonomy'=>'project_type','order'=>'ASC','orderby'=>'menu_order'));?>
                 <?php if(!is_wp_error($terms)&&is_array($terms)): ?>
 					<?php foreach($terms as $term): ?>
 					    <li><a class="<?php
@@ -68,6 +68,7 @@
 					<?php endforeach; ?>
 				<?php endif; ?>
             </ul>
+			<?php get_template_part("/template-parts/social");?>
 		</nav>
     </div><!--.company-info-nav .wrapper-->
 </header><!--#site-header-->

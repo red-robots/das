@@ -34,7 +34,7 @@
                 <?php the_field("main_line_telephone_number","option");?>
             </p>
         </div><!--.company-info-->
-		<h1 class="title"><?php if(is_category()||is_tax()):
+		<h1 class="title news-landing"><?php if(is_category()||is_tax()):
 			$obj = get_queried_object();
 			echo $obj->name;
 		else:	
@@ -43,6 +43,7 @@
 		<nav class="mobile">
 			<i class="mobile hamburger fa fa-bars"></i>
 			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+			<?php get_template_part("/template-parts/social");?>
 		</nav>
     </div><!--.company-info-nav .wrapper-->
 </header><!--#site-header-->

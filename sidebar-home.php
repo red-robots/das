@@ -12,6 +12,12 @@
     <div class="logo wrapper">
        <a href="<?php get_bloginfo("url");?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
     </div><!--.logo .wrapper-->
+    <i class="mobile hamburger fa fa-bars"></i>
+    <nav class="mobile">
+        <i class="mobile hamburger fa fa-bars"></i>
+        <?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+        <?php get_template_part("/template-parts/social");?>
+    </nav>
 	<div class="nav-info wrapper">
         <nav id="site-nav">
             <?php wp_nav_menu( array( 'theme_location' => 'sidebar' ) ); ?>
@@ -34,7 +40,17 @@
                     <p class="toll-free-line">toll free <?php the_field("toll_free_line_number","option");?></p>
                 <?php endif; ?>
                 <?php if(get_field("contact_email","option")): ?>
-                    <p class="contact-email"><span><?php the_field("contact_email","option");?></span></p>
+                    <p class="contact-email"><?php $full_email = get_field("contact_email","option");?>
+                        <a href="mailto:<?php echo $full_email;?>">
+                            <?php $index = strpos($full_email,'@');
+                            if($index):
+                                if(substr($full_email,0,$index+1)):echo "<span>".substr($full_email,0,$index+1)."</span>";endif;
+                                if(substr($full_email,$index+1)):echo "<span>".substr($full_email,$index+1)."</span>";endif;
+                            else: 
+                                echo "<span>".$full_email."</span>";
+                            endif;?>
+                        </a>
+                    </p>
                 <?php endif; ?>
             </div><!-- .electronic-info -->
             <div class="address">

@@ -51,6 +51,9 @@ a.surrounding {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
+	a {
+        @include border1;
+    }
 }
 a:hover, .thumbnail.wrapper .thumbnail:hover, .video.wrapper .video:hover, .link {
 	cursor: pointer;
@@ -114,7 +117,7 @@ blockquote {
 			width: 100%-$size__main-sidebar;
 			margin: 0;
 			float: right;
-			padding: 30px $size__page-right-margin 0 2%;
+			padding: 15px $size__page-right-margin 0 2%;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				padding-top: 0;
 				text-align: right;
@@ -124,7 +127,7 @@ blockquote {
 				padding: 1px;
 				text-align: right;
 				color: $color__das-grey;
-				@media screen and (max-width: $tabwidth) {
+				@media screen and (max-width: $mobilelandscapewidth) {
 					display: none;
 				}
 				.info-social.wrapper {
@@ -144,7 +147,7 @@ blockquote {
 						margin: 0;
 						position: relative;
 						li {
-							padding: 0 0 0 10px;
+							padding: 0 0 0 15px;
 							display: block;
 							float: left;
 							list-style: none;
@@ -183,6 +186,9 @@ blockquote {
 			nav.desktop.portfolio-landing, h1.title.portfolio-landing {
 				padding-right: 6.0%;
 			}
+			h1.news-landing {
+                padding-right: 10%;
+            }
 			nav.desktop {		
 				clear:right;
 				display: block;
@@ -242,7 +248,7 @@ blockquote {
 						padding: 0 0 10px 0 ;
 						text-transform: uppercase;
 						font-size: $font__size-medium-small;
-						&:before {
+                        &:before {
 							content: "|";
 							padding: 0 7px;
 						}
@@ -264,50 +270,99 @@ blockquote {
 			nav.mobile {
 				display: none;
 				position: fixed;
-				right: -1*$size__mobile-sidebar;
+				right: -100%;
 				top: 0;
 				width: $size__mobile-sidebar;
 				background-color: $color__das-blue;
-				z-index: 2;
-				overflow: scroll;
+				z-index: 3;
+				overflow-y: scroll;
 				height: 100%;
-				padding: 30px 0 0 0;
+				padding: 0 5%;
 				text-align: left;
 				@media screen and (max-width: $mobilelandscapewidth) {
 					display: block;
-					width: $size__mobile-sidebar+10%;
-					right: (-1*$size__mobile-sidebar)-10%;
+					width: $size__mobile-sidebar;
+                    font-size: $font__size-medium;
 				}
 				@media screen and (max-width: $mobileportraitwidth) {
 					font-size: $font__size-medium-small;
+                    width: 50%;
 				}
 				@media screen and (max-width: $mobiletinywidth) {
 					font-size: $font__size-small;
+                    width: 60%;
 				}
 				.mobile.hamburger {
 					color: $color__das-white;
 					text-transform: uppercase;
 					font-size: $font__size-medium-large;
-					margin: 0 0 20px 10%;
+					margin: 30px 0 8px 0;
 				}
+                .descriptor {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    @media screen and (max-width: $mobilelandscapewidth) {
+                        padding: 5px 0;
+                    }
+                    @media screen and (max-width: $mobiletinywidth) {
+                        padding: 8px 0;
+                    }
+                }
 				ul {
 					margin: 0;
 					padding: 0;
 					.descriptor {
-						padding: 0 0 0 10%;
+                        display: inline-block;
 						text-transform: uppercase;
 						font-weight: 700;
+                        @media screen and (max-width: $mobilelandscapewidth) {
+                            padding: 5px 0;
+                        }
+						@media screen and (max-width: $mobiletinywidth) {
+							padding: 8px 0;
+						}
 					}
 					li {
 						margin: 0;
-						padding: 0 0 0 10%;
 						list-style-type: none;
 						text-transform: uppercase;
-						@media screen and (max-width: $mobileportraitwidth) {
-							padding-top: 5px;
+						@media screen and (max-width: $mobilelandscapewidth) {
+							padding: 5px 0;
 						}
 						@media screen and (max-width: $mobiletinywidth) {
-							padding-top: 8px;
+							padding: 8px 0;
+						}
+						a {
+                            &.active {
+                                font-weight: 700;
+                            }
+                        }
+					}
+				}
+				.social {
+					vertical-align: middle;
+					display: inline-block;
+					font-size: $font__size-large;
+					margin: 0;
+					position: relative;
+                    @media screen and (max-width: $mobilelandscapewidth) {
+                        padding: 5px 0 30px 0;
+                    }
+                    @media screen and (max-width: $mobiletinywidth) {
+                        padding: 8px 0 30px 0;
+                    }
+					li {
+						padding: 0 0 0 10px;
+						display: block;
+						float: left;
+						list-style: none;
+                        color: white;
+                        &:first-child {
+                            padding: 0;
+                        }
+						a {
+							color: inherit;
 						}
 					}
 				}
@@ -353,7 +408,7 @@ blockquote {
 		opacity: .6;
 		z-index:-1;
 	}
-	* {font-size: $font__size-medium-small;}
+	* {font-size: $font__size-medium-medium-small;}
 	nav {
 		ul {
 			margin: 0;
@@ -376,7 +431,7 @@ blockquote {
 		}
 		.float-left.company-info-footer-links.wrapper {
 			text-align: left;
-			width: auto;
+			width: 45%;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				float:none;
 				width: 100%;
@@ -387,6 +442,7 @@ blockquote {
 				font-weight: 600;
 				.company-name {
 					margin: 0 0 20px 0;
+                    font-weight: 700;
 				}
 				.main-line {
 					margin: 20px 0 0 0;
@@ -400,11 +456,12 @@ blockquote {
 			}
 			.footer-links-menu {
 				margin: 20px 0 0 0;
+                text-transform: uppercase;
 			}
 		}
 		.float-right.company-location-sitemap-bw.wrapper {
 			text-align: right;
-			width: auto;
+			width: 47%;
 			@media screen and (max-width: $mobilelandscapewidth) {
 				float:none;
 				width: 100%;

@@ -100,7 +100,7 @@ get_header(); ?>
 								</h3>
 							<?php endif;
 							if($video_desc): ?>
-								<div class="video-description">
+								<div class="video-description copy">
 									<?php echo $video_desc;?>
 								</div><!--.video-description-->
 							<?php endif;

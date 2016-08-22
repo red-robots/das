@@ -38,6 +38,7 @@
 		<nav class="mobile">
 			<i class="mobile hamburger fa fa-bars"></i>
 			<?php wp_nav_menu( array( 'theme_location'=>'sidebar' ) ); ?>
+			<?php get_template_part("/template-parts/social");?>
 		</nav>
     </div><!--.company-info-nav .wrapper-->
 </header><!--#site-header-->

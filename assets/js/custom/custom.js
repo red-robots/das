@@ -128,29 +128,45 @@ jQuery(document).ready(function ($) {
 		var $footer = $('#colophon');//get footer
 		var $sidebar = $('#sidebar');//get sidebar
 		var $window = $(window);
+        if($sidebar.length===0)return;
 		$window.on('scroll resize ready',function(){
 			var footerOffsetTop = Number($footer.offset().top);
 			var windowBottom = Number($window.scrollTop())+Number($window.height());
 			var sidebarHeight = Number($sidebar.height());
 			var scrollbar_width = window.innerWidth-$(window).width();
+            var $nav_wrapper = $sidebar.find(".nav.wrapper");
+            var nav_wrapper_offset = $nav_wrapper.outerHeight()+$nav_wrapper.offset().top;
+            var scroll = nav_wrapper_offset > (sidebarHeight+$window.scrollTop())? true: false;
 			if($(this).width()>600-scrollbar_width){ //if not mobile
 				if(windowBottom>=footerOffsetTop){
-					$sidebar.css({ //fix sidebar to footer
-						"position": "absolute",
-						"bottom": 0,
-						"left": 0,
-						"height": sidebarHeight,
-						"top": "inherit"
-					});
+                    if(scroll){
+                        $sidebar.css({ //fix sidebar to footer
+                            "position": "absolute",
+                            "bottom": 0,
+                            "left": 0,
+                            "height": footerOffsetTop-$window.scrollTop()+"px",
+                            "top": "inherit",
+                            "overflow-y":"scroll"
+                        });
+                    } else {
+                        $sidebar.css({ //fix sidebar to footer
+                            "position": "absolute",
+                            "bottom": 0,
+                            "left": 0,
+                            "height": sidebarHeight+"px",
+                            "top": "inherit"
+                        });
+                    }
 				}
 				if(windowBottom<footerOffsetTop){
-					$sidebar.css({ //cancel out previous work
-						"position": "",
-						"bottom": "",
-						"left": "",
-						"height": "",
-						"top": ""
-					});
+                    $sidebar.css({ //cancel out previous work
+                        "position": "",
+                        "bottom": "",
+                        "left": "",
+                        "height": "",
+                        "top": "",
+                        "overflow-y":""
+                    });
 				}
 			}
 			else { //if mobile cancel out previous work
@@ -159,7 +175,8 @@ jQuery(document).ready(function ($) {
 					"bottom": "",
 					"left": "",
 					"height": "",
-					"top": ""
+					"top": "",
+                    "overflow-y":""
 				});
 			}
 		});
@@ -181,7 +198,22 @@ jQuery(document).ready(function ($) {
 	.on('click',function(){
 		var $nav = $('#site-header .company-info-nav.wrapper.right-column > nav.mobile');
 		$nav.animate({
-			"right": 100*(-1*$nav.width()/$(window).width())-2+"%"
+			"right": "-100%"
+		});
+	});
+    //if homepage hamburger clicked move menu into view
+	$('#homepage-sidebar > i.mobile.hamburger')
+	.on('click',function(){
+		$('#homepage-sidebar > nav.mobile').animate({
+			"right": 0,
+		});
+	});
+	//if homepage hamburger clicked on menu move back out of view
+	$('#homepage-sidebar > nav.mobile > i.mobile.hamburger')
+	.on('click',function(){
+		var $nav = $('#homepage-sidebar > nav.mobile');
+		$nav.animate({
+			"right": "-100%"
 		});
 	});
 	
@@ -291,6 +323,13 @@ jQuery(document).ready(function ($) {
 			}).find('iframe').css({
 				"height": height,
 			});
+		});
+        $('.map').not('.wrapper').each(function(){
+			var $this = $(this);
+			var height = Number($this.width())+"px";
+			$this.css({
+				"height": height,
+			}).find('iframe').attr("width",height).attr("height",height);
 		});
 	});
 	
