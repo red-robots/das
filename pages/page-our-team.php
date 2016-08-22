@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Our Team
+ * Template Name: Our People
  * 
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -50,16 +50,19 @@ get_header(); ?>
 											<?php the_content();?>
 										</div><!--.copy-->
 									</section><!--.video-copy .wrapper-->
-									<?php $query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
+									<?php $query = new WP_Query(array('post_type'=>'leader','posts_per_page'=>-1));
 									if($query->have_posts()):?>
                                         <section class="leadership wrapper">
-                                            <?php if(get_field("our_team_title")):?>
+                                            <?php if(get_field("our_people_title")):?>
                                                 <header>
-                                                    <h2><?php echo get_field("our_team_title");?></h2>
+                                                    <h2><?php echo get_field("our_people_title");?></h2>
                                                 </header>
                                             <?php endif;
                                             while($query->have_posts()):$query->the_post();?>
-                                                <div class="leader">
+                                                <div class="leader clear-bottom">
+                                                    <?php if(get_field("picture")):?>
+                                                        <img src="<?php echo wp_get_attachment_image_src(get_field("picture"), "full")[0];?> " alt="<?php echo get_post(get_field("picture"))->post_title;?>">
+                                                    <?php endif;?>
                                                     <header>
                                                         <h3><?php the_title();?></h3>
                                                         <?php if(get_field("professional_title")):?>

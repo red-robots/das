@@ -399,6 +399,34 @@
 				margin: 0 0 40px 0;
 			}
 		}
+		.leadership.wrapper {
+            header {
+                h2 {
+                }
+            }
+            .leader {
+                margin: 0 0 20px 0;
+                img {
+                    float: left;
+                    margin: 0 15px 15px 0;
+                    padding: 0;
+                    width: 20%;
+                }
+                header {
+                    h3 {
+                        font-size: $font__size-medium;
+                        margin: 0 0 15px 0;
+                    }
+                    p {
+                        color: $color__das-blue;
+                        font-size: $font__size-medium;
+                        margin: 0 0 15px 0;
+                    }
+                }
+                .copy {
+                }
+            }
+        }
     }
 	/*-----------------------------------
 	 * Our Process Specific
