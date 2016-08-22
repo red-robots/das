@@ -222,7 +222,13 @@ jQuery(document).ready(function ($) {
 	 *
 	 * Custom gallery thumbnail switcher
 	 *
-	 */	
+	 */
+    //preload images
+    $('.gallery .thumbnail img.thumbnail-img').each(function(){ 
+		var url = $(this).attr('data-full-url'); //get url from data attribute
+        var $img = $('<img>').css({"display":"none"}).attr("src",url);
+        $('body').append($img);
+	});
 	$('.gallery .thumbnail img.thumbnail-img').on('click',function(){ //on thumbnail click
 		var url = $(this).attr('data-full-url'); //get url from data attribute
 		$('.gallery .featured-image img').attr('src',url); //send url to featured image

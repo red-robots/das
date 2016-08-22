@@ -10,7 +10,7 @@
 
 <aside id="homepage-sidebar" class="sidebar js-blocks" role="complementary">
     <div class="logo wrapper">
-       <a href="<?php get_bloginfo("url");?>"><img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo"></a>
+       <img src="<?php echo wp_get_attachment_url(get_field("logo","option"));?>" alt="logo" id="logo">
     </div><!--.logo .wrapper-->
     <i class="mobile hamburger fa fa-bars"></i>
     <nav class="mobile">
