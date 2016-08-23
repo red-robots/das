@@ -53,16 +53,16 @@ get_header(); ?>
 								<div class="process-steps wrapper">
 									<ol>
 										<?php if(get_field("step_1")):
-											echo '<li class="wow zoomIn"><img src="'.get_template_directory_uri().'/images/1.png'.'" class="process-step-image">'.get_field("step_1")."</li>";
+											echo '<li class="wow zoomIn"><img src="'.get_template_directory_uri().'/images/1.png'.'" class="process-step-image" alt="step 1 graphic">'.get_field("step_1")."</li>";
 										endif; ?>
 										<?php if(get_field("step_2")):
-											echo '<li class="wow zoomIn" data-wow-delay=".5s"><img src="'.get_template_directory_uri().'/images/2.png'.'" class="process-step-image">'.get_field("step_2")."</li>";
+											echo '<li class="wow zoomIn" data-wow-delay=".5s"><img src="'.get_template_directory_uri().'/images/2.png'.'" class="process-step-image" alt="step 2 graphic">'.get_field("step_2")."</li>";
 										endif; ?>
 										<?php if(get_field("step_3")):
-											echo '<li class="wow zoomIn" data-wow-delay="1s"><img src="'.get_template_directory_uri().'/images/3.png'.'" class="process-step-image">'.get_field("step_3")."</li>";
+											echo '<li class="wow zoomIn" data-wow-delay="1s"><img src="'.get_template_directory_uri().'/images/3.png'.'" class="process-step-image" alt="step 3 graphic">'.get_field("step_3")."</li>";
 										endif; ?>
 										<?php if(get_field("step_4")):
-											echo '<li class="wow zoomIn" data-wow-delay="1.5s"><img src="'.get_template_directory_uri().'/images/4.png'.'" class="process-step-image">'.get_field("step_4")."</li>";
+											echo '<li class="wow zoomIn" data-wow-delay="1.5s"><img src="'.get_template_directory_uri().'/images/4.png'.'" class="process-step-image" alt="step 4 graphic">'.get_field("step_4")."</li>";
 										endif; ?>
 									</ol>
 								</div><!--.process-steps .wrapper-->

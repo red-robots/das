@@ -26,7 +26,7 @@ get_header(); ?>
 												<div class="box date"><?php echo get_the_date("n.j.Y");?></div><!--.box .date-->
 											</div><!--.box .date .wrapper-->
 											<?php if(has_post_thumbnail()): ?>
-												<img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), "large")[0]; ?>" alt="<?php echo $thumbnail->post_title;?>" class="featured-news-image">
+												<img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), "large")[0]; ?>" alt="<?php echo get_post(get_post_thumbnail_id())->post_title;?>" class="featured-news-image">
 											<?php endif;//if has thumbnail?>
 											<h2 class="title"><?php the_title(); ?></h2>
 										</header>

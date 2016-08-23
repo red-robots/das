@@ -44,7 +44,7 @@ get_header(); ?>
 											</div><!--.title-type .wrapper-->
 											<div class="background wrapper"></div>
 											<a href="<?php echo get_the_permalink();?>" class="surrounding full-article"></a>
-											<img src="<?php echo wp_get_attachment_image_src(get_field("featured_image"), 'full')[0]; ?>" alt="<?php echo $thumbnail->post_title;?>">
+											<img src="<?php echo wp_get_attachment_image_src(get_field("featured_image"), 'full')[0]; ?>" alt="<?php echo get_post(get_field("featured_image"))->post_title;?>">
 										</div><!--.project-->
 									<?php endif;//if featured image?> 
 								<?php endwhile; //while for all portfolio posts;?> 
