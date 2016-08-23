@@ -103,5 +103,10 @@ function acstarter_widgets_init() {
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ) );
+  
+  /*
+   * Custom image size for gallery
+   */
+   add_image_size("gallery",300,200,array('center','center'));
 }
 add_action( 'widgets_init', 'acstarter_widgets_init' );

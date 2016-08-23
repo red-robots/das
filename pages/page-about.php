@@ -81,7 +81,7 @@ get_header(); ?>
 														<?php for($i=0;$i<count($images);$i++):?>
 															<div class="thumbnail count-<?php echo $i%4;?>">
 																<a class="gallery" href="<?php echo $images[$i]['url'];?>">
-																	<img src="<?php echo $images[$i]['sizes']['medium'];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
+																	<img src="<?php echo wp_get_attachment_image_src($images[$i]['ID'],"gallery")[0];?>" alt="<?php echo $images[$i]['title']; ?>" class="thumbnail-img">																
 																</a>
 															</div><!--.thumbnail-->
 														<?php endfor;?>
