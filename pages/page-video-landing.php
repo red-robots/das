@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<?php get_template_part("/template-parts/site-header","news"); ?>
+		<?php get_template_part("/template-parts/site-header","videos"); ?>
 		<div class="main-sidebar wrapper clear-bottom">
 			<?php get_sidebar(); ?>
 			<main id="main" class="site-main right-column" role="main">
