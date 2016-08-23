@@ -71,13 +71,18 @@
 			overflow:visible;  
 			position:absolute; 
 			top:10px; 
-			background:url(images/x.png); 
+			background:url(images/left.png); 
 			background-size: 100% auto;
-			/*background-repeat: no-repeat;*/
-			width:25px; 
-			height:25px; 
+			background-repeat: no-repeat;
+            background-position: center;
+			width:30px; 
+			height:50px; 
 			text-indent:-9999px;
 			box-shadow:none;
+            @media screen and (max-width: $mobilelandscapewidth) {
+                width: 18px;
+                height: 30px;
+            }
         }
         #cboxNext {
             border:0; 
@@ -86,13 +91,18 @@
 			overflow:visible;  
 			position:absolute; 
 			top:10px; 
-			background:url(images/x.png); 
+			background:url(images/right.png); 
 			background-size: 100% auto;
-			/*background-repeat: no-repeat;*/
-			width:25px; 
-			height:25px; 
+			background-repeat: no-repeat;
+            background-position: center;
+			width:30px; 
+			height:50px; 
 			text-indent:-9999px;
 			box-shadow:none;
+            @media screen and (max-width: $mobilelandscapewidth) {
+                width: 18px;
+                height: 30px;
+            }
         }
         #cboxSlideshow, #cboxClose {
 			border:0; 
@@ -103,7 +113,8 @@
 			top:10px; 
 			background:url(images/x.png); 
 			background-size: 100% auto;
-			/*background-repeat: no-repeat;*/
+			background-repeat: no-repeat;
+            background-position: center;
 			width:25px; 
 			height:25px; 
 			text-indent:-9999px;
@@ -113,11 +124,11 @@
         /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 
-        #cboxPrevious{left:20px; background-position: -0px -0px;}
+        #cboxPrevious{left:20px; /*background-position: -0px -0px;*/}
         /*#cboxPrevious:hover{background-position:-0px -50px;}*/
-        #cboxNext{left:90px; background-position:-50px -0px;}
+        #cboxNext{left:90px; /*background-position:-50px -0px;*/}
         /*#cboxNext:hover{background-position:-50px -50px;}*/
-        #cboxClose{right:20px; background-position:-100px -0px;}
+        #cboxClose{right:20px; /*background-position:-100px -0px;*/}
         /*#cboxClose:hover{background-position:-100px -50px;}*/
 
         .cboxSlideshow_on #cboxSlideshow{background-position:-125px 0px; right:27px;}

@@ -330,6 +330,12 @@
 					float: left;
 					width: (100%-($size__about-thumbnail-tile-margin*($size__about-thumbnail-tile-span+-1)))/$size__about-thumbnail-tile-span;
 					margin: 0 $size__about-thumbnail-tile-margin $size__about-thumbnail-tile-margin 0;
+                    @media screen and (max-width: $mobilelandscapewidth) {
+                        width: (100%-$size__about-thumbnail-tile-margin)/2;
+                        &.count-1 {
+                            margin-right: 0;
+                        }
+                    }
                     &.count-3 {
                         margin-right: 0;
                     }
