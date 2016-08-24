@@ -550,13 +550,17 @@
 					li {
 						padding: 0;
 						display: list-item;
+                        position: relative;
 						width: 100%;
                         margin: 15px 0;
                         list-style-type: none;
                         .process-step-image {
+                            float: left;
                             width: 40px;
-                            vertical-align: middle;
                             margin: 0 10px 0 0;
+                        }
+                        .step-copy {
+                            padding: 9px 0 0 50px;
                         }
                     }
                 }
