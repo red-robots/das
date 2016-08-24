@@ -1745,13 +1745,11 @@ blockquote{border-left:4px solid #005fbb;font-size:18pt;margin:0;padding:0;font-
 #home-primary section.featured-project.clear-bottom .featured-video.right-column header.box h2{margin:0;font-weight:500;text-transform:uppercase;font-size:9pt;color:white}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .video.left-column{float:left;width:60%}
 @media screen and (max-width:900px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .video.left-column{width:100%;float:none}
-}@media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .video.left-column{float:left;width:60%}
-}@media screen and (max-width:500px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .video.left-column{width:100%;float:none}
+}@media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .video.left-column{width:100%;float:none}
 }#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .video.left-column iframe{width:100%}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{float:right;width:40%;padding:0 20px}
 @media screen and (max-width:900px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{width:100%;float:none;padding:20px 0 0 0}
-}@media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{float:right;width:40%;padding:0 20px}
-}@media screen and (max-width:500px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{width:100%;float:none;padding:20px 0 0 0}
+}@media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column{width:100%;float:none;padding:20px 0 0 0}
 }#home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .title{margin:0 0 15px 0;color:black;font-size:12pt}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .video-description{margin:15px 0}
 #home-primary section.featured-project.clear-bottom .featured-video.right-column .video-section.wrapper .description.right-column .video-description p{font-size:11pt}
