@@ -325,18 +325,21 @@
 		}
 	}
 	section.featured-project.clear-bottom {
-		display: table;
+		display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        align-content: center;
 		margin: 0;
 		padding: 70px 50px 80px 50px;
 		width: 100%;
 		@media screen and (max-width: $mobilelandscapewidth) {
-			display: block;
+			flex-wrap: wrap;
+            display: block;
 			padding: 0;
 		}
 		.process.left-column {
 			width: $size__homepage-process-width;
-			display: table-cell;
-			vertical-align: middle;
 			padding: 0 110px 0 20px;
 			@include border4;
 			@media screen and (max-width: $midwidth) {
@@ -386,8 +389,6 @@
 		}
 		.featured-video.right-column {
 			width: 100%-$size__homepage-process-width;
-			display: table-cell;
-			vertical-align: top;
 			padding: 30px 0 0 0;
 			@media screen and (max-width: $midwidth) {
 				width: 50%;
