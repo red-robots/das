@@ -86,7 +86,7 @@ get_header(); ?>
 						<div class="video left-column">
 							<?php $video = get_field("video");
 							preg_match("/src=\"(.+)\"/i",$video,$matches); ?>
-							<iframe src="<?php echo $matches[1];?>"></iframe>
+							<iframe src="<?php echo $matches[1];?>" allowfullscreen=""></iframe>
 						</div><!--.video-->
 						<div class="description right-column">	
 							<?php $post = get_post(244);
