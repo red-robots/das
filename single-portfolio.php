@@ -51,7 +51,7 @@ get_header(); ?>
 											<div class="video">
 												<?php $video = get_field("video");
 												preg_match("/src=\"(.+)\"/i",$video,$matches); ?>
-												<iframe src="<?php echo $matches[1];?>"></iframe>
+												<iframe src="<?php echo $matches[1];?>" allowfullscreen=""></iframe>
 											</div><!--.video -->
 											<?php if(get_field("video_description")):?>
 												<section class="video-description copy">
