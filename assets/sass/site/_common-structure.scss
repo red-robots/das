@@ -516,6 +516,20 @@ blockquote {
 		z-index: -2;
 	}
 }
+.search-form-leader.clear-bottom {
+    margin: 0 0 10px 0;
+    form {
+        float: right;
+        input[type=text] {
+            display: inline-block;
+        }
+        input[type=submit] {
+            display: inline-block;
+            
+        }
+    }
+}
+
 /*
 .widget-area {
 	width: 100%;

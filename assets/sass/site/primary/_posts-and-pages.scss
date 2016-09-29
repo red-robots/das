@@ -106,6 +106,44 @@
 				}
 			}
 			/*-------------------------------------
+			 * Leader Search Specific
+			 --------------------------------------*/
+			.leader.is-container.left-column {
+				.leader.item {
+					height: auto;
+					width: (100%-($size__leader-landing-tile-margin*$size__leader-landing-tile-span))/$size__leader-landing-tile-span;
+					margin: 0 $size__leader-landing-tile-margin $size__leader-landing-tile-margin 0;
+					display: block;
+                    position: relative;
+					float: left;
+					@media screen and (max-width: $tabwidth) {
+						width: (100%-($size__leader-landing-tile-margin*2))/2;
+					}
+					@media screen and (max-width: $mobilelandscapewidth) {
+						width: (100%-($size__leader-landing-tile-margin*$size__leader-landing-tile-span))/$size__leader-landing-tile-span;
+					}
+					@media screen and (max-width: $mobileportraitwidth) {
+						width: 100%;
+                        margin: $size__leader-landing-tile-margin 0 0 0;
+					}
+					img {
+                        width: 100%;
+                        display: block;
+                        margin: 0 0 10px 0;
+                    }
+                    header {
+                        color: $color__das-blue;
+                        margin: 0;
+                        .title {
+                            margin: 0 0 10px 0;
+                        }
+                        .position {
+                            margin: 0;
+                        }
+                    }
+				}
+			}
+			/*-------------------------------------
 			 * Video Landing Specific
 			 --------------------------------------*/
 			.video.is-container.left-column {
@@ -769,4 +807,91 @@
 			}
 		}
 	}
+	/*-------------------------------------
+	 * News individual specific
+	 --------------------------------------*/
+	.leader.wrapper.clear-bottom {
+		position: relative;
+		.leader.clear-bottom.js-blocks {
+			width: 100%;
+			.left-column {
+                float: left;
+                width: 30%;
+                @media screen and (max-width: $mobilelandscapewidth) {
+                    float: none;
+                    width: 100%;
+                }
+                .featured-leader-image {
+                    margin: 5px 0 20px 0;
+                    display: block;
+                    width: 100%;
+                }
+            }
+            .right-column {
+                float: right;
+                width: 70%;
+                padding-left: 20px;
+                @media screen and (max-width: $mobilelandscapewidth) {
+                    float: none;
+                    width: 100%;
+                }
+                .search-bar {
+                    
+                }
+                header {
+                    display: block;
+                    width: 100%;
+                    .title {
+                        display: block;
+                        font-size: $font__size-medium-large;
+                        margin: 10px 0 0 0;
+                        color: $color__das-blue;
+                        text-transform: uppercase;
+                    }
+                    .position {
+                        display: block;
+                        font-size: $font__size-medium-large;
+                        margin: 0 0 10px 0 ;
+                        color: $color__das-blue;
+                    }
+                }
+                .copy {
+                    display: block;
+                    width: 100%;
+                    margin: 10px 0;
+                }
+            }
+		}
+	}
+}
+
+.no-search-results {
+    header {
+        margin: 0 0 20px 0;
+        h1 {
+            margin: 0;
+            text-transform: uppercase;
+            color: $color__das-blue;
+        }
+    }
+    .copy {
+        margin: 0;
+        ul {
+            margin: 20px 0 0 20px;
+            padding: 0;
+            &.sub-menu {
+                margin-top: 0;
+            }
+            li {
+                margin: 0;
+                padding: 0 0 0 20px;
+                a {
+                    border: none;
+                    &:hover {
+                        @include border1;
+                    }
+                }
+            }
+        }
+    }
 }

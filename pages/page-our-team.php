@@ -52,29 +52,29 @@ get_header(); ?>
 									</section><!--.video-copy .wrapper-->
 									<?php $query = new WP_Query(array('post_type'=>'leader','posts_per_page'=>-1));
 									if($query->have_posts()):?>
-                                        <section class="leadership wrapper">
-                                            <?php if(get_field("our_people_title")):?>
-                                                <header>
-                                                    <h2><?php echo get_field("our_people_title");?></h2>
-                                                </header>
-                                            <?php endif;
-                                            while($query->have_posts()):$query->the_post();?>
-                                                <div class="leader clear-bottom">
-                                                    <?php if(get_field("picture")):?>
-                                                        <img src="<?php echo wp_get_attachment_image_src(get_field("picture"), "full")[0];?> " alt="<?php echo get_post(get_field("picture"))->post_title;?>">
-                                                    <?php endif;?>
-                                                    <header>
-                                                        <h3><?php the_title();?></h3>
-                                                        <?php if(get_field("professional_title")):?>
-                                                            <p class="title"><?php echo get_field("professional_title");?></p>
-                                                        <?php endif;//if get field professional_title?>
-                                                    </header>
-                                                    <div class="copy">
-                                                        <?php the_content();?>
-                                                    </div><!--.copy-->
-                                                </div><!--.leader-->
-                                            <?php endwhile;//while have leaders?>
-                                        </section><!--.leadership .wrapper-->
+                                        <?php get_template_part("/template-parts/search","leader-form");?>
+                                        <div class="isotope-footer-pagination wrapper clear-bottom">
+                                            <div class="isotope-side-pagination wrapper clear-bottom">
+                                                <section class="leader is-container left-column">
+                                                    <?php while($query->have_posts()):$query->the_post();?>
+                                                        <div class="leader js-blocks item">
+                                                            <img src="<?php echo wp_get_attachment_url(get_field("picture"));?>" alt="<?php echo get_post(get_field("picture"))->post_title;?>" class="featured-leader-image">
+                                                            <header>
+                                                                <h1 class="title"><?php the_title();?></h1>
+                                                                <p class="position"><?php echo get_field("professional_title");?></p>
+                                                            </header>
+                                                            <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>
+                                                        </div><!--.leader-->
+                                                    <?php endwhile; //while for all portfolio posts;?> 
+                                                </section><!--.project .is-container .left-column-->
+                                                <div class="right-column pagination wrapper">
+                                                    <?php pagi_posts_arrow_nav($query);?>
+                                                </div><!--.pagination .right-column .wrapper-->
+                                            </div><!--.isotope-side-pagination .wrapper-->
+                                            <div class="pagination wrapper left-column">
+                                                <?php pagi_posts_nav($query);?>
+                                            </div><!--.pagination .wrapper-->
+                                        </div><!--.isotope-footer-pagination .wrapper-->
                                     <?php endif;//if have leaders?>
 								</div><!--.video-copy-team .wrapper-->
 							</article>
