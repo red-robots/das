@@ -52,18 +52,26 @@ get_header(); ?>
 									</section><!--.video-copy .wrapper-->
 									<?php $query = new WP_Query(array('post_type'=>'leader','posts_per_page'=>-1));
 									if($query->have_posts()):?>
-                                        <?php get_template_part("/template-parts/search","leader-form");?>
+                                        <header class="clear-bottom">
+                                            <?php if(get_field("our_people_title")):?>
+                                                <h2><?php echo get_field("our_people_title");?></h2>
+                                            <?php endif;?>
+                                            <?php get_template_part("/template-parts/search","leader-form");?>
+                                        </header>
                                         <div class="isotope-footer-pagination wrapper clear-bottom">
                                             <div class="isotope-side-pagination wrapper clear-bottom">
                                                 <section class="leader is-container left-column">
                                                     <?php while($query->have_posts()):$query->the_post();?>
                                                         <div class="leader js-blocks item">
-                                                            <img src="<?php echo wp_get_attachment_url(get_field("picture"));?>" alt="<?php echo get_post(get_field("picture"))->post_title;?>" class="featured-leader-image">
+                                                            <div class="image wrapper">
+                                                                <img src="<?php echo wp_get_attachment_url(get_field("picture"));?>" alt="<?php echo get_post(get_field("picture"))->post_title;?>" class="featured-leader-image">
+                                                                <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>
+                                                            </div><!--.image .wrapper-->
                                                             <header>
-                                                                <h1 class="title"><?php the_title();?></h1>
-                                                                <p class="position"><?php echo get_field("professional_title");?></p>
+                                                                <p class="link full-article"><a href="<?php echo get_the_permalink();?>">Read Bio</a></p>
+                                                                <h1 class="title"><a href="<?php echo get_the_permalink();?>"><?php the_title();?></a></h1>
+                                                                <p class="position"><a href="<?php echo get_the_permalink();?>"><?php echo get_field("professional_title");?></a></p>
                                                             </header>
-                                                            <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>
                                                         </div><!--.leader-->
                                                     <?php endwhile; //while for all portfolio posts;?> 
                                                 </section><!--.project .is-container .left-column-->

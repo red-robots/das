@@ -126,18 +126,41 @@
 						width: 100%;
                         margin: $size__leader-landing-tile-margin 0 0 0;
 					}
-					img {
-                        width: 100%;
-                        display: block;
-                        margin: 0 0 10px 0;
+					a {
+                        color: $color__text-main;
+                    }
+					.image.wrapper {
+                        position: relative;
+                        img {
+                            width: 100%;
+                            display: block;
+                            margin: 0 0 5px 0;
+                        }
                     }
                     header {
                         color: $color__das-blue;
                         margin: 0;
+                        .link.full-article {
+                            text-align: right;
+                            padding: 0;
+                            margin: 20px 5px 0 0;
+                            float: right;
+                            font-size: $font__size-medium-small;
+                            text-transform: uppercase;
+                            a {
+                                color: $color__text-main;
+                                @include border1;
+                                &:hover {
+                                    color:$color__das-blue;
+                                }
+                            }
+                        }
                         .title {
-                            margin: 0 0 10px 0;
+                            font-size: $font__size-medium;
+                            margin: 0;
                         }
                         .position {
+                            font-size: $font__size-medium-medium-small;
                             margin: 0;
                         }
                     }
@@ -510,7 +533,21 @@
 				margin: 0 0 40px 0;
 			}
 		}
-		.leadership.wrapper {
+		header {
+            h2 {
+                float: left;
+                color: $color__das-blue;
+                margin: 0;
+            }
+            .search-form-leader {
+                margin-top: 0;
+                float: right;
+				@media screen and (max-width: $mobilelandscapewidth) {
+                    margin-top: 5px;
+                }
+            }
+        }
+		/*.leadership.wrapper {
             header {
                 h2 {
                 }
@@ -537,7 +574,7 @@
                 .copy {
                 }
             }
-        }
+        }*/
     }
 	/*-----------------------------------
 	 * Our Process Specific
@@ -808,7 +845,7 @@
 		}
 	}
 	/*-------------------------------------
-	 * News individual specific
+	 * Leader individual specific
 	 --------------------------------------*/
 	.leader.wrapper.clear-bottom {
 		position: relative;
