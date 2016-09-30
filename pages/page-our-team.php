@@ -50,7 +50,20 @@ get_header(); ?>
 											<?php the_content();?>
 										</div><!--.copy-->
 									</section><!--.video-copy .wrapper-->
-									<?php $query = new WP_Query(array('post_type'=>'leader','posts_per_page'=>-1));
+									<?php $query = new WP_Query(array('post_type'=>'leader','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>
+                                        array(
+                                            'relation'=>'AND',
+                                            array(
+                                                'key'=>'show',
+                                                'compare'=>'EXISTS',
+                                            ),
+                                            array(
+                                                'key'=>'show',
+                                                'value'=>'yes',
+                                                'compare'=>'='
+                                            ),
+                                        ),
+                                    ));
 									if($query->have_posts()):?>
                                         <header class="clear-bottom">
                                             <?php if(get_field("our_people_title")):?>
