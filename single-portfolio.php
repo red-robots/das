@@ -22,7 +22,7 @@ get_header(); ?>
 							if($images!=null && count($images)>0): ?>
 								<section class="gallery wrapper">
 									<div class="featured-image left-column">
-										<img src="<?php echo $images[0][url];?>" alt="<?php echo $images[0]['title'];?>">
+										<img src="<?php echo $images[0]['url'];?>" alt="<?php echo $images[0]['title'];?>">
 									</div><!--.featured-image-->
 									<div class="thumbnail wrapper right-column">
 										<?php for($i=0;$i<14&&$i<count($images);$i++):?>

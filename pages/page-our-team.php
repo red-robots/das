@@ -59,7 +59,7 @@ get_header(); ?>
                                             <div class="isotope-side-pagination wrapper clear-bottom">
                                                 <section class="leader is-container left-column">
                                                     <?php while($query->have_posts()):$query->the_post();?>
-                                                        <div class="leader js-blocks item">
+                                                        <div class="leader item">
                                                             <div class="image wrapper">
                                                                 <img src="<?php echo wp_get_attachment_url(get_field("picture"));?>" alt="<?php echo get_post(get_field("picture"))->post_title;?>" class="featured-leader-image">
                                                                 <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>

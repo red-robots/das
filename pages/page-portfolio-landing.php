@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php get_sidebar(); ?>
 			<main id="main" class="site-main right-column" role="main">
 				<div class ="isotope-footer-pagination wrapper clear-bottom">
-					<?php if(!empty(get_query_var('term'))):
+					<?php if(get_query_var('term')):
 						$args = array('post_type'=>'portfolio','posts_per_page'=>9,'order'=>'DESC',
 									'tax_query'=>array(
 										array(
