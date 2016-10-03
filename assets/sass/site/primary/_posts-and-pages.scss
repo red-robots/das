@@ -497,9 +497,9 @@
 	/*
      * Our Team Specific
      */
-    .video-copy-team.wrapper{
-		.video-copy.wrapper {
-			.video.wrapper {
+    .image-copy-team.wrapper{
+		.image-copy.wrapper {
+			.image.wrapper {
 				width: 35%;
 				float: right;
 				margin: 0 0 10px 50px;
@@ -508,25 +508,9 @@
                     margin: 0 auto 20px auto;
                     float: none;
                 }
-				.video {
+				img{
 					width: 100%;
 					height: auto;
-					iframe {
-						width: 100%;
-					}
-				}
-				.link.full-article {
-					text-align: right;
-					padding: 10px 0 0 0;
-					font-size: $font__size-medium-small;
-					text-transform: uppercase;
-					a {
-						color: $color__text-main;
-						@include border1;
-						&:hover {
-							color:$color__das-blue;
-						}
-					}
 				}
 			}
 			.copy {

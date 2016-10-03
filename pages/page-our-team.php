@@ -18,38 +18,22 @@ get_header(); ?>
 		        <main id="main" class="site-main right-column about" role="main">
 							<article>
 								<header><h1 class="title"><?php echo get_the_title();?></h1></header>
-								<div class="video-copy-team wrapper clear-bottom">
-									<section class="video-copy wrapper">
-										<div class="video wrapper">
-											<?php $portfolio_w_video = array();
-											$query = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
-											if($query->have_posts()):
-												while($query->have_posts()):$query->the_post();
-													if(get_field("video")):
-														$portfolio_w_video[] = $query->post->ID;//get portfolios with videos
-													endif;//end of if for has video
-												endwhile;//end of have posts for portfolios
-											endif;//end of if posts for portfolios
-											wp_reset_postdata();
-											if(!empty($portfolio_w_video)):
-												$selection = $portfolio_w_video[rand(0,count($portfolio_w_video)-1)];//get random portfolio
-												$post=get_post($selection);
-												setup_postdata($post);?>
-												<div class="video">
-													<?php $video = get_field("video");
-													preg_match("/src=\"(.+)\"/i",$video,$matches); ?>
-													<iframe src="<?php echo $matches[1];?>" allowfullscreen=""></iframe>
-												</div><!--.video-->
-												<div class="link full-article">
-													<a href="<?php the_permalink();?>">View More</a>
-												</div><!--.link.full-article-->
-												<?php wp_reset_postdata();
-											endif;//end of if for has videos?>
-										</div><!--.video-->
+								<div class="image-copy-team wrapper clear-bottom">
+									<section class="image-copy wrapper clear-bottom">
+										<div class="image wrapper">
+                                            <?php if(get_field("team_gallery")):
+                                                $images = get_field('team_gallery');?>
+                                                <?php $count = count($images); 
+                                                if($images!=null && $count>0): 
+                                                    $i = rand(0,$count-1);?>
+                                                    <img src="<?php echo wp_get_attachment_image_src($images[$i]['ID'],"full")[0];?>" alt="<?php echo $images[$i]['title']; ?>">
+                                                <?php endif; //if images ?>
+                                            <?php endif;//if gallery?>
+										</div><!--.image-->
 										<div class="copy">
 											<?php the_content();?>
 										</div><!--.copy-->
-									</section><!--.video-copy .wrapper-->
+									</section><!--.image-copy .wrapper-->
 									<?php $query = new WP_Query(array('post_type'=>'leader','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>
                                         array(
                                             'relation'=>'AND',
@@ -97,7 +81,7 @@ get_header(); ?>
                                             </div><!--.pagination .wrapper-->
                                         </div><!--.isotope-footer-pagination .wrapper-->
                                     <?php endif;//if have leaders?>
-								</div><!--.video-copy-team .wrapper-->
+								</div><!--.image-copy-team .wrapper-->
 							</article>
 		        </main><!-- #main -->
 		      </div><!--.main-sidebar .wrapper-->
