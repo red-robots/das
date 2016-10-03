@@ -35,11 +35,11 @@ get_header(); ?>
                                     <?php endwhile; //while for all portfolio posts;?> 
                                 </section><!--.project .is-container .left-column-->
                                 <div class="right-column pagination wrapper">
-                                    <?php pagi_posts_arrow_nav($query);?>
+                                    <?php pagi_posts_arrow_nav($wp_query);?>
                                 </div><!--.pagination .right-column .wrapper-->
                             </div><!--.isotope-side-pagination .wrapper-->
                             <div class="pagination wrapper left-column">
-                                <?php pagi_posts_nav($query);?>
+                                <?php pagi_posts_nav($wp_query);?>
                             </div><!--.pagination .wrapper-->
                         <?php else: ?>
                         <div class="no-search-results">
