@@ -53,7 +53,7 @@ get_header(); ?>
 		<section class="featured-project clear-bottom">
 			<div class="process left-column">
 				<?php if(get_field("company_name","option")): ?>
-					<p class="company-name"><?php echo get_field("company_name","option");?></p>
+					<h1 class="company-name"><?php echo get_field("company_name","option");?></h1>
 				<?php endif; ?>
 				<?php if(get_field("process_description")): ?>
 					<blockquote class="process-description"><?php echo get_field("process_description");?></blockquote><!--.process-description-->

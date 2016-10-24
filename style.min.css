@@ -1763,7 +1763,7 @@ blockquote{border-left:4px solid #005fbb;font-size:18pt;margin:0;padding:0;font-
 }#home-primary section.featured-project.clear-bottom .process.left-column{width:43%;padding:0 110px 0 20px;border-left:8px solid #005fbb}
 @media screen and (max-width:900px){#home-primary section.featured-project.clear-bottom .process.left-column{width:50%;padding:0 55px 0 20px}
 }@media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .process.left-column{width:100%;display:block;padding:20px}
-}#home-primary section.featured-project.clear-bottom .process.left-column .company-name{font-size:11pt;font-weight:700;color:#005fbb;text-transform:uppercase}
+}#home-primary section.featured-project.clear-bottom .process.left-column .company-name{font-size:11pt;font-weight:700;color:#005fbb;text-transform:uppercase;margin:20px 0}
 #home-primary section.featured-project.clear-bottom .process.left-column .process-description{border:0;margin:0;padding:0;font-weight:500}
 #home-primary section.featured-project.clear-bottom .process.left-column .process-description p{margin:0;padding:0;font-size:20pt}
 @media screen and (max-width:600px){#home-primary section.featured-project.clear-bottom .process.left-column .process-description p{font-size:12pt}
